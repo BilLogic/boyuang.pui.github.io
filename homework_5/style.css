@@ -1,0 +1,132 @@
+.Header {
+    position: absolute;
+    width: 1440px;
+    height: 193px;
+    left: 0px;
+    top: 0px;
+
+    background: #CCC5B9;
+    border-radius: 45px;
+}
+
+.Header-brand {
+    position: absolute;
+    width: 172px;
+    height: 210.84px;
+    left: 37px;
+    top: 5px;
+
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.Header-cart {
+    position: absolute;
+    width: 172px;
+    height: 168.55px;
+    left: 1235px;
+    top: 12px;
+}
+
+.Header-nav {
+    position: relative;
+    width: 925px;
+    height: 90px;
+    left: 180px;
+    top: 90px;
+    padding: 0;
+}
+
+.Header-nav li {
+    list-style-type: none;
+
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 2px;
+
+    padding: 20px 30px 10px 30px;
+    margin-right: 65px;
+    text-transform: uppercase;
+
+    background: #FFFCF2;
+    border-radius: 50px;
+
+    position: relative;
+    left: 17.99%;
+    right: 68.89%;
+    top: 0;
+    bottom: 1.22%;
+
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+}
+
+
+.Header-nav li a {
+    font-family: PT Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 25px;
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #252422;
+}
+
+.Body {
+    position: absolute;
+    width: 1440px;
+    height: 712px;
+    left: 1px;
+    top: 208px;
+
+    background: #CCC5B9;
+    mix-blend-mode: normal;
+    border-radius: 50px;
+}
+
+.Body .Content {
+    position: relative;
+
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+
+    mix-blend-mode: normal;
+}
+
+.Body .Content li {
+    display: inline-block;
+}
+
+.Body a {
+    position: absolute;
+    left: 17.64%;
+    right: 17.43%;
+    top: 34.81%;
+    bottom: 35.21%;
+
+    background: #EB5E28;
+    border-radius: 50px;
+
+    font-family: PT Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 64px;
+    line-height: 104.2%;
+
+    padding: 0% 15%;
+    /* or 67px */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-decoration-line: underline;
+    text-transform: uppercase;
+
+    color: #FFFCF2;
+}
