@@ -148,3 +148,119 @@ body {
 .grid-container>.header>.info>button:hover {
     background-color: #403D39;
 }
+
+/* specify the page you are in */
+.grid-container>.header>.info>button.index_2>a {
+    color: #FFFCF2;
+}
+
+.grid-container>.header>.info>button.index_2 {
+    background-color: #403D39;
+}
+
+
+
+
+/*****************************************************************/
+/* Main Body Content */
+.grid-container>.content {
+    position: relative;
+    grid-area: content;
+    background: #FFFCF2;
+    border-radius: 45px;
+    width: 100%;
+
+    display: grid;
+    grid-template-areas:
+        'roll_1 roll_2 roll_3'
+        'roll_4 roll_5 roll_6';
+    grid-auto-columns: 1fr 1fr 1fr;
+    grid-auto-rows: 1fr 1fr;
+
+
+    justify-content: space-around;
+    align-content: space-evenly;
+
+    /* spread the items evenly */
+    justify-items: center;
+    row-gap: 2%;
+}
+
+.grid-container>.content>div {
+    display: grid;
+    grid-template-areas:
+        'pic'
+        'info'
+        'cart';
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 2fr 1fr 1fr;
+    row-gap: 2%;
+
+    justify-items: center;
+    align-items: center;
+
+    align-self: center;
+    width: 75%;
+    height: 100%;
+
+    background: #CCC5B9;
+    border: 1px solid #252422;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+}
+
+.grid-container>.content>div>div.pic {
+    grid-area: pic;
+    width: 75%;
+    height: 100%;
+    padding: 5% 10%;
+    background: #FFFCF2;
+    border-radius: 15px;
+    margin-top: 8%;
+}
+
+.grid-container>.content>div>div.pic>img {
+    position: relative;
+    width: max-content;
+    height: max-content;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.grid-container>.content>div>div.info {
+    grid-area: info;
+    width: 75%;
+    height: 100%;
+    background: #FFFCF2;
+    border-radius: 15px;
+}
+
+.grid-container>.content>div>div.info>p {
+    font-family: PT Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+
+    text-align: left;
+    color: #252422;
+    margin: auto;
+}
+
+.grid-container>.content>div>div.cart {
+    grid-area: cart;
+    background: #EB5E28;
+    border-radius: 15px;
+    width: 100%;
+}
+
+.grid-container>.content>div>div.cart>p {
+    font-family: PT Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+
+    text-align: center;
+
+    color: #FFFCF2;
+}
