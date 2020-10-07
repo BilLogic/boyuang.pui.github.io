@@ -202,100 +202,28 @@ img {
 
     border-radius: 45px;
     width: 100%;
+    height: 100%;
 
     display: grid;
-    grid-template-areas: "left middle right";
-    grid-auto-columns: 1fr 4fr 1fr;
-    column-gap: 10px;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(8, 1fr);
 
     align-items: center;
+    justify-items: center;
+    align-self: center;
+    justify-self: center;
 }
 
 /************************************************/
 /* real main body */
-.grid-container>.content>.middle {
-    position: relative;
-    grid-area: middle;
-    display: grid;
-    grid-gap: 2%;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    height: 80%;
-
-    text-align: left;
-    align-items: center;
-
-    padding: 3% 8%;
-    background: #CCC5B9;
-    border-radius: 50px;
-}
-
-.grid-container>.content>.middle div {
-    background: #FFFCF2;
-    border-radius: 15px;
+.grid-container>.content>.list {
     width: 100%;
     height: 100%;
-}
-
-/* inner main body content */
-.grid-container>.content>.middle>.pic {
-    grid-column: 1/2;
-    grid-row: 1/5;
-    display: grid;
-    grid-template-areas: "left middle right";
-    grid-auto-columns: 1fr 4fr 1fr;
-}
-
-.grid-container>.content>.middle>.pic img {
-    grid-area: middle;
-    width: 70%;
-}
-
-.grid-container>.content>.middle>.tag {
-    grid-column: 1/2;
-    grid-row: 5/6;
-    justify-self: center;
-}
-
-.grid-container>.content>.middle>.info {
-    grid-column: 2/-1;
+    grid-column: 1/-1;
     grid-row: 1/4;
-    background-color: #252422;
-    color: #fffcf2;
-}
-
-.grid-container>.content>.middle>.glaze {
-    grid-column: 2/-1;
-    grid-row: 4/5;
-    background-color: #252422;
-    color: #fffcf2;
-}
-
-.grid-container>.content>.middle>.qty {
-    grid-column: 2/-1;
-    grid-row: 5/6;
-    background-color: #252422;
-    color: #fffcf2;
-}
-
-.grid-container>.content>.middle>.cart {
-    grid-column: 2/-1;
-    grid-row: 6/7;
-
-    background: #EB5E28;
-    border-radius: 15px;
-    font-size: 3vw;
-    text-align: center;
-
-    color: #FFFCF2;
-}
-
-.grid-container>.content>.middle>.close img {
-    background: none;
-    position: absolute;
-    align-self: center;
-    justify-self: center;
-    width: 4vw;
-    top: -2%;
-    right: -2%;
+    display: grid;
+    grid-auto-columns: repeat(6, 1fr);
+    grid-auto-rows: repeat(3, 1fr);
+    background: #ccc5b9;
+    border-radius: 25px;
 }

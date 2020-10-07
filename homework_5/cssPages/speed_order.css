@@ -5,10 +5,13 @@
 body {
     font-family: PT Sans;
     margin: auto;
+
     vertical-align: middle;
     line-height: normal;
-}
+    text-align: center;
 
+    font-size: 2vw;
+}
 
 /* The grid container */
 .grid-container {
@@ -107,13 +110,12 @@ body {
 
 .grid-container>.header>.cart>.number-in-cart {
     position: absolute;
-    left: 85%;
+    right: -18%;
     top: 35%;
     transform: translate(-50%, -50%);
     font-family: PT Sans;
     font-style: normal;
     font-weight: bold;
-    font-size: 30px;
 
     text-align: center;
     letter-spacing: 0.055em;
@@ -135,7 +137,7 @@ body {
     font-family: PT Sans;
     font-style: normal;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 1.5vw;
 
     text-align: center;
     width: 100%;
@@ -159,6 +161,10 @@ body {
 }
 
 
+
+
+
+
 /*****************************************************************/
 /* Main Body Content */
 .grid-container>.content {
@@ -179,6 +185,7 @@ body {
     /* spread the items evenly */
     justify-items: center;
     row-gap: 2%;
+    font-size: 1.2vw;
 }
 
 .grid-container>.content>div {
@@ -188,9 +195,9 @@ body {
         'info'
         'cart';
     grid-auto-columns: 1fr;
-    grid-auto-rows: 2fr 1fr 1fr;
+    grid-auto-rows: 3fr 2fr 2fr;
 
-    width: 70%;
+    width: 90%;
     background: #CCC5B9;
     border: 1px solid #252422;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -200,11 +207,11 @@ body {
 }
 
 .grid-container>.content>div>div {
+    position: relative;
     background-color: #FFFCF2;
     border-radius: 15px;
     width: 70%;
     margin: 2%;
-    position: relative;
 }
 
 .grid-container>.content>div>div.pic {
@@ -212,12 +219,15 @@ body {
 }
 
 .grid-container>.content>div>div.pic img {
-    width: 100%;
+    width: 70%;
+}
+
+.grid-container>.content>div>div.pic img:hover {
+    cursor: pointer;
 }
 
 .grid-container>.content>div>div.info {
     grid-area: info;
-    font-size: 100%;
     text-align: left;
     color: #252422;
 }
@@ -228,7 +238,8 @@ body {
     background: #EB5E28;
     border-radius: 15px;
     width: 100%;
-    font-size: 36px;
+    font-size: 3vw;
+    float: right;
     color: #FFFCF2;
     margin: 0%;
     width: 100%;

@@ -8,14 +8,17 @@ body {
 
   vertical-align: middle;
   line-height: normal;
+  text-align: center;
+
+  font-size: 2vw;
 }
 
 /* The grid container */
 .grid-container {
   display: grid;
   grid-template-areas:
-    "header header header"
-    "content content content";
+    'header header header'
+    'content content content';
   grid-column-gap: 5px;
   grid-template-rows: 1fr 4fr;
   grid-template-columns: 1fr 1fr 1fr;
@@ -26,6 +29,7 @@ body {
   margin: auto;
   height: 100%;
 }
+
 
 /* Style the header */
 
@@ -106,13 +110,12 @@ body {
 
 .grid-container>.header>.cart>.number-in-cart {
   position: absolute;
-  left: 85%;
+  right: -18%;
   top: 35%;
   transform: translate(-50%, -50%);
   font-family: PT Sans;
   font-style: normal;
   font-weight: bold;
-  font-size: 30px;
 
   text-align: center;
   letter-spacing: 0.055em;
@@ -134,7 +137,7 @@ body {
   font-family: PT Sans;
   font-style: normal;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 1.5vw;
 
   text-align: center;
   width: 100%;
@@ -258,8 +261,8 @@ body {
   border-radius: 50px;
 
   font-weight: bold;
-  font-size: 64px;
-  line-height: 67px;
+  font-size: 4vw;
+  line-height: 4vw;
 
   padding: 2% 20%;
   text-align: center;

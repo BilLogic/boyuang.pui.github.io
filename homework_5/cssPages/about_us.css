@@ -5,6 +5,7 @@
 body {
     font-family: PT Sans;
     margin: auto;
+    font-size: 2vw;
 }
 
 
@@ -106,13 +107,13 @@ body {
 
 .grid-container>.header>.cart>.number-in-cart {
     position: absolute;
-    left: 85%;
+    right: -18%;
     top: 35%;
     transform: translate(-50%, -50%);
     font-family: PT Sans;
     font-style: normal;
     font-weight: bold;
-    font-size: 30px;
+
 
     text-align: center;
     letter-spacing: 0.055em;
@@ -134,7 +135,7 @@ body {
     font-family: PT Sans;
     font-style: normal;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 1vw;
 
     text-align: center;
     width: 100%;
