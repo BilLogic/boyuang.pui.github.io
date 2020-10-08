@@ -13,8 +13,14 @@ body {
     font-size: 2vw;
 }
 
+a:hover,
+button:hover {
+    cursor: pointer;
+}
+
 /* The grid container */
 .grid-container {
+    position: relative;
     display: grid;
     grid-template-areas:
         'header header header'
@@ -185,6 +191,119 @@ body {
     /* spread the items evenly */
     justify-items: center;
     row-gap: 2%;
+}
+
+.Roll_1 {
+    grid-area: roll_1;
+}
+
+.Roll_2 {
+    grid-area: roll_2;
+}
+
+.Roll_3 {
+    grid-area: roll_3;
+}
+
+.Roll_4 {
+    grid-area: roll_4;
+}
+
+.Roll_5 {
+    grid-area: roll_5;
+}
+
+.Roll_6 {
+    grid-area: roll_6;
+}
+
+.grid-container>#cartDisplay {
+    position: absolute;
+    height: 81%;
+    width: 15%;
+    right: 0%;
+    top: 21%;
+    display: none;
+    background: #252422;
+    color: #eb5e28;
+    border-radius: 15px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 8fr 1fr 2fr;
+}
+
+#cartDisplay #itemList {
+    display: flex;
+    flex-direction: column;
+}
+
+#cartDisplay #itemList>.item {
+    display: grid;
+    grid-template-areas: "pic info info"
+        ". edit delete";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 4fr 1fr;
+    font-size: 1vw;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    background: #EB5E28;
+    border-radius: 15%;
+    column-gap: 5%;
+}
+
+.item #cartImg {
+    grid-area: pic;
+    background: #fffcf2;
+    border-radius: 15%;
+    height: 90%;
+    width: 100%;
+}
+
+.item #cartInfo {
+    grid-area: info;
+    background: #fffcf2;
+    border-radius: 15%;
+    height: 90%;
+    width: 100%;
+}
+
+.item #edit {
+    grid-area: edit;
+    width: 100%;
+}
+
+.item #delete {
+    grid-area: delete;
+    width: 100%;
+}
+
+#totalPrice {
+    background: #FFE66D;
+    border: 3px solid #403D39;
+    box-sizing: border-box;
+    border-radius: 15px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    color: #252422;
+}
+
+#Review {
+    background: #EB5E28;
+    border: 5px solid #403D39;
+    box-sizing: border-box;
+    border-radius: 15px;
+
+    font-weight: bold;
+    font-size: 2.5vw;
+    line-height: 104.2%;
+    /* or 38px */
+
+    display: flex;
+    align-items: center;
+
+    color: #FFFCF2;
+
 }
 
 .grid-container>.content>div {

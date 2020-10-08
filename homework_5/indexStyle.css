@@ -113,7 +113,6 @@ body {
   right: -18%;
   top: 35%;
   transform: translate(-50%, -50%);
-  font-family: PT Sans;
   font-style: normal;
   font-weight: bold;
 
@@ -134,7 +133,6 @@ body {
   color: #252422;
   border-radius: 50px;
 
-  font-family: PT Sans;
   font-style: normal;
   font-weight: bold;
   font-size: 1.5vw;

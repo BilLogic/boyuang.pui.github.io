@@ -1,229 +1,227 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: PT Sans;
-    margin: auto;
+  font-family: PT Sans;
+  margin: auto;
 
-    vertical-align: middle;
-    line-height: normal;
-    text-align: center;
+  vertical-align: middle;
+  line-height: normal;
+  text-align: center;
 
-    font-size: 2vw;
+  font-size: 2vw;
 }
 
 img {
-    align-self: center;
-    justify-self: center;
+  align-self: center;
+  justify-self: center;
+}
+
+a:hover {
+  cursor: pointer;
 }
 
 /* left arrow */
 .left {
-    grid-area: left;
-    height: 50%;
-    justify-self: end;
+  grid-area: left;
+  height: 50%;
+  justify-self: end;
 }
 
-.left>img {
-    height: 100%;
+.left > img {
+  height: 100%;
 }
 
 /* right arrow */
 .right {
-    grid-area: right;
-    height: 50%;
-    justify-self: start;
+  grid-area: right;
+  height: 50%;
+  justify-self: start;
 }
 
-.right>img {
-    height: 100%;
-    transform: rotate(180deg);
+.right > img {
+  height: 100%;
+  transform: rotate(180deg);
 }
 
 /* The grid container */
 .grid-container {
-    display: grid;
-    grid-template-areas:
-        'header header header'
-        'content content content';
-    grid-column-gap: 5px;
-    grid-template-rows: 1fr 4fr;
-    grid-template-columns: 1fr 1fr 1fr;
-    row-gap: 20px;
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "content content content";
+  grid-column-gap: 5px;
+  grid-template-rows: 1fr 4fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 20px;
 
-    background: rgba(255, 252, 242, 0.5);
-    border-radius: 15px;
-    margin: auto;
-    height: 100%;
+  background: rgba(255, 252, 242, 0.5);
+  border-radius: 15px;
+  margin: auto;
+  height: 100%;
 }
-
 
 /* Style the header */
 
-.grid-container>.header {
-    grid-area: header;
-    background: #ccc5b9;
-    padding: 30px;
-    border-radius: 45px;
-    width: 100%;
-    margin: auto;
+.grid-container > .header {
+  grid-area: header;
+  background: #ccc5b9;
+  padding: 30px;
+  border-radius: 45px;
+  width: 100%;
+  margin: auto;
 
-    display: grid;
-    grid-template-areas: "logo info cart";
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr 4fr 1fr;
+  display: grid;
+  grid-template-areas: "logo info cart";
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 4fr 1fr;
 
-    justify-content: space-between;
-    align-items: center;
-    justify-items: center;
+  justify-content: space-between;
+  align-items: center;
+  justify-items: center;
 }
 
 /* Style the header inner indexes*/
-.grid-container>.header>.info {
-    display: grid;
-    grid-template-areas:
-        "delivery announcement announcement announcement"
-        "index1 index2 index3 index4";
-    width: 100%;
-    height: 100%;
+.grid-container > .header > .info {
+  display: grid;
+  grid-template-areas:
+    "delivery announcement announcement announcement"
+    "index1 index2 index3 index4";
+  width: 100%;
+  height: 100%;
 
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 
-    justify-content: space-evenly;
-    align-content: center;
-    align-items: center;
-    border-radius: 50px;
+  justify-content: space-evenly;
+  align-content: center;
+  align-items: center;
+  border-radius: 50px;
 }
 
 /* Style the top columns */
-.grid-container>.header>.info>.delivery {
-    grid-area: delivery;
+.grid-container > .header > .info > .delivery {
+  grid-area: delivery;
 }
 
-.grid-container>.header>.info>.announcement {
-    grid-area: announcement;
+.grid-container > .header > .info > .announcement {
+  grid-area: announcement;
 }
 
 /* Style the bottom columns */
-.grid-container>.header>.info>.index_1 {
-    grid-area: index1;
+.grid-container > .header > .info > .index_1 {
+  grid-area: index1;
 }
 
-.grid-container>.header>.info>.index_2 {
-    grid-area: index2;
+.grid-container > .header > .info > .index_2 {
+  grid-area: index2;
 }
 
-.grid-container>.header>.info>.index_3 {
-    grid-area: index3;
+.grid-container > .header > .info > .index_3 {
+  grid-area: index3;
 }
 
-.grid-container>.header>.info>.index_4 {
-    grid-area: index4;
+.grid-container > .header > .info > .index_4 {
+  grid-area: index4;
 }
 
 /* Style the left logo column */
-.grid-container>.header>.logo {
-    grid-area: logo;
+.grid-container > .header > .logo {
+  grid-area: logo;
 }
 
 /* Style the right cart column */
-.grid-container>.header>.cart {
-    grid-area: cart;
-    position: relative;
+.grid-container > .header > .cart {
+  grid-area: cart;
+  position: relative;
 }
 
-.grid-container>.header>.cart>.number-in-cart {
-    position: absolute;
-    right: -18%;
-    top: 35%;
-    transform: translate(-50%, -50%);
-    font-family: PT Sans;
-    font-style: normal;
-    font-weight: bold;
+.grid-container > .header > .cart > .number-in-cart {
+  position: absolute;
+  right: -18%;
+  top: 35%;
+  transform: translate(-50%, -50%);
+  font-family: PT Sans;
+  font-style: normal;
+  font-weight: bold;
 
-    text-align: center;
-    letter-spacing: 0.055em;
-    text-transform: capitalize;
+  text-align: center;
+  letter-spacing: 0.055em;
+  text-transform: capitalize;
 
-    color: #fffcf2;
-    background-color: #eb5e28;
-    padding: 2% 4%;
-    border-radius: 30%;
+  color: #fffcf2;
+  background-color: #eb5e28;
+  padding: 2% 4%;
+  border-radius: 30%;
 }
 
 /* Style the inner column texts */
-.grid-container>.header>.info>a {
-    position: relative;
-    background: #fffcf2;
-    color: #252422;
-    border-radius: 50px;
+.grid-container > .header > .info > a {
+  position: relative;
+  background: #fffcf2;
+  color: #252422;
+  border-radius: 50px;
 
-    font-family: PT Sans;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 1.5vw;
+  font-family: PT Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.5vw;
 
-    text-align: center;
-    width: 100%;
-    height: 100%;
-    padding-top: 5%;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  padding-top: 5%;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 /* hyperlink text */
 
-.grid-container>.header>.info>a:hover {
-    color: #fffcf2;
-    background-color: #403d39;
+.grid-container > .header > .info > a:hover {
+  color: #fffcf2;
+  background-color: #403d39;
 }
 
 /* specify the page you are in */
-.grid-container>.header>.info>a.index_2 {
-    color: #FFFCF2;
-    background-color: #403D39;
-    opacity: 75%;
+.grid-container > .header > .info > a.index_2 {
+  color: #fffcf2;
+  background-color: #403d39;
+  opacity: 75%;
 }
-
-
-
-
-
 
 /*****************************************************************/
 /* Main Body Content */
 
-.grid-container>.content {
-    position: relative;
-    grid-area: content;
+.grid-container > .content {
+  position: relative;
+  grid-area: content;
 
-    border-radius: 45px;
-    width: 100%;
-    height: 100%;
+  border-radius: 45px;
+  width: 100%;
+  height: 100%;
 
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(8, 1fr);
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(8, 1fr);
 
-    align-items: center;
-    justify-items: center;
-    align-self: center;
-    justify-self: center;
+  align-items: center;
+  justify-items: center;
+  align-self: center;
+  justify-self: center;
 }
 
 /************************************************/
 /* real main body */
-.grid-container>.content>.list {
-    width: 100%;
-    height: 100%;
-    grid-column: 1/-1;
-    grid-row: 1/4;
-    display: grid;
-    grid-auto-columns: repeat(6, 1fr);
-    grid-auto-rows: repeat(3, 1fr);
-    background: #ccc5b9;
-    border-radius: 25px;
+.grid-container > .content > .list {
+  width: 100%;
+  height: 100%;
+  grid-column: 1/-1;
+  grid-row: 1/4;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  background: #ccc5b9;
+  border-radius: 25px;
 }
