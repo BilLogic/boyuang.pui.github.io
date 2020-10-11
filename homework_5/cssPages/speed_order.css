@@ -13,6 +13,10 @@ body {
     font-size: 2vw;
 }
 
+img:hover {
+    transform: rotate(15deg);
+}
+
 /* The grid container */
 .grid-container {
     display: grid;
@@ -188,6 +192,128 @@ body {
     font-size: 1.2vw;
 }
 
+.Roll_1 {
+    grid-area: roll_1;
+}
+
+.Roll_2 {
+    grid-area: roll_2;
+}
+
+.Roll_3 {
+    grid-area: roll_3;
+}
+
+.Roll_4 {
+    grid-area: roll_4;
+}
+
+.Roll_5 {
+    grid-area: roll_5;
+}
+
+.Roll_6 {
+    grid-area: roll_6;
+}
+
+.Roll_7 {
+    grid-area: roll_7;
+}
+
+.Roll_8 {
+    grid-area: roll_8;
+}
+
+.grid-container>#cartDisplay {
+    position: absolute;
+    height: 111%;
+    width: 12%;
+    right: 0%;
+    top: 29%;
+    display: none;
+    background: #252422;
+    color: #eb5e28;
+    border-radius: 15px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 8fr 1fr 2fr;
+}
+
+#cartDisplay #itemList {
+    display: flex;
+    flex-direction: column;
+}
+
+#cartDisplay #itemList>.item {
+    display: grid;
+    grid-template-areas: "pic info info"
+        ". edit delete";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 4fr 1fr;
+    font-size: 1vw;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    background: #EB5E28;
+    border-radius: 15%;
+    column-gap: 5%;
+}
+
+.item #cartImg {
+    grid-area: pic;
+    background: #fffcf2;
+    border-radius: 15%;
+    height: 90%;
+    width: 100%;
+}
+
+.item #cartInfo {
+    grid-area: info;
+    background: #fffcf2;
+    border-radius: 15%;
+    height: 90%;
+    width: 100%;
+}
+
+.item #edit {
+    grid-area: edit;
+    width: 100%;
+}
+
+.item #delete {
+    grid-area: delete;
+    width: 100%;
+}
+
+#totalPrice {
+    background: #FFE66D;
+    border: 3px solid #403D39;
+    box-sizing: border-box;
+    border-radius: 15px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    color: #252422;
+}
+
+#Review {
+    background: #EB5E28;
+    border: 5px solid #403D39;
+    box-sizing: border-box;
+    border-radius: 15px;
+
+    font-weight: bold;
+    font-size: 2.5vw;
+    line-height: 104.2%;
+    /* or 38px */
+
+    display: flex;
+    align-items: center;
+
+    color: #FFFCF2;
+
+}
+
+
 .grid-container>.content>div {
     display: grid;
     grid-template-areas:
@@ -195,7 +321,7 @@ body {
         'info'
         'cart';
     grid-auto-columns: 1fr;
-    grid-auto-rows: 3fr 2fr 2fr;
+    grid-template-rows: 1.75fr 1.75fr 1fr;
 
     width: 90%;
     background: #CCC5B9;
@@ -219,7 +345,8 @@ body {
 }
 
 .grid-container>.content>div>div.pic img {
-    width: 70%;
+    height: 100%;
+    width: 80%;
 }
 
 .grid-container>.content>div>div.pic img:hover {
@@ -230,26 +357,25 @@ body {
     grid-area: info;
     text-align: left;
     color: #252422;
+    font-size: 1.5vw;
 }
 
 
 .grid-container>.content>div>div.cart {
     grid-area: cart;
     background: #EB5E28;
-    border-radius: 15px;
-    width: 100%;
+    /* border-radius: 15px; */
     font-size: 3vw;
-    float: right;
     color: #FFFCF2;
     margin: 0%;
-    width: 100%;
 }
 
 .grid-container>.content>div>div.cart>img {
     position: absolute;
     height: 100%;
     border-radius: 15px;
-    left: 0%;
-    width: 20%;
+    left: -21%;
+    width: 25%;
     background: #77BFA3;
+    top: 0%;
 }

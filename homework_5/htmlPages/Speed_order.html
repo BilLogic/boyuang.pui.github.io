@@ -6,6 +6,7 @@
     <link href="../cssPages/speed_order.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
         rel="stylesheet" />
+        <script src="../main.js"></script>
 </head>
 
 <body>
@@ -33,15 +34,20 @@
 			<!-- get rid of button, https://www.w3schools.com/css/css_link.asp-->
 			<!-- text decoration none-->
 
-			<div class="cart">
-				<!--cart on the right -->
-				<a class="cart" href="../htmlPages/Check_out.html">
-					<img src="../Imgs/CartCart_without_number.svg" alt="Bun Bun Shopping Cart" />
-				</a>
-				<p class="number-in-cart">0</p>
-			</div>
+            <div class="cart">
+                <!--cart on the right -->
+                <a class="cart">
+                  <img
+                    src="../Imgs/CartCart_without_number.svg"
+                    alt="Bun Bun Shopping Cart"
+                    id="theCartLogo"
+                    onclick="openCart2()"
+                  />
+                </a>
+                <p class="number-in-cart">0</p>
+              </div>
 		</div>
-        <div class="content">
+        <div class="content" id="mainMenu">
             <div class="Roll_1">
                 <div class="pic"><img src="../Imgs/RollPics/speed-roll_1.svg" alt="Original Roll"></div>
                 <div class="info">
@@ -51,7 +57,7 @@
                     Qty: 1<br />
                 </div>
                 <div class="cart">
-                    Add to Cart
+                    <p>Add to Cart</p>
                     <img src="../Imgs/Buttons/double-arrow.png" alt="button">
                 </div>
             </div>
@@ -64,7 +70,7 @@
                     Qty: 3<br />
                 </div>
                 <div class="cart">
-                    Add to Cart
+                    <p>Add to Cart</p>
                     <img src="../Imgs/Buttons/double-arrow.png" alt="button">
                 </div>
             </div>
@@ -77,7 +83,7 @@
                     Qty: 3<br />
                 </div>
                 <div class="cart">
-                    Add to Cart
+                    <p>Add to Cart</p>
                     <img src="../Imgs/Buttons/double-arrow.png" alt="button">
                 </div>
             </div>
@@ -90,7 +96,7 @@
                     Qty: 6<br />
                 </div>
                 <div class="cart">
-                    Add to Cart
+                    <p>Add to Cart</p>
                     <img src="../Imgs/Buttons/double-arrow.png" alt="button">
                 </div>
             </div>
@@ -103,7 +109,7 @@
                     Qty: 6<br />
                 </div>
                 <div class="cart">
-                    Add to Cart
+                    <p>Add to Cart</p>
                     <img src="../Imgs/Buttons/double-arrow.png" alt="button">
                 </div>
             </div>
@@ -116,7 +122,7 @@
                     Qty: 6<br />
                 </div>
                 <div class="cart">
-                    Add to Cart
+                    <p>Add to Cart</p>
                     <img src="../Imgs/Buttons/double-arrow.png" alt="button">
                 </div>
             </div>
@@ -129,7 +135,7 @@
                     Qty: 12<br />
                 </div>
                 <div class="cart">
-                    Add to Cart
+                    <p>Add to Cart</p>
                     <img src="../Imgs/Buttons/double-arrow.png" alt="button">
                 </div>
             </div>
@@ -142,11 +148,28 @@
                     Qty: 12<br />
                 </div>
                 <div class="cart">
-                    Add to Cart
+                    <p>Add to Cart</p>
                     <img src="../Imgs/Buttons/double-arrow.png" alt="button">
                 </div>
             </div>
         </div>
+        <div id="cartDisplay">
+            <div id="itemList">
+              <div class="item">
+                <img id="cartImg" src="../Imgs/RollPics/og-roll-pic.svg" alt="Image of the cart"/>
+                <div id="cartInfo">Glaze: None<br />Qty: 1<br />PriceL 1$</div>
+                <button id="edit">Edit</button>
+                <button id="delete">Delete</button>
+              </div>
+            </div>
+            <div id="totalPrice">Total Cost: 1$</div>
+            <button
+              id="Review"
+              onclick="location.href='../htmlPages/Check_out.html'"
+            >
+              Review Order & Check Out
+            </button>
+          </div>
     </div>
 </body>
 

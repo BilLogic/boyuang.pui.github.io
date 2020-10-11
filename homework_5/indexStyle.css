@@ -13,6 +13,10 @@ body {
   font-size: 2vw;
 }
 
+img:hover {
+  transform: rotate(15deg);
+}
+
 /* The grid container */
 .grid-container {
   display: grid;
@@ -20,7 +24,7 @@ body {
     'header header header'
     'content content content';
   grid-column-gap: 5px;
-  grid-template-rows: 1fr 4fr;
+  grid-template-rows: 1fr 3fr;
   grid-template-columns: 1fr 1fr 1fr;
   row-gap: 20px;
 

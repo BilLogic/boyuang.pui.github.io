@@ -17,6 +17,9 @@ img {
     align-self: center;
     justify-self: center;
 }
+img:hover {
+    transform: rotate(15deg);
+}
 
 /* left arrow */
 .left {
