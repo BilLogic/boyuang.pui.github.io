@@ -61,3 +61,40 @@ function openCart2() {
 
   cartSwitch = !cartSwitch;
 }
+
+function ZipCodeInput() {
+  var banner = document.getElementById("banner");
+  console.log(banner);
+}
+
+function ChangeImg(i) {
+  var pic = document.getElementById("itemPic");
+
+  if (i === 1) {
+    pic.src = "../Imgs/RollPics/count1.svg";
+  } else if (i === 3) {
+    pic.src = "../Imgs/RollPics/count3.svg";
+  } else if (i === 6) {
+    pic.src = "../Imgs/RollPics/count6.svg";
+  } else if (i === 12) {
+    pic.src = "../Imgs/RollPics/count12.svg";
+  }
+}
+
+function ChangeGlaze(value) {
+  var pic = document.getElementById("itemPic");
+
+  if (value === "None") {
+    pic.src = "../Imgs/RollPics/glaze_none.svg";
+  } else if (value === "Sugar-Milk") {
+    pic.src = "../Imgs/RollPics/glaze_sugarMilk.svg";
+  } else if (value === "Vanilla-Milk") {
+    pic.src = "../Imgs/RollPics/glaze_vinillaMilk.svg";
+  } else if (value === "Double-chocolate") {
+    pic.src = "../Imgs/RollPics/glaze_doubleChoco.svg";
+  }
+}
+
+function ChangeDescription(i) {
+  var text = document.getElementById();
+}

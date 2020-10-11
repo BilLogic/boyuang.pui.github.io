@@ -11,6 +11,7 @@ body {
     text-align: center;
 
     font-size: 2vw;
+
 }
 
 img:hover {
@@ -44,6 +45,8 @@ img:hover {
     border-radius: 45px;
     width: 100%;
     margin: auto;
+    margin-top: 0%;
+    
 
     display: grid;
     grid-template-areas: "logo info cart";
@@ -224,19 +227,20 @@ img:hover {
     grid-area: roll_8;
 }
 
-.grid-container>#cartDisplay {
+#cartDisplay {
+    display: none;
     position: absolute;
-    height: 111%;
+    height: 100%;
     width: 12%;
     right: 0%;
-    top: 29%;
-    display: none;
     background: #252422;
     color: #eb5e28;
     border-radius: 15px;
     grid-template-columns: 1fr;
     grid-template-rows: 8fr 1fr 2fr;
+    justify-items: center;
 }
+
 
 #cartDisplay #itemList {
     display: flex;
@@ -321,7 +325,7 @@ img:hover {
         'info'
         'cart';
     grid-auto-columns: 1fr;
-    grid-template-rows: 1.75fr 1.75fr 1fr;
+    grid-template-rows: 1.25fr 1fr 0.75fr;
 
     width: 90%;
     background: #CCC5B9;

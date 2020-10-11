@@ -41,24 +41,27 @@
 				<p class="number-in-cart">0</p>
 			</div>
 		</div>
-        <div class="content">
-            <div class="list">
+		<div class="content" id="mainMenu">
+			<div id="cartDisplay">
+			  <div id="itemList">
+				<div class="item">
+				  <img id="cartImg" src="../Imgs/RollPics/og-roll-pic.svg" alt="Image of the cart"/>
+				  <div id="cartInfo">Glaze: None<br />Qty: 1<br />PriceL 1$</div>
+				  <button id="edit">Edit</button>
+				  <button id="delete">Delete</button>
+				</div>
+			  </div>
+			  <div id="totalPrice">Total Cost: 1$</div>
+			  <button
+				id="Review"
+				onclick="location.href='../htmlPages/Check_out.html'"
+			  >
+				Review Order & Check Out
+			  </button>
+			  <div id="promotion">Today's Recommendation hasn't come out yet.</div>
+			</div>
 
-                <ul class="item1">
-                    <li>
-                        <img>
-                    </li>
-                    <li>OG Roll</li>
-                    <li>3</li>
-                    <li>Sugar-Milk</li>
-                    <li>$3.00</li>
-                </ul>
-
-            </div>
-            <div class="promotion"></div>
-            <div class="summary"></div>
-            <div class="finally"></div>
-        </div>
+		  </div>
     </div>
 </body>
 

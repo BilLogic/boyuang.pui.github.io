@@ -24,7 +24,7 @@ img:hover {
     'header header header'
     'content content content';
   grid-column-gap: 5px;
-  grid-template-rows: 1fr 3fr;
+  grid-template-rows: 1fr 2.5fr;
   grid-template-columns: 1fr 1fr 1fr;
   row-gap: 20px;
 
@@ -44,6 +44,7 @@ img:hover {
   border-radius: 45px;
   width: 100%;
   margin: auto;
+  margin-top: 0%;
 
   display: grid;
   grid-template-areas: "logo info cart";

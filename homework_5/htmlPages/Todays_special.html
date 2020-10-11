@@ -6,6 +6,7 @@
     <link href="../cssPages/todays_special.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
         rel="stylesheet" />
+        <script src="../main.js"></script>
 </head>
 
 <body>
@@ -50,7 +51,7 @@
                     <div class="left">
                         <img src="../Imgs/Buttons/huge-arrow.svg" alt="Switch to the previous item" />
                     </div>
-                    <img src="../Imgs/RollPics/description-roll.svg" alt="Original Roll Picture">
+                    <img id="itemPic" src="../Imgs/RollPics/description-roll.svg" alt="Original Roll Picture">
                     <div class="right">
                         <img src="../Imgs/Buttons/huge-arrow.svg" alt="Switch to the previous item" />
                     </div>
@@ -64,28 +65,28 @@
                     cinnamon<br />
                     Popularity: * * * * *
                 </div>
-                <div class="glaze">
-                    <label for="glaze">Glaze:
-                        <select id="glaze">
-                            <option value="None">None</option>
-                            <option value="Sugar-Milk">Sugar-Milk</option>
-                            <option value="Vanilla-Milk">Vanilla-Milk</option>
-                            <option value="Double-chocolate">Double-chocolate</option>
-                        </select>
-                    </label>
+                <div class="glaze">Glaze:
+                    <input type="radio" id="None" value="None" name="glaze" onclick="ChangeGlaze(this.value)">
+                    <label for="None">None</label>
+                    <input type="radio" id="Sugar-Milk" value="Sugar-Milk" name="glaze" onclick="ChangeGlaze(this.value)">
+                    <label for="Sugar-Milk">Sugar-Milk</label>                    
+                    <input type="radio" id="Vanilla-Milk" value="Vanilla-Milk" name="glaze" onclick="ChangeGlaze(this.value)">
+                    <label for="Vanilla-Milk">Vanilla-Milk</label>                    
+                    <input type="radio" id="Double-chocolate" value="Double-chocolate" name="glaze" onclick="ChangeGlaze(this.value)">
+                    <label for="Double-chocolate">Double-chocolate</label>
                 </div>
                 <div class="qty">Quantity:
-                    <input type="radio" id="1" value="1">
-                    <label for="1">1</label>
-                    <input type="radio" id="3" value="3">
-                    <label for="3">3</label>
-                    <input type="radio" id="6" value="6">
-                    <label for="6">6</label>
-                    <input type="radio" id="12" value="12">
-                    <label for="12">12</label>
+                    <input type="radio" id="1" value="1" name="qty" onclick="ChangeImg(1)">
+                    <label for="1">One</label>
+                    <input type="radio" id="3" value="3" name="qty" onclick="ChangeImg(3)">
+                    <label for="3">Three</label>
+                    <input type="radio" id="6" value="6" name="qty" onclick="ChangeImg(6)">
+                    <label for="6">Six</label>
+                    <input type="radio" id="12" value="12" name="qty" onclick="ChangeImg(12)">
+                    <label for="12">Twelve</label>
                 </div>
                 <div class="cart">
-                    Add to Cart
+                    <a href="../htmlPages/Check_out.html">Add to Cart</a>
                 </div>
                 <a class="close" href="../index.html"><img src="../Imgs/Buttons/close.svg" alt="cancel"></a>
             </div>

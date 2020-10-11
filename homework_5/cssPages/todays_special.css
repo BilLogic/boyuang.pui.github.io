@@ -11,6 +11,7 @@ body {
     text-align: center;
 
     font-size: 2vw;
+
 }
 
 img {
@@ -73,7 +74,8 @@ img:hover {
     border-radius: 45px;
     width: 100%;
     margin: auto;
-
+    margin-top: 0%;
+    
     display: grid;
     grid-template-areas: "logo info cart";
     grid-template-rows: 1fr;
@@ -223,7 +225,7 @@ img:hover {
     grid-area: middle;
     display: grid;
     grid-gap: 2%;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 0.5fr 0.5fr;
     grid-template-rows: repeat(6, 1fr);
     height: 80%;
 
@@ -270,19 +272,19 @@ img:hover {
 }
 
 .grid-container>.content>.middle>.glaze {
-    grid-column: 2/-1;
-    grid-row: 4/5;
+    grid-column: 2/3;
+    grid-row: 4/6;
     background-color: #252422;
     color: #fffcf2;
 }
 
 .grid-container>.content>.middle>.qty {
-    grid-column: 2/-1;
-    grid-row: 5/6;
+    display: block;
+    grid-column: 3/4;
+    grid-row: 4/6;
     background-color: #252422;
     color: #fffcf2;
 }
-
 .grid-container>.content>.middle>.cart {
     grid-column: 2/-1;
     grid-row: 6/7;
@@ -294,6 +296,55 @@ img:hover {
 
     color: #FFFCF2;
 }
+
+/* Customize the radio button */
+.glaze,
+.qty {
+    margin: 10px;
+  }
+  .glaze input[type="radio"],
+  .qty input[type="radio"] {
+    opacity: 0;
+    position: fixed;
+    width: 0;
+  }
+  .glaze label,
+  .qty label {
+      display: block;
+      background-color: #CCC5B9;
+      padding: 0 10%;
+      font-size: 1.5vw;
+      border: 2px solid #403d39;
+      border-radius: 4px;
+      opacity: 75%;
+  }
+  .glaze label:hover,
+  .qty label:hover {
+    background-color: #403D39;
+    opacity: 20%;
+  }
+  .glaze input[type="radio"]:focus + label,
+  .qty input[type="radio"]:focus + label {
+      border: 2px dashed #403d39;
+  }
+  .glaze input[type="radio"]:checked + label,
+  .qty input[type="radio"]:checked + label {
+      background-color: #eb5e28;
+      border-color: #FFFCF2;
+      opacity: 100%;
+  }
+  
+
+
+
+
+.grid-container>.content>.middle>.cart a{
+    color: #FFFCF2;
+    font-weight: bold;
+    text-decoration-line: underline;
+    text-transform: uppercase;
+}
+
 
 .grid-container>.content>.middle>.close img {
     background: none;

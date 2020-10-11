@@ -11,6 +11,7 @@ body {
   text-align: center;
 
   font-size: 2vw;
+
 }
 
 img {
@@ -47,13 +48,14 @@ a:hover {
 
 /* The grid container */
 .grid-container {
+  position: relative;
   display: grid;
   grid-template-areas:
-    "header header header"
-    "content content content";
+      'header header header'
+      'content content content';
   grid-column-gap: 5px;
-  grid-template-rows: 1fr 4fr;
   grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 3fr;
   row-gap: 20px;
 
   background: rgba(255, 252, 242, 0.5);
@@ -71,7 +73,8 @@ a:hover {
   border-radius: 45px;
   width: 100%;
   margin: auto;
-
+  margin-top: 0%;
+  
   display: grid;
   grid-template-areas: "logo info cart";
   grid-template-rows: 1fr;
@@ -197,31 +200,117 @@ a:hover {
 .grid-container > .content {
   position: relative;
   grid-area: content;
-
   border-radius: 45px;
   width: 100%;
   height: 100%;
-
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(8, 1fr);
-
-  align-items: center;
-  justify-items: center;
   align-self: center;
   justify-self: center;
 }
-
 /************************************************/
 /* real main body */
-.grid-container > .content > .list {
-  width: 100%;
+#cartDisplay {
   height: 100%;
-  grid-column: 1/-1;
-  grid-row: 1/4;
+  background: #252422;
+  color: #eb5e28;
+  border-radius: 15px;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  background: #ccc5b9;
-  border-radius: 25px;
+  grid-template-areas:
+      "list list list"
+      "promotion promotion total"
+      "promotion promotion review";
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-self: center;
+}
+
+#cartDisplay #itemList {
+  grid-area: list;
+  display: flex;
+  flex-direction: column;
+}
+
+#cartDisplay #itemList>.item {
+  display: grid;
+  grid-template-areas:
+      "pic info edit"
+      "pic info delete";
+  grid-template-columns: 1fr 2fr 0.5fr;
+  /* grid-template-rows: 4fr 1fr; */
+  /* font-size: 2vw; */
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  background: #EB5E28;
+  border-radius: 15%;
+  column-gap: 5%;
+}
+
+.item #cartImg {
+  grid-area: pic;
+  background: #fffcf2;
+  border-radius: 15%;
+  height: 90%;
+  width: 100%;
+}
+
+.item #cartInfo {
+  grid-area: info;
+  background: #fffcf2;
+  border-radius: 15%;
+  height: 90%;
+  width: 100%;
+}
+
+.item #edit {
+  grid-area: edit;
+  width: 100%;
+}
+
+.item #delete {
+  grid-area: delete;
+  width: 100%;
+}
+
+#totalPrice {
+  grid-area: total;
+  background: #FFE66D;
+  border: 3px solid #403D39;
+  box-sizing: border-box;
+  border-radius: 15px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  color: #252422;
+}
+
+#Review {
+  grid-area: review;
+  background: #EB5E28;
+  border: 5px solid #403D39;
+  box-sizing: border-box;
+  border-radius: 15px;
+
+  font-weight: bold;
+  font-size: 2.5vw;
+  line-height: 104.2%;
+  /* or 38px */
+
+  display: flex;
+  align-items: center;
+
+  color: #FFFCF2;
+}
+
+#promotion {
+  grid-area: promotion;
+  background: #eb5e28;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 3vw;
+  padding: 10% 10%;
+  text-align: center;
+  text-decoration-line: underline;
+  text-transform: uppercase;
+  color: #252422;
+  margin: 0 3vw;
 }
