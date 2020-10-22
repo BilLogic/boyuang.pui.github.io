@@ -52,24 +52,7 @@
                 <img src="../Imgs/Buttons/huge-arrow.svg" alt="Switch to the previous item" />
             </div>
             <div class="middle" id="description-section" >
-                <!-- <div class="pic">
-                    <div class="left">
-                        <img src="../Imgs/Buttons/huge-arrow.svg" alt="Switch to the previous item" />
-                    </div>
-                    <img id="itemPic" src="../Imgs/RollPics/description-roll.svg" alt="Original Roll Picture">
-                    <div class="right">
-                        <img src="../Imgs/Buttons/huge-arrow.svg" alt="Switch to the previous item" />
-                    </div>
-                </div>
-
-                <div class="tag">Item: Original Roll<br /> Price: <span>1$</span></div>
-                <div class="info">Flavor: Homemade cinnamon roll with grandma’s love. <br />
-                    Calories: 560 KJ<br />
-                    Allergies: Contains dairy, soy,
-                    cinnamon<br />
-                    Popularity: * * * * *
-                </div> -->
-                <div class="glaze">Glaze:
+                <div class="glaze" id="glaze-selection">Glaze:
                     <input type="radio" id="None" value="None" name="glaze" onclick="ChangeGlaze(this.value)">
                     <label for="None">None</label>
                     <input type="radio" id="Sugar-Milk" value="Sugar-Milk" name="glaze" onclick="ChangeGlaze(this.value)">
@@ -79,7 +62,7 @@
                     <input type="radio" id="Double-chocolate" value="Double-chocolate" name="glaze" onclick="ChangeGlaze(this.value)">
                     <label for="Double-chocolate">Double-chocolate</label>
                 </div>
-                <div class="qty">Quantity:
+                <div class="qty" id="qty-selection">Quantity:
                     <input type="radio" id="1" value="1" name="qty" onclick="ChangeImg(1)">
                     <label for="1">1</label>
                     <input type="radio" id="3" value="3" name="qty" onclick="ChangeImg(3)">
@@ -89,8 +72,8 @@
                     <input type="radio" id="12" value="12" name="qty" onclick="ChangeImg(12)">
                     <label for="12">12</label>
                 </div>
-                <div class="cart">
-                  <a href="../htmlPages/Check_out.html">Add to Cart</a>
+                <div class="cart" onclick="updateCart()">
+                  <a href="../htmlPages/Product_menu.html">Add to Cart</a>
               </div>
               <a class="close" href="../htmlPages/Product_menu.html"><img src="../Imgs/Buttons/close.svg" alt="cancel"></a>
             </div>
