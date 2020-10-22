@@ -9,7 +9,7 @@
         <script src="../main.js"></script>
 </head>
 
-<body>
+<body onload="getInfo()">
     <div class="grid-container">
 		  <div class="header">
 			<div class="logo">
@@ -51,8 +51,8 @@
             <div class="left">
                 <img src="../Imgs/Buttons/huge-arrow.svg" alt="Switch to the previous item" />
             </div>
-            <div class="middle">
-                <div class="pic">
+            <div class="middle" id="description-section" >
+                <!-- <div class="pic">
                     <div class="left">
                         <img src="../Imgs/Buttons/huge-arrow.svg" alt="Switch to the previous item" />
                     </div>
@@ -68,7 +68,7 @@
                     Allergies: Contains dairy, soy,
                     cinnamon<br />
                     Popularity: * * * * *
-                </div>
+                </div> -->
                 <div class="glaze">Glaze:
                     <input type="radio" id="None" value="None" name="glaze" onclick="ChangeGlaze(this.value)">
                     <label for="None">None</label>

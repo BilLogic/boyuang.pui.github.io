@@ -1,0 +1,13 @@
+1. Edit Shopping Cart on the side
+2. Make add to cart a real button
+3. Add an additional Check-out Page for delivery address, card info, etc
+
+
+
+Task 2:
+    1. Construct Pre-fab buttons
+    2. Add onclick event handler
+        onclick => fetch value 
+                => delete previous tab
+                => append next tab
+                =>  
