@@ -10,4 +10,24 @@ Task 2:
         onclick => fetch value 
                 => delete previous tab
                 => append next tab
-                =>  
+                =>
+
+
+// TODO:
+// 1. fabricate an array of tag options: add to cart, allergy, glaze selection drop box, qty selection drop box, finished
+// 2. allow indexing to add and remove to the prev/next tag
+        // 2.1 have an index stored as id?
+3. Reset the target to original add to cart if target has changed
+4. store the information locally 
+
+
+Change saturation?
+
+Tasks done:
+1. implement smart auto-fill description on Item-description page with JS
+2. implement function that keep track of all items added to cart with JS
+3. implement function to help display in cart item on the side bar with JS
+3. implement function to keep track of total item counts with JS
+4. implement function to directly delete item on cart side bar with JS
+5. implement function to make in-menu add to cart fully functional with JS
+    make sure minor errors won't destroy the system

@@ -241,6 +241,8 @@ function loadCartItems(){
     // parent node
     const cartItemList = document.getElementById("itemList");
 
+    // clear cartItemList
+    cartItemList.innerHTML="";
     // iterate through each item => turn into a block item => add to display item list 
     cartArray.forEach((cartTag) => {
         let cartBlock = CartItemTemplate(cartTag.name, cartTag.glaze, cartTag.qty, cartTag.price, cartTag.imgUrl);
@@ -347,5 +349,199 @@ function ChangeGlaze(value) {
     }    
     else if (value=== "Double-chocolate"){
         pic.src="../Imgs/RollPics/glaze_doubleChoco.svg"
+    }
+}
+
+// 3. link with the local array + set array
+
+const stateArray = ["Add to Cart", "Allergy", "glaze:<br/>", "qty:<br/>", "Confirm?"];
+
+/******Drag Function */
+let startX = null;
+let menuTagManager = {
+    rollDiv: null,
+    cartDiv: null,
+    target: null,
+    textIndex: 0,
+    glaze: null,
+    qty: null,
+    rollInfoIndex: null
+};
+
+
+/************************Drag Functions *********************************/
+// Helper function that reset the tag if target has changed
+function resetMenuTagManger(){
+    menuTagManager.rollDiv = null;
+    menuTagManager.cartDiv = null;
+    menuTagManager.target = null;
+    menuTagManager.textIndex = 0;
+    menuTagManager.glaze = null;
+    menuTagManager.qty = null;
+    menuTagManager.rollInfoIndex = null;
+}
+function checkMenuTagTarget(newTarget){
+    let newRollDiv = newTarget.parentNode.parentNode;
+        // target changed
+    if (menuTagManager.textIndex > 0){
+        if (newRollDiv.className != menuTagManager.rollDiv.className){
+            console.log("Target Changed!");
+            // reset current Obj
+            updateMenuTag(menuTagManager.cartDiv, 0);
+            resetMenuTagManger();
+        }
+    }
+}
+
+
+function setMenuTagManager(){
+    const stateIndex = menuTagManager.textIndex;
+    if (stateIndex === 0){
+        // set obj info
+        menuTagManager.rollInfoIndex = menuTagManager.rollDiv.className[5];
+        //console.log(menuTagManager.rollInfoIndex);
+        // store current selection locally
+        setDetailInfo(menuTagManager.rollInfoIndex);
+    }
+
+    else if (stateIndex === 2){
+        // set glaze
+        let glazeSelection = document.getElementById("menu-glaze-selection").value;
+        menuTagManager.glaze = glazeSelection;
+    }
+    else if (stateIndex === 3){
+        // set qty
+        let qtySelection = document.getElementById("menu-qty-selection").value;
+        menuTagManager.qty = Number(qtySelection);
+    }
+    console.log(menuTagManager);
+}
+
+// dragstart handler if (menuTagManager.textIndex != 0){
+function dragStart(e, target) {
+    menuTagManager.target = target;
+    // check if target has changed
+    checkMenuTagTarget(target);
+    startX = e.offsetX;
+    menuTagManager.cartDiv = target.parentNode;
+    menuTagManager.rollDiv = target.parentNode.parentNode;
+}
+
+// dragend handler
+function dragEnd(e, target) {
+    const thresholdX = target.width * 2;
+
+    let endX = e.offsetX;
+    let changeX = endX - startX;
+    if (changeX < thresholdX){
+        target.style.left = "-21%";
+        //console.log("Not enough!");
+    } else {
+        target.style.left = "100%";
+        //console.log("You made it!");
+        updateMenuTag(target.parentNode, 1);
+    }
+}
+
+// Helper function that fabricate add to cart tags
+function menuTagTemplate(obj){
+    let textIndex = obj.textIndex;
+    let parent = obj.rollDiv;
+    // create main div
+    let mainDiv = document.createElement("div");
+    mainDiv.className = "cart";
+
+    // create drag button
+    let dragButton = document.createElement("img");
+    dragButton.setAttribute("src", "../Imgs/Buttons/double-arrow.png");
+    dragButton.setAttribute("alt", "button");
+    dragButton.setAttribute("ondragStart", "dragStart(event, this)");
+    dragButton.setAttribute("ondragend", "dragEnd(event, this)");
+    mainDiv.appendChild(dragButton);
+
+    // create info test
+    // Back to cart
+    if (textIndex === 0){
+        let initP = document.createElement("p");
+        initP.innerHTML = stateArray[textIndex];
+        mainDiv.appendChild(initP);
+    }
+
+    // Add to cart =>  Allergy
+    else if (textIndex === 1){
+        let infoP = document.createElement("p");
+        infoP.innerHTML = stateArray[textIndex];
+        mainDiv.appendChild(infoP);
+    }
+
+    // allergy => glaze
+    else if (textIndex === 2){
+        let glazeDiv = document.createElement("div");
+        glazeDiv.className = "glaze";
+        glazeDiv.innerHTML = `
+        <label for="glaze">${stateArray[textIndex]}</label>
+        <select name="glaze" id="menu-glaze-selection">
+            <option value="None">None</option>
+            <option value="Sugar-Milk">Sugar-Milk</option>
+            <option value="Vanilla-Milk">Vanilla-Milk</option>
+            <option value="Double-chocolate">Double-chocolate</option>
+        </select>`
+        mainDiv.appendChild(glazeDiv);
+    }
+
+    // glaze => qty
+    else if (textIndex === 3){
+        let qtyDiv = document.createElement("div");
+        qtyDiv.className = "qty";
+        qtyDiv.innerHTML = `
+        <label for="qty">${stateArray[textIndex]}</label>
+        <select name="qty" id="menu-qty-selection">
+            <option value="1">One</option>
+            <option value="3">Three</option>
+            <option value="6">Six</option>
+            <option value="12">Twelve</option>
+        </select>`
+        mainDiv.appendChild(qtyDiv);
+    }
+
+    else if (textIndex === 4){
+        let doneDiv = document.createElement("div");
+        doneDiv.innerHTML = `
+        <button onclick="setCartInfo(menuTagManager.glaze, menuTagManager.qty);
+                         getCart();
+                         openCart();
+                         loadCartItems();
+                         resetMenuTagManger();">
+                         ${stateArray[textIndex]}
+                         </button>`
+        mainDiv.appendChild(doneDiv);
+    }
+
+    // update menuTagManager info
+    menuTagManager.cartDiv = mainDiv;
+    // attach to parent
+    parent.appendChild(mainDiv);
+}
+
+
+// Swipe Event Handler
+function updateMenuTag(prevTag, step){
+    //move to next
+    if (menuTagManager.textIndex<4 && step===1){
+    //collect data if necessary
+    // load to local storage
+    setMenuTagManager();
+    // update state
+    menuTagManager.textIndex++;
+    //delete old node
+    deleteItem(prevTag);
+    //append new node
+    menuTagTemplate(menuTagManager);
+    }
+    // reset
+    else if(step === 0){
+        deleteItem(prevTag);
+        menuTagManager.textIndex = 0;
+        menuTagTemplate(menuTagManager);
     }
 }
