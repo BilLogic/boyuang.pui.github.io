@@ -1,5 +1,13 @@
 "use strict";
 
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+
+function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
@@ -177,6 +185,53 @@ function getCart() {
     cartArray = _toConsumableArray(parsedCartArray);
     updateNumberTag();
   }
+} //FIXME:
+// Helper function that is attached to the edit button
+
+
+function inCartEdit() {
+  // get info
+  var editName, editGlaze, editQty;
+
+  var _this$parentNode$id$s = this.parentNode.id.split("^");
+
+  var _this$parentNode$id$s2 = _slicedToArray(_this$parentNode$id$s, 3);
+
+  editName = _this$parentNode$id$s2[0];
+  editGlaze = _this$parentNode$id$s2[1];
+  editQty = _this$parentNode$id$s2[2];
+  console.log(editName, editGlaze, editQty); // edit index on the local cart array
+
+  var editIndex = cartArray.findIndex(function (item) {
+    return item.name === editName && item.glaze === editGlaze && item.qty === editQty;
+  });
+  console.log(editIndex); // obj index from the default array
+
+  var objIndex = rollInfo.findIndex(function (item) {
+    return item.itemName === editName;
+  });
+  console.log(objIndex);
+  var editObj = cartArray[editIndex];
+  setDetailInfo(objIndex); // delete it from array and set local
+
+  cartArray.splice(editIndex, 1);
+  setCart(); //bring back to specific product page
+
+  window.location.href = "../htmlPages/Product_detail.html"; //TODO: Have og value set (radio button)
+} // Helper function that are attached to the button
+
+
+function inCartDelete() {
+  // target deleted item's index
+  var deleteKey = this.parentNode.id.split("^");
+  var deleteIndex = cartArray.findIndex(function (item) {
+    return item.name === deleteKey[0] && item.glaze === deleteKey[1] && item.qty === deleteKey[2];
+  });
+  cartArray.splice(deleteIndex, 1); // delete from model
+
+  setCart(); // delete item from view
+
+  deleteItem(this.parentNode);
 } // Produce SideBar Cart Items
 
 
@@ -195,23 +250,11 @@ function CartItemTemplate(name, glaze, qty, price, imgUrl) {
   var editButton = document.createElement("button");
   editButton.textContent = "EDIT";
   editButton.setAttribute("id", "edit");
+  editButton.onclick = inCartEdit;
   var deleteButton = document.createElement("button");
   deleteButton.textContent = "DELETE";
   deleteButton.setAttribute("id", "delete");
-
-  deleteButton.onclick = function () {
-    // target deleted item's index
-    var deleteKey = this.parentNode.id.split("^");
-    var deleteIndex = cartArray.findIndex(function (item) {
-      return item.name === deleteKey[0] && item.glaze === deleteKey[1] && item.qty === deleteKey[2];
-    });
-    cartArray.splice(deleteIndex, 1); // delete from model
-
-    setCart(); // delete item from view
-
-    deleteItem(this.parentNode);
-  }; // attach all child nodes
-
+  deleteButton.onclick = inCartDelete; // attach all child nodes
 
   itemDiv.appendChild(infoDiv);
   itemDiv.appendChild(editButton);
@@ -269,16 +312,12 @@ function openCart2() {
   if (!cartSwitch) {
     cartLogo.src = "../Imgs/Buttons/Cart_CheckOut.svg";
     menu.style.gridTemplateAreas = "'roll_1 roll_2 roll_3 roll_4 .' 'roll_5 roll_6 roll_7 roll_8 .'";
-    menu.style.gridAutoColumns = "2fr 2fr 2fr 2fr 1fr"; //layout.style.gridTemplateAreas = "'header header openCart' 'content content 0penCart'";
-    //layout.style.gridTemplateColumns = "3fr 3fr 1fr";
-
+    menu.style.gridAutoColumns = "2fr 2fr 2fr 2fr 1fr";
     cartList.style.display = "grid";
   } else {
     cartLogo.src = "../Imgs/CartBun_cart_icon.svg";
     menu.style.gridTemplateAreas = "'roll_1 roll_2 roll_3 roll_4' 'roll_5 roll_6 roll_7 roll_8'";
-    menu.style.gridAutoColumns = "1fr 1fr 1fr 1fr"; //layout.style.gridTemplateAreas = "'header header header' 'content content content'";
-    //layout.style.gridTemplateColumns = "1fr 1fr 1fr";
-
+    menu.style.gridAutoColumns = "1fr 1fr 1fr 1fr";
     cartList.style.display = "none";
   }
 
@@ -475,4 +514,4 @@ function updateMenuTag(prevTag, step) {
       menuTagManager.textIndex = 0;
       menuTagTemplate(menuTagManager);
     }
-}
+} //TODO: Make the load available across all pages

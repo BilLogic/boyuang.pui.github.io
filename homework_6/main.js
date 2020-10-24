@@ -188,6 +188,47 @@ function getCart(){
     }
 }
 
+//FIXME:
+// Helper function that is attached to the edit button
+function inCartEdit() {
+    // get info
+    let editName, editGlaze, editQty;
+    [editName, editGlaze, editQty] = this.parentNode.id.split("^");
+    console.log(editName, editGlaze, editQty);
+    // edit index on the local cart array
+    let editIndex = cartArray.findIndex((item) => 
+                                               (item.name === editName) 
+                                            && (item.glaze === editGlaze) 
+                                            && (item.qty === editQty));
+    console.log(editIndex);
+    // obj index from the default array
+    let objIndex = rollInfo.findIndex((item) => item.itemName === editName);
+    console.log(objIndex);
+    const editObj = cartArray[editIndex];
+    setDetailInfo(objIndex);
+
+    // delete it from array and set local
+    cartArray.splice(editIndex, 1);
+    setCart();
+    //bring back to specific product page
+    window.location.href = ("../htmlPages/Product_detail.html");
+    //TODO: Have og value set (radio button)
+}
+
+// Helper function that are attached to the button
+function inCartDelete() {
+        // target deleted item's index
+        let deleteKey = this.parentNode.id.split("^");
+        let deleteIndex = cartArray.findIndex((item) => (item.name === deleteKey[0]) 
+                                                    && (item.glaze === deleteKey[1]) 
+                                                    && (item.qty === deleteKey[2]));
+        cartArray.splice(deleteIndex, 1);
+        // delete from model
+        setCart();
+        // delete item from view
+        deleteItem(this.parentNode);
+}
+
 // Produce SideBar Cart Items
 function CartItemTemplate(name, glaze, qty, price, imgUrl){
     // create div
@@ -209,23 +250,11 @@ function CartItemTemplate(name, glaze, qty, price, imgUrl){
     let editButton = document.createElement("button");
     editButton.textContent = "EDIT";
     editButton.setAttribute("id", "edit");
+    editButton.onclick = inCartEdit;
     let deleteButton = document.createElement("button");
     deleteButton.textContent = "DELETE";
     deleteButton.setAttribute("id", "delete");
-    deleteButton.onclick = function () {
-        
-        // target deleted item's index
-        let deleteKey = this.parentNode.id.split("^");
-        let deleteIndex = cartArray.findIndex((item) => (item.name === deleteKey[0]) 
-                                                    && (item.glaze === deleteKey[1]) 
-                                                    && (item.qty === deleteKey[2]));
-        cartArray.splice(deleteIndex, 1);
-        
-        // delete from model
-        setCart();
-        // delete item from view
-        deleteItem(this.parentNode);
-    };
+    deleteButton.onclick = inCartDelete;
 
     // attach all child nodes
     itemDiv.appendChild(infoDiv);
@@ -291,17 +320,11 @@ function openCart2() {
         cartLogo.src = "../Imgs/Buttons/Cart_CheckOut.svg";
         menu.style.gridTemplateAreas = "'roll_1 roll_2 roll_3 roll_4 .' 'roll_5 roll_6 roll_7 roll_8 .'";
         menu.style.gridAutoColumns = "2fr 2fr 2fr 2fr 1fr";
-        //layout.style.gridTemplateAreas = "'header header openCart' 'content content 0penCart'";
-        //layout.style.gridTemplateColumns = "3fr 3fr 1fr";
-
         cartList.style.display = "grid";
     } else {
         cartLogo.src = "../Imgs/CartBun_cart_icon.svg";
         menu.style.gridTemplateAreas = "'roll_1 roll_2 roll_3 roll_4' 'roll_5 roll_6 roll_7 roll_8'";
         menu.style.gridAutoColumns = "1fr 1fr 1fr 1fr";
-
-        //layout.style.gridTemplateAreas = "'header header header' 'content content content'";
-        //layout.style.gridTemplateColumns = "1fr 1fr 1fr";
         cartList.style.display = "none";
     }
 
@@ -545,3 +568,5 @@ function updateMenuTag(prevTag, step){
         menuTagTemplate(menuTagManager);
     }
 }
+
+//TODO: Make the load available across all pages
