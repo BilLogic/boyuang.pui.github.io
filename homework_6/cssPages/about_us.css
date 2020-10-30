@@ -5,7 +5,7 @@
 body {
     font-family: PT Sans;
     margin: auto;
-    font-size: 2vw;
+    font-size: 1.5vw;
     vertical-align: middle;
     line-height: normal;
     text-align: center;
@@ -23,7 +23,7 @@ body {
     grid-column-gap: 1%;
 
     grid-template-columns: 1fr 8fr 1fr;
-    grid-row-gap: 5%;
+    grid-row-gap: 3%;
 
     background: rgba(255, 252, 242, 0.5);
     border-radius: 15px;
@@ -167,7 +167,7 @@ body {
 }
 
 p.paragraph {
-    font-size: 1.8vw;
+    font-size: 1.3vw;
     font-style: normal;
     overflow-wrap: normal;
 
@@ -198,7 +198,7 @@ div.pic{
     height: 100%;
     width: 100%;
     margin: 0%;
-    margin-bottom: 10%; /* make sure body don't overlap with footer*/  
+    margin-bottom: 15%; /* make sure body don't overlap with footer*/  
 }
   
 
@@ -257,7 +257,8 @@ div#value>div.title{
 }
 div#value>.paragraph{
     grid-area: value-paragraph;
-
+    height: 100%;
+    margin: 0%;
 }
 /************ Achievement Style *********************/
 div#achievement {
@@ -284,11 +285,13 @@ div#achievement>div {
 }
 div#achievement>div>p {
     background-color: transparent;
-    font-size: 1.5vw;
+    font-size: 1.3vw;
 }
 div#achievement>div>h3 {
     color: rgba(235,94,40,1);
     font-style: italic;
+    font-weight: bold;
+    font-size: 2vw;
 }
 
 div#achievement>div.title{
@@ -325,4 +328,11 @@ div#achievement>div#bottom-right{
     text-align: center;
     color: #252422;
     background-color: rgba(204, 197, 185, 0.7);
+}
+
+.footer>.email{
+    font-size: 2vw;
+    text-align: left;
+    margin-left: 29%;
+    text-transform: uppercase;
 }
