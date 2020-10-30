@@ -19,7 +19,7 @@ button:hover {
     cursor: pointer;
 }
 
-img:hover {
+.pic img:hover {
     transform: rotate(15deg);
 }
 
@@ -45,7 +45,7 @@ img:hover {
 
 .grid-container>.header {
     grid-area: header;
-    background: #ccc5b9;
+    background: rgba(204, 197, 185, 0.7);
     padding: 30px;
     border-radius: 45px;
     width: 100%;
@@ -134,7 +134,7 @@ img:hover {
     text-transform: capitalize;
 
     color: #fffcf2;
-    background-color: #eb5e28;
+    background-color: rgba(235,94,40, 0.8);
     padding: 2% 4%;
     border-radius: 30%;
 }
@@ -196,6 +196,9 @@ img:hover {
     /* spread the items evenly */
     justify-items: center;
     row-gap: 2%;
+
+    width: 85%;
+    justify-self: center;
 }
 
 .Roll_1 {
@@ -227,9 +230,9 @@ img:hover {
     position: absolute;
     height: 100%;
     width: 15%;
-    right: 0%;
+    right: -15%;
     background: #252422;
-    color: #eb5e28;
+    color: rgba(235,94,40, 0.8);
     border-radius: 15px;
     grid-template-columns: 1fr;
     grid-template-rows: 8fr 1fr 2fr;
@@ -251,7 +254,7 @@ img:hover {
     justify-content: center;
     align-items: center;
     justify-items: center;
-    background: #EB5E28;
+    background: rgba(235,94,40, 0.8);
     border-radius: 15%;
     column-gap: 5%;
 }
@@ -294,7 +297,7 @@ img:hover {
 }
 
 #Review {
-    background: #EB5E28;
+    background: rgba(235,94,40, 0.8);
     border: 5px solid #403D39;
     box-sizing: border-box;
     border-radius: 15px;
@@ -321,7 +324,7 @@ img:hover {
     grid-template-rows: 1.75fr 1fr 1fr;
 
     width: 80%;
-    background: #CCC5B9;
+    background: rgba(204, 197, 185, 0.7);
     border: 1px solid #252422;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
@@ -360,7 +363,7 @@ img:hover {
 
 .grid-container>.content>div>div.cart {
     grid-area: cart;
-    background: #EB5E28;
+    background: rgba(235,94,40, 0.8);
     /* border-radius: 15px; */
     font-size: 3vw;
     color: #FFFCF2;

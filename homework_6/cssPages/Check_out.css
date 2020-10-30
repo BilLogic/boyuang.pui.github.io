@@ -68,7 +68,7 @@ a:hover {
 
 .grid-container > .header {
   grid-area: header;
-  background: #ccc5b9;
+  background: rgba(204, 197, 185, 0.7);
   padding: 30px;
   border-radius: 45px;
   width: 100%;
@@ -156,7 +156,7 @@ a:hover {
   text-transform: capitalize;
 
   color: #fffcf2;
-  background-color: #eb5e28;
+  background-color: rgba(235,94,40, 0.8);
   padding: 2% 4%;
   border-radius: 30%;
 }
@@ -212,7 +212,7 @@ a:hover {
 #cartDisplay {
   height: 100%;
   background: #252422;
-  color: #eb5e28;
+  color: rgba(235,94,40, 0.8);
   border-radius: 15px;
   display: grid;
   grid-template-areas:
@@ -240,7 +240,7 @@ a:hover {
   justify-content: center;
   align-items: center;
   justify-items: center;
-  background: #EB5E28;
+  background: rgba(235,94,40, 0.8);
   border-radius: 15%;
   column-gap: 5%;
 }
@@ -285,7 +285,7 @@ a:hover {
 
 #Review {
   grid-area: review;
-  background: #EB5E28;
+  background: rgba(235,94,40, 0.8);
   border: 5px solid #403D39;
   box-sizing: border-box;
   border-radius: 15px;
@@ -303,7 +303,7 @@ a:hover {
 
 #promotion {
   grid-area: promotion;
-  background: #eb5e28;
+  background: rgba(235,94,40, 0.8);
   border-radius: 50px;
   font-weight: bold;
   font-size: 3vw;

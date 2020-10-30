@@ -64,7 +64,7 @@ img {
 
 .grid-container>.header {
     grid-area: header;
-    background: #ccc5b9;
+    background: rgba(204, 197, 185, 0.7);
     padding: 30px;
     border-radius: 45px;
     width: 100%;
@@ -152,7 +152,7 @@ img {
     text-transform: capitalize;
 
     color: #fffcf2;
-    background-color: #eb5e28;
+    background-color: rgba(235,94,40, 0.8);
     padding: 2% 4%;
     border-radius: 30%;
 }
@@ -228,7 +228,7 @@ img {
     align-items: center;
 
     padding: 3% 8%;
-    background: #CCC5B9;
+    background: rgba(204, 197, 185, 0.7);
     border-radius: 50px;
 }
 
@@ -284,7 +284,7 @@ img {
     grid-column: 2/-1;
     grid-row: 6/7;
 
-    background: #EB5E28;
+    background: rgba(235,94,40, 0.8);
     border-radius: 15px;
     font-size: 3vw;
     text-align: center;
@@ -313,7 +313,7 @@ img {
   .glaze label,
   .qty label {
       display: block;
-      background-color: #CCC5B9;
+      background-color: rgba(204, 197, 185, 0.7);
       padding: 0 10%;
       font-size: 1.5vw;
       border: 2px solid #403d39;
@@ -331,7 +331,7 @@ img {
   }
   .glaze input[type="radio"]:checked + label,
   .qty input[type="radio"]:checked + label {
-      background-color: #eb5e28;
+      background-color: rgba(235,94,40, 0.8);
       border-color: #FFFCF2;
       opacity: 100%;
   }

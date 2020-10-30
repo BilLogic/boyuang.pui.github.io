@@ -293,17 +293,18 @@ function openCart() {
     const cartLogo = document.getElementById("theCartLogo");
     const menu = document.getElementById("mainMenu");
     const cartList = document.getElementById("cartDisplay");
-
     if (!cartSwitch) {
         cartLogo.src = "../Imgs/Buttons/Cart_CheckOut.svg";
         menu.style.gridTemplateAreas = "'roll_1 roll_2 roll_3 .' 'roll_4 roll_5 roll_6 .'";
-        menu.style.gridAutoColumns = "2fr 2fr 2fr 1fr";
+        menu.style.gridAutoColumns = "3fr 3fr 3fr 0fr";
         cartList.style.display = "grid";
+        menu.style.justifySelf = 'start';
     } else {
         cartLogo.src = "../Imgs/CartCart_without_number.svg";
         menu.style.gridTemplateAreas = "'roll_1 roll_2 roll_3' 'roll_4 roll_5 roll_6'";
         menu.style.gridAutoColumns = "1fr 1fr 1fr";
         cartList.style.display = "none";
+        menu.style.justifySelf = 'center';
     }
 
     cartSwitch = !cartSwitch;
@@ -319,13 +320,15 @@ function openCart2() {
     if (!cartSwitch) {
         cartLogo.src = "../Imgs/Buttons/Cart_CheckOut.svg";
         menu.style.gridTemplateAreas = "'roll_1 roll_2 roll_3 roll_4 .' 'roll_5 roll_6 roll_7 roll_8 .'";
-        menu.style.gridAutoColumns = "2fr 2fr 2fr 2fr 1fr";
+        menu.style.gridAutoColumns = "2fr 2fr 2fr 2fr 0fr";
         cartList.style.display = "grid";
+        menu.style.justifySelf = 'start';
     } else {
         cartLogo.src = "../Imgs/CartBun_cart_icon.svg";
         menu.style.gridTemplateAreas = "'roll_1 roll_2 roll_3 roll_4' 'roll_5 roll_6 roll_7 roll_8'";
         menu.style.gridAutoColumns = "1fr 1fr 1fr 1fr";
         cartList.style.display = "none";
+        menu.style.justifySelf = 'center';
     }
 
     cartSwitch = !cartSwitch;

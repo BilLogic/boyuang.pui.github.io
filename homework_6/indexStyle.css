@@ -13,9 +13,7 @@ body {
   font-size: 2vw;
 }
 
-img:hover {
-  transform: rotate(15deg);
-}
+
 
 /* The grid container */
 .grid-container {
@@ -39,7 +37,7 @@ img:hover {
 
 .grid-container>.header {
   grid-area: header;
-  background: #ccc5b9;
+  background: rgba(204, 197, 185, 0.7);
   padding: 30px;
   border-radius: 45px;
   width: 100%;
@@ -126,7 +124,7 @@ img:hover {
   text-transform: capitalize;
 
   color: #fffcf2;
-  background-color: #eb5e28;
+  background-color: rgba(235,94,40, 0.8);
   padding: 2% 4%;
   border-radius: 30%;
 }
@@ -161,7 +159,7 @@ img:hover {
 .grid-container>.content {
   position: relative;
   grid-area: content;
-  background: #ccc5b9;
+  background: rgba(204, 197, 185, 0.7);
   border-radius: 45px;
   width: 100%;
 
@@ -260,7 +258,7 @@ img:hover {
   left: 50%;
   transform: translate(-50%, -50%);
 
-  background: #eb5e28;
+  background: rgba(235,94,40, 0.8);
   border-radius: 50px;
 
   font-weight: bold;
@@ -278,7 +276,7 @@ img:hover {
 /* Floating banner on hover */
 
 .grid-container>.content>.banner:hover {
-  color: #eb5e28;
+  color: rgba(235,94,40, 0.8);
   background: #fffcf2;
 }
 

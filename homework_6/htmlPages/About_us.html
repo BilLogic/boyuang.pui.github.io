@@ -5,7 +5,8 @@
     <title>Bun Bun's Story</title>
     <link href="../cssPages/about_us.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-        rel="stylesheet" />
+		rel="stylesheet" />
+		<script src="../main.js"></script>
 </head>
 
 <body onload="getCart()">
@@ -33,13 +34,17 @@
 			<!-- get rid of button, https://www.w3schools.com/css/css_link.asp-->
 			<!-- text decoration none-->
 
-			<div class="cart">
-				<!--cart on the right -->
-				<a class="cart" href="../htmlPages/Check_out.html">
-					<img src="../Imgs/CartCart_without_number.svg" alt="Bun Bun Shopping Cart" />
-				</a>
-				<p class="number-in-cart">0</p>
-			</div>
+            <div class="cart">
+                <!--cart on the right -->
+                <a class="cart">
+                  <img
+                    src="../Imgs/CartCart_without_number.svg"
+                    alt="Bun Bun Shopping Cart"
+					id="theCartLogo"
+					href="./htmlPages/Check_out.html"                  />
+                </a>
+                <p class="number-in-cart">0</p>
+              </div>
 		</div>
 		<div class="content">
 			<!--Top section: Our story-->
@@ -50,15 +55,25 @@
 				<div class="title">
 					Our Story
 				</div>
-				<div class="paragraph">
-					<p>Batrick Carnegie and Bamber Carnegie created Bun Bun Bakery in 1995, out of their passions for food, friendship and hard work.</p>
-					<p>From the start they baked everything fresh on-site each day and donated the day’s leftovers to charity each night, actions that remain solidly in place almost 25 years later.</p>
-					<p>We take our name from Chinese word “Bang,” meaning good and well-being.</p>
-				</div>
+				<p class="paragraph">Batrick Carnegie and Bamber Carnegie created Bun Bun Bakery in 1995, out of their passions for food, friendship and hard work.<br>
+				From the start they baked everything fresh on-site each day and donated the day’s leftovers to charity each night, actions that remain solidly in place almost 25 years later.<br>
+				We take our name from Chinese word “Bang,” meaning good and well-being.
+				</p>
 			</div>
 			<!--Second section: Photo Wall-->
 			<div id="photo-wall">
-
+				<img id="photo-wall-1" src="../Imgs/AboutUsPics/image 2.png" alt="people eating roll">
+				<img id="photo-wall-2" src="../Imgs/AboutUsPics/image 3.png" alt="people eating roll">
+				<img id="photo-wall-3" src="../Imgs/AboutUsPics/image 4.png" alt="people eating roll">
+				<img id="photo-wall-5" src="../Imgs/AboutUsPics/image 6.png" alt="people eating roll">
+				<img id="photo-wall-6" src="../Imgs/AboutUsPics/image 7.png" alt="people eating roll">
+				<img id="photo-wall-4" src="../Imgs/AboutUsPics/image 5.png" alt="people eating roll">
+				<img id="photo-wall-7" src="../Imgs/AboutUsPics/image 8.png" alt="people eating roll">
+				<img id="photo-wall-11" src="../Imgs/AboutUsPics/image 12.png" alt="people eating roll">
+				<img id="photo-wall-9" src="../Imgs/AboutUsPics/image 10.png" alt="people eating roll">
+				<img id="photo-wall-10" src="../Imgs/AboutUsPics/image 11.png" alt="people eating roll">
+														<!--
+				-->
 			</div>
 			<!--Third section: value-->
 			<div id="value">
@@ -68,9 +83,7 @@
 				<div class="title">
 					Our Value
 				</div>
-				<div class="paragraph">
-					<p>Our aim is to continue enriching the global sweet market.</p>
-				</div>
+				<p class="paragraph">Our aim is to continue enriching the global sweet market.</p>
 			</div>
 			<!--Top section: achievement stats-->
 			<div id="achievement">
@@ -79,25 +92,26 @@
 				</div>
 				<div id="top-left">
 					<h3>25<br>years</h3>
-					<p>delivering the unique experience to all passionate cake lovers.</p>
+					<p class="paragraph">delivering the unique experience to all passionate cake lovers.</p>
 				</div>
 				<div id="top-right">
 					<h3>58<br>employees</h3>
-					<p>producing the unique sweet solutions delighting customers´ demands.</p>
+					<p class="paragraph">producing the unique sweet solutions delighting customers´ demands.</p>
 				</div>
 				<div id="bottom-left">
 					<h3>4.8/5.0<br>stars</h3>
-					<p>on Yelp, Uber Eats, GrubHub, etc</p>
+					<p class="paragraph">on Yelp, Uber Eats, GrubHub, etc</p>
 				</div>
 				<div id="bottom-right">
-					<h3>7,500,000<br>pounds</h3>
-					<p>of rolls adored, eaten and appreciated by customers.</p>
+					<h3 >7,500,000<br>pounds</h3>
+					<p class="paragraph">of rolls adored, eaten and appreciated by customers.</p>
 				</div>
 			</div>
 		</div>
 		<div class="footer">
 			<div class="email">
-				<h3>We bake emails too. Sign up to receive the latest news</h3>
+				<h3>We bake emails too.<br>
+					Sign up to receive the latest news</h3>
 				<form action="/action_page.php">
 					<label for="email">email:</label>
 					<input type="email" id="email" name="email">
