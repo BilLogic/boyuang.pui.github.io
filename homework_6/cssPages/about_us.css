@@ -227,13 +227,51 @@ div#story>.paragraph{
 
 /************ Photo Wall Style *********************/
 div#photo-wall {
+    position: relative;
     grid-area: photo-wall;
     display: flex;
     justify-content: space-around;
-    align-content: space-between;
+    align-content: center;
     flex-wrap:wrap;
     margin: auto;
     gap: 10px;
+}
+
+#photo-wall img {
+    height: auto; 
+    width: auto; 
+    max-height: 1000px;
+}
+
+div#photo-wall>#share {
+    position: absolute;
+    text-transform: uppercase;
+    font-weight: lighter;
+    background-color: rgba(204, 197, 185, 0.7);
+    left: 20%;
+    bottom: 20%;
+    padding: 2%;
+}
+
+div#photo-wall>#left-arrow{
+    position: absolute;
+    left: 0%;
+    background-color: rgba(204, 197, 185, 0.7);
+    transform: rotate(180deg);
+    top: 45%;
+    border-radius: 10px;
+    height: 15%;
+    width: auto;
+}
+div#photo-wall>#right-arrow {
+    position: absolute;
+    background-color: rgba(204, 197, 185, 0.7);
+    right: 0%;
+    top: 45%;
+    border-radius: 2px;
+    border-radius: 10px;
+    height: 15%;
+    width: auto;
 }
 /************ Value Style *********************/
 div#value {
@@ -292,6 +330,7 @@ div#achievement>div>h3 {
     font-style: italic;
     font-weight: bold;
     font-size: 2vw;
+    height: 100%;
 }
 
 div#achievement>div.title{
@@ -331,8 +370,13 @@ div#achievement>div#bottom-right{
 }
 
 .footer>.email{
-    font-size: 2vw;
+    font-size: 1.5vw;
     text-align: left;
     margin-left: 29%;
     text-transform: uppercase;
+}
+
+.footer>.links{
+    text-align: left;
+    margin-left: 29%;
 }
