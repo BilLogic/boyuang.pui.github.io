@@ -240,7 +240,7 @@ div#photo-wall {
 #photo-wall img {
     height: auto; 
     width: auto; 
-    max-height: 1000px;
+    MAX-WIDTH: 14%;
 }
 
 div#photo-wall>#share {
