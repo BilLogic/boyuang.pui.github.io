@@ -64,7 +64,7 @@ img {
 
 .grid-container>.header {
     grid-area: header;
-    background: rgba(204, 197, 185, 0.7);
+    background: rgba(204, 197, 185, 0.4);
     padding: 30px;
     border-radius: 45px;
     width: 100%;
@@ -228,7 +228,7 @@ img {
     align-items: center;
 
     padding: 3% 8%;
-    background: rgba(204, 197, 185, 0.7);
+    background: rgba(204, 197, 185, 0.4);
     border-radius: 50px;
 }
 
@@ -313,7 +313,7 @@ img {
   .glaze label,
   .qty label {
       display: block;
-      background-color: rgba(204, 197, 185, 0.7);
+      background-color: rgba(204, 197, 185, 0.4);
       padding: 0 10%;
       font-size: 1.5vw;
       border: 2px solid #403d39;

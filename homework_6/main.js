@@ -279,6 +279,20 @@ function loadCartItems(){
     })
 }
 
+// Loads up all stored item in the check out page display format
+function loadCartItemsToFinalCheckout(){
+    // parent node
+    const cartItemList = document.getElementById("itemList");
+
+    // clear cartItemList
+    cartItemList.innerHTML="";
+    // iterate through each item => turn into a block item => add to display item list 
+    cartArray.forEach((cartTag) => {
+        let cartBlock = CartItemTemplate(cartTag.name, cartTag.glaze, cartTag.qty, cartTag.price, cartTag.imgUrl);
+        cartItemList.appendChild(cartBlock);
+    })
+}
+
 function TurnOnItemPage() {
     const menu = document.getElementById("mainMenu");
     menu.style.display = "none";

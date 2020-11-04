@@ -37,7 +37,7 @@ body {
 
 .grid-container>.header {
   grid-area: header;
-  background: rgba(204, 197, 185, 0.7);
+  background: rgba(204, 197, 185, 0.4);
   padding: 30px;
   border-radius: 45px;
   width: 100%;
@@ -159,7 +159,7 @@ body {
 .grid-container>.content {
   position: relative;
   grid-area: content;
-  background: rgba(204, 197, 185, 0.7);
+  background: rgba(204, 197, 185, 0.4);
   border-radius: 45px;
   width: 100%;
 
