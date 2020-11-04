@@ -210,7 +210,8 @@ table {
 thead {
   display: table;  
   width: 100%;
-  border: 15px solid rgba(37,36,34,0.8);
+  border: 5px solid rgba(37,36,34,0.8);
+  border-radius: 3px;
 }
 /* Spacing and layout*/
 thead th:nth-child(1) {
@@ -247,10 +248,10 @@ tbody tr {
 
 /* Spacing and layout*/
 tbody td:nth-child(1) {
-  width: 35%
+  width: 33%
 }
 tbody td:nth-child(2) {
-  width: 15%
+  width: 12%
 }
 tbody td:nth-child(3) {
   width: 15%
@@ -259,7 +260,7 @@ tbody td:nth-child(4) {
   width: 15%
 }
 tbody td:nth-child(5) {
-  width: 20%
+  width: 15%
 }
 
 /* First col */
@@ -269,46 +270,73 @@ tbody td:nth-child(1) div{
 }
 tbody td:nth-child(1) img {
   grid-area: Title_Pic;
+  width: 55%;
+  margin: auto;
 }
 tbody td:nth-child(1) p {
   grid-area: Title_text;
   margin: auto;
 }
 
+tbody button {
+  all: unset;
+  background-image: url("../Imgs/Buttons/up-arrow 1.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  /* put the height and width of your image here */
+  height: 100%;
+  width: 100%;
+  align-self: center;
+  justify-self: center;
+  border: none;
+  background-color: transparent;
+}
+
 /* Third col */
-tbody td:nth-child(3) div{
+tbody td:nth-child(3) div {
   display: grid;
   grid-template-areas: 'Q_Lbtn Title Q_Rbtn';
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 button#Qty_Up {
   grid-area: Q_Lbtn;
 }
+
 button#Qty_Down {
-  grid-area: Q_Rbtn;
+  grid-area: Q_Rbtn; 
+  transform: rotate(180deg);
 }
 
 /* Fourth col */
 tbody td:nth-child(4) div{
   display: grid;
   grid-template-areas: 'G_Lbtn Title G_Rbtn';
+  grid-template-columns: 1fr 1.5fr 1fr;
 }
 
 button#Glaze_Prev {
   grid-area: G_Lbtn;
+  transform: rotate(270deg);
 }
 button#Glaze_Next {
   grid-area: G_Rbtn;
+  transform: rotate(90deg);
 }
 
 /* Fifth col */
 tbody td:nth-child(5) div{
   display: grid;
   grid-template-areas: 'total Delete_btn';
+  grid-template-columns: 3fr 1fr;
 }
 
 button#In_Delete_btn {
   grid-area: Delete_btn;
+  height: 25%;
+  width: 50%;
+  background-size: contain;
+  background-image: url("../Imgs/Buttons/close.svg");
 }
 
 /**************** Footer ********************************/
@@ -362,6 +390,7 @@ button#In_Delete_btn {
   width: 100%;
   margin: 5%;
 }
+
 #saleInfo p{
   background-color: rgba(235,94,40, 0.8);
   border-radius: 25px;

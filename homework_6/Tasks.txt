@@ -33,7 +33,7 @@ Tasks done:
 7. implement function to make in-menu add to cart fully functional with JS
     make sure minor errors won't destroy the system
 8. Decrease the saturation of the site with CSS
-9. 
+
 
 
 Note:
@@ -42,3 +42,13 @@ Note:
 2. The checkout page is still ugly and needs to be modified
 3. The sidebar cart page needs to be modified to have a wishlist implementation
 4. Need a final payment & delivery page after the checkout page
+
+
+6B Update:
+1. Implemented HTML & CSS for checkout Page
+2. Load cart info and display under the table template style with JS
+3. custom buttons
+
+TODO:
+1. Make buttons features available
+2. Calculate subtotal & Grand total

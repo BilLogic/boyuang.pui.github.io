@@ -47,7 +47,7 @@ function setDetailInfo(index){
 
 
 // Helper function that add a img element under the given parentNode
-function AddImgTemplate(parentNode, src, alt, id=null){
+function AddImgTemplate(parentNode, src, alt, id = null) {
     let imgNode = document.createElement('img');
 
     if(id != null){    
@@ -282,14 +282,14 @@ function loadCartItems(){
 // Loads up all stored item in the check out page display format
 function loadCartItemsToFinalCheckout(){
     // parent node
-    const cartItemList = document.getElementById("itemList");
+    const tableBodyContainer = document.querySelector("#itemTableBody");
 
     // clear cartItemList
-    cartItemList.innerHTML="";
+    tableBodyContainer.innerHTML="";
     // iterate through each item => turn into a block item => add to display item list 
     cartArray.forEach((cartTag) => {
-        let cartBlock = CartItemTemplate(cartTag.name, cartTag.glaze, cartTag.qty, cartTag.price, cartTag.imgUrl);
-        cartItemList.appendChild(cartBlock);
+        let newTableRow = checkoutListTemplate(cartTag.name, cartTag.glaze, cartTag.qty, cartTag.price, cartTag.imgUrl);
+        tableBodyContainer.appendChild(newTableRow);
     })
 }
 
@@ -587,3 +587,87 @@ function updateMenuTag(prevTag, step){
 }
 
 //TODO: Make the load available across all pages
+function checkoutListTemplate(name, glaze, qty, price, imgUrl) {
+    console.log("CheckoutListTemplate got called");
+    // create the tr wrapper
+    const newRow = document.createElement("tr");
+
+    // create the td under tr
+    const itemTD = document.createElement("td");
+    itemTD.setAttribute("scope", "row");
+    const priceTD = document.createElement("td");
+    const qtyTD = document.createElement("td");
+    const glazeTD = document.createElement("td");
+    const totalTD = document.createElement("td");
+
+    // set up item TD
+    let itemDiv = document.createElement("div");
+    let rollPic = document.createElement("img");
+    rollPic.setAttribute("src", imgUrl);
+    let rollName = document.createElement("p");
+    rollName.innerHTML = `${name}`;
+    itemDiv.appendChild(rollPic);
+    itemDiv.appendChild(rollName);
+
+    // insert div to the item TD
+    itemTD.appendChild(itemDiv);
+
+    // set up price TD
+    priceTD.innerHTML = `${price}$`;
+
+
+    // set up qty TD
+    let qtyDiv = document.createElement("div");
+    let qtyParagraph = document.createElement("p");
+    qtyParagraph.innerHTML = `${qty}`;
+    const buttonUp = document.createElement("button");
+    buttonUp.setAttribute("id", "Qty_Up");
+    const buttonDown = document.createElement("button");
+    buttonDown.setAttribute("id", "Qty_Down");
+    // assemble the qty TD
+    qtyDiv.appendChild(buttonUp);
+    qtyDiv.appendChild(qtyParagraph);
+    qtyDiv.appendChild(buttonDown);
+    // insert div to the item TD
+    qtyTD.appendChild(qtyDiv);
+
+
+    // set up glaze TD
+    let glazeDiv = document.createElement("div");
+    let glazeParagraph = document.createElement("p");
+    glazeParagraph.innerHTML = `${glaze}`;
+    const buttonPrev = document.createElement("button");
+    buttonPrev.setAttribute("id", "Glaze_Prev");
+    const buttonNext = document.createElement("button");
+    buttonNext.setAttribute("id", "Glaze_Next");
+    // assemble the qty TD
+    glazeDiv.appendChild(buttonPrev);
+    glazeDiv.appendChild(glazeParagraph); 
+    glazeDiv.appendChild(buttonNext);
+    // insert div to the item TD
+    glazeTD.appendChild(glazeDiv);
+
+    // set up total TD
+    let totalDiv = document.createElement("div");
+    let totalParagraph = document.createElement("p");
+    let rowTotal = qty * price;
+    totalParagraph.innerHTML = `${rowTotal}$`;
+    const buttonDel = document.createElement("button");
+    buttonDel.setAttribute("id", "In_Delete_btn");
+    // assemble the total TD
+    totalDiv.appendChild(totalParagraph); 
+    totalDiv.appendChild(buttonDel);
+    // insert div to the item TD
+    totalTD.appendChild(totalDiv);
+
+    // assemble the table row
+    newRow.appendChild(itemTD);
+    newRow.appendChild(priceTD);
+    newRow.appendChild(qtyTD);
+    newRow.appendChild(glazeTD);
+    newRow.appendChild(totalTD);
+
+    // return the assembled newRow
+    console.log(newRow);
+    return(newRow);
+}

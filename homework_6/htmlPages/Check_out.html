@@ -6,9 +6,10 @@
 	<link href="../cssPages/Check_out.css" rel="stylesheet" type="text/css" />
 	<link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
 		rel="stylesheet" />
+	<script src="../main.js"></script> 
 </head>
 
-<body>
+<body onload="getCart(); loadCartItemsToFinalCheckout();">
 	<div class="grid-container">
 		<div class="header" id="navBar">
 			<div class="logo">
@@ -34,21 +35,17 @@
 				</div>
 
 			<div class="cart">
-			  <!--cart on the right -->
-			  <a class="cart">
-				<img
-				  src="../Imgs/CartCart_without_number.svg"
-				  alt="Bun Bun Shopping Cart"
-				  id="theCartLogo"
-				  onclick="openCart()"
-				/>
-			  </a>
+                <!--cart on the right -->
+                  <img
+                    src="../Imgs/CartCart_without_number.svg"
+                    alt="Bun Bun Shopping Cart"
+					id="theCartLogo"/>
 			  <p class="number-in-cart">0</p>
 			</div>
 		  </div>
 
-		<div class="content" id="itemTable">
-			<table>
+		<div class="content">
+			<table  id="itemTable">
 				<thead>
 					<tr id='titles'>
 						<th scope='col'>Item</th>
@@ -58,7 +55,7 @@
 						<th scope='col'>Total</th>
 					</tr>
 				</thead>
-				<tbody>
+				<tbody id="itemTableBody">
 					<tr>
 						<td scope='row'>
 							<div>
@@ -70,7 +67,6 @@
 						<td>
 							<div>
 								<button id="Qty_Up">
-	
 								</button>
 								<p>3</p>
 								<button id="Qty_Down">
@@ -80,184 +76,7 @@
 						</td>
 						<td>
 							<div>
-								<button id="Glaze_Prev">
-	
-								</button>
-								<p>3</p>
-								<button id='Glaze_Next'></button>
-							</div>
-						</td>
-						<td>
-							<div>
-								<p>$3</p>
-								<button id="In_Delete_btn"></button>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td scope='row'>
-							<div>
-								<img src='../Imgs/body-Placeholder.svg'>
-								<p>Item Name</p>
-							</div>
-						</td>
-						<td>1$</td>
-						<td>
-							<div>
-								<button id="Qty_Up">
-	
-								</button>
-								<p>3</p>
-								<button id="Qty_Down">
-	
-								</button>
-							</div>
-						</td>
-						<td>
-							<div>
-								<button id="Glaze_Prev">
-	
-								</button>
-								<p>3</p>
-								<button id='Glaze_Next'></button>
-							</div>
-						</td>
-						<td>
-							<div>
-								<p>$3</p>
-								<button id="In_Delete_btn"></button>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td scope='row'>
-							<div>
-								<img src='../Imgs/body-Placeholder.svg'>
-								<p>Item Name</p>
-							</div>
-						</td>
-						<td>1$</td>
-						<td>
-							<div>
-								<button id="Qty_Up">
-	
-								</button>
-								<p>3</p>
-								<button id="Qty_Down">
-	
-								</button>
-							</div>
-						</td>
-						<td>
-							<div>
-								<button id="Glaze_Prev">
-	
-								</button>
-								<p>3</p>
-								<button id='Glaze_Next'></button>
-							</div>
-						</td>
-						<td>
-							<div>
-								<p>$3</p>
-								<button id="In_Delete_btn"></button>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td scope='row'>
-							<div>
-								<img src='../Imgs/body-Placeholder.svg'>
-								<p>Item Name</p>
-							</div>
-						</td>
-						<td>1$</td>
-						<td>
-							<div>
-								<button id="Qty_Up">
-	
-								</button>
-								<p>3</p>
-								<button id="Qty_Down">
-	
-								</button>
-							</div>
-						</td>
-						<td>
-							<div>
-								<button id="Glaze_Prev">
-	
-								</button>
-								<p>3</p>
-								<button id='Glaze_Next'></button>
-							</div>
-						</td>
-						<td>
-							<div>
-								<p>$3</p>
-								<button id="In_Delete_btn"></button>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td scope='row'>
-							<div>
-								<img src='../Imgs/body-Placeholder.svg'>
-								<p>Item Name</p>
-							</div>
-						</td>
-						<td>1$</td>
-						<td>
-							<div>
-								<button id="Qty_Up">
-	
-								</button>
-								<p>3</p>
-								<button id="Qty_Down">
-	
-								</button>
-							</div>
-						</td>
-						<td>
-							<div>
-								<button id="Glaze_Prev">
-	
-								</button>
-								<p>3</p>
-								<button id='Glaze_Next'></button>
-							</div>
-						</td>
-						<td>
-							<div>
-								<p>$3</p>
-								<button id="In_Delete_btn"></button>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td scope='row'>
-							<div>
-								<img src='../Imgs/body-Placeholder.svg'>
-								<p>Item Name</p>
-							</div>
-						</td>
-						<td>1$</td>
-						<td>
-							<div>
-								<button id="Qty_Up">
-	
-								</button>
-								<p>3</p>
-								<button id="Qty_Down">
-	
-								</button>
-							</div>
-						</td>
-						<td>
-							<div>
-								<button id="Glaze_Prev">
-	
-								</button>
+								<button id="Glaze_Prev"></button>
 								<p>3</p>
 								<button id='Glaze_Next'></button>
 							</div>
