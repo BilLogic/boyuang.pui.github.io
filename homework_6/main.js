@@ -1,6 +1,7 @@
 // global variable
 let cartArray = [];
-
+const glazeArray = ["None", "Sugar-Milk", "Vanilla-Milk", "Double-chocolate"];
+const qtyArray = ["1", "3", "6", "12"];
 
 // Roll Info constructor function
 function RollDescription(imgUrl, itemName, price, description, rate, calory, allergy){
@@ -587,10 +588,13 @@ function updateMenuTag(prevTag, step){
 }
 
 //TODO: Make the load available across all pages
+
+/**************        * CHECK OUT PAGE LOADING ********* */
 function checkoutListTemplate(name, glaze, qty, price, imgUrl) {
     console.log("CheckoutListTemplate got called");
     // create the tr wrapper
     const newRow = document.createElement("tr");
+    newRow.setAttribute("id", `${name}^${glaze}^${qty}`);
 
     // create the td under tr
     const itemTD = document.createElement("td");
@@ -613,17 +617,21 @@ function checkoutListTemplate(name, glaze, qty, price, imgUrl) {
     itemTD.appendChild(itemDiv);
 
     // set up price TD
-    priceTD.innerHTML = `${price}$`;
+    priceTD.innerHTML = `<span>${price}$</span>`;
 
 
     // set up qty TD
     let qtyDiv = document.createElement("div");
     let qtyParagraph = document.createElement("p");
-    qtyParagraph.innerHTML = `${qty}`;
+    qtyParagraph.innerHTML = `<span>${qty}</span>`;
     const buttonUp = document.createElement("button");
     buttonUp.setAttribute("id", "Qty_Up");
+    buttonUp.onclick = inCheckoutEdit;
+
     const buttonDown = document.createElement("button");
     buttonDown.setAttribute("id", "Qty_Down");
+    buttonDown.onclick = inCheckoutEdit;
+
     // assemble the qty TD
     qtyDiv.appendChild(buttonUp);
     qtyDiv.appendChild(qtyParagraph);
@@ -635,11 +643,15 @@ function checkoutListTemplate(name, glaze, qty, price, imgUrl) {
     // set up glaze TD
     let glazeDiv = document.createElement("div");
     let glazeParagraph = document.createElement("p");
-    glazeParagraph.innerHTML = `${glaze}`;
+    glazeParagraph.innerHTML = `<span>${glaze}</span>`;
     const buttonPrev = document.createElement("button");
     buttonPrev.setAttribute("id", "Glaze_Prev");
+    buttonPrev.onclick = inCheckoutEdit;
+
     const buttonNext = document.createElement("button");
     buttonNext.setAttribute("id", "Glaze_Next");
+    buttonNext.onclick = inCheckoutEdit;
+
     // assemble the qty TD
     glazeDiv.appendChild(buttonPrev);
     glazeDiv.appendChild(glazeParagraph); 
@@ -651,9 +663,11 @@ function checkoutListTemplate(name, glaze, qty, price, imgUrl) {
     let totalDiv = document.createElement("div");
     let totalParagraph = document.createElement("p");
     let rowTotal = qty * price;
-    totalParagraph.innerHTML = `${rowTotal}$`;
+    totalParagraph.innerHTML = `<span>${rowTotal}$</span>`;
     const buttonDel = document.createElement("button");
     buttonDel.setAttribute("id", "In_Delete_btn");
+    buttonDel.onclick = inCheckoutDelete;
+
     // assemble the total TD
     totalDiv.appendChild(totalParagraph); 
     totalDiv.appendChild(buttonDel);
@@ -671,3 +685,74 @@ function checkoutListTemplate(name, glaze, qty, price, imgUrl) {
     console.log(newRow);
     return(newRow);
 }
+
+
+function inCheckoutDelete() {
+        // target deleted item's index
+    const deleteNode = this.parentNode.parentNode.parentNode;
+    console.log(deleteNode);
+    let deleteKey = deleteNode.id.split("^");
+    let deleteIndex = cartArray.findIndex((item) => (item.name === deleteKey[0]) 
+                                                && (item.glaze === deleteKey[1]) 
+                                                && (item.qty === deleteKey[2]));
+    cartArray.splice(deleteIndex, 1);
+    // delete from model
+    setCart();
+    // delete item from view
+    deleteItem(deleteNode);
+}
+
+
+
+function inCheckoutEdit(event) {
+        // target deleted item's index
+    const commandID = event.target.id;
+    const editNode = this.parentNode.parentNode.parentNode;
+    let editKey = editNode.id.split("^");
+    let editIndex = cartArray.findIndex((item) => (item.name === editKey[0]) 
+                                                && (item.glaze === editKey[1]) 
+        && (item.qty === editKey[2]));
+    let editItem = cartArray[editIndex];
+    let replaceItem = { ...editItem };
+    console.log("Original item:", editItem);
+    
+    console.log("Original Array:", cartArray);
+    let GlazeIndex = glazeArray.findIndex(glaze => (glaze === editItem.glaze));
+    let QtyIndex = qtyArray.findIndex(qty => (qty === editItem.qty));
+    // Case 1: Decrease Qty if necessary
+    if (commandID === "Qty_Down" && QtyIndex !== 0) {
+        QtyIndex = ((QtyIndex - 1) % qtyArray.length);
+    }
+    // Case 2: Increase Qty if necessary
+    else if (commandID === "Qty_Up" && QtyIndex !== (qtyArray.length - 1)) {
+        QtyIndex = (QtyIndex + 1) % qtyArray.length;
+    }
+    // Case 3: Prev Glaze circularly
+    else if (commandID === "Glaze_Prev") {
+        GlazeIndex = ((GlazeIndex - 1) % glazeArray.length);
+        if (GlazeIndex < 0) {
+            GlazeIndex = 3;
+            console.log("Stupid JS modular arith");
+        }
+    }
+    // Case 4: Next Glaze circularly
+    else if (commandID === "Glaze_Next") {
+        GlazeIndex = (GlazeIndex + 1) % glazeArray.length;
+    }
+
+    // reset Qty & Glaze & ID
+    let newGlaze = glazeArray[GlazeIndex];
+    let newQty = qtyArray[QtyIndex];
+    replaceItem.glaze = newGlaze;
+    replaceItem.qty = newQty;
+    cartArray.splice(editIndex, 1, replaceItem);
+
+    console.log("New Item: ", replaceItem);
+    console.log("New Array:", cartArray);
+
+    setCart();
+    getCart();
+    checkoutListTemplate();
+    location.reload();
+}
+

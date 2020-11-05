@@ -1,5 +1,11 @@
 "use strict";
 
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
@@ -17,7 +23,9 @@ function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
 
 // global variable
-var cartArray = []; // Roll Info constructor function
+var cartArray = [];
+var glazeArray = ["None", "Sugar-Milk", "Vanilla-Milk", "Double-chocolate"];
+var qtyArray = ["1", "3", "6", "12"]; // Roll Info constructor function
 
 function RollDescription(imgUrl, itemName, price, description, rate, calory, allergy) {
   this.imgUrl = imgUrl;
@@ -533,11 +541,14 @@ function updateMenuTag(prevTag, step) {
     }
 } //TODO: Make the load available across all pages
 
+/**************        * CHECK OUT PAGE LOADING ********* */
+
 
 function checkoutListTemplate(name, glaze, qty, price, imgUrl) {
   console.log("CheckoutListTemplate got called"); // create the tr wrapper
 
-  var newRow = document.createElement("tr"); // create the td under tr
+  var newRow = document.createElement("tr");
+  newRow.setAttribute("id", "".concat(name, "^").concat(glaze, "^").concat(qty)); // create the td under tr
 
   var itemTD = document.createElement("td");
   itemTD.setAttribute("scope", "row");
@@ -556,15 +567,17 @@ function checkoutListTemplate(name, glaze, qty, price, imgUrl) {
 
   itemTD.appendChild(itemDiv); // set up price TD
 
-  priceTD.innerHTML = "".concat(price, "$"); // set up qty TD
+  priceTD.innerHTML = "<span>".concat(price, "$</span>"); // set up qty TD
 
   var qtyDiv = document.createElement("div");
   var qtyParagraph = document.createElement("p");
-  qtyParagraph.innerHTML = "".concat(qty);
+  qtyParagraph.innerHTML = "<span>".concat(qty, "</span>");
   var buttonUp = document.createElement("button");
   buttonUp.setAttribute("id", "Qty_Up");
+  buttonUp.onclick = inCheckoutEdit;
   var buttonDown = document.createElement("button");
-  buttonDown.setAttribute("id", "Qty_Down"); // assemble the qty TD
+  buttonDown.setAttribute("id", "Qty_Down");
+  buttonDown.onclick = inCheckoutEdit; // assemble the qty TD
 
   qtyDiv.appendChild(buttonUp);
   qtyDiv.appendChild(qtyParagraph);
@@ -574,11 +587,13 @@ function checkoutListTemplate(name, glaze, qty, price, imgUrl) {
 
   var glazeDiv = document.createElement("div");
   var glazeParagraph = document.createElement("p");
-  glazeParagraph.innerHTML = "".concat(glaze);
+  glazeParagraph.innerHTML = "<span>".concat(glaze, "</span>");
   var buttonPrev = document.createElement("button");
   buttonPrev.setAttribute("id", "Glaze_Prev");
+  buttonPrev.onclick = inCheckoutEdit;
   var buttonNext = document.createElement("button");
-  buttonNext.setAttribute("id", "Glaze_Next"); // assemble the qty TD
+  buttonNext.setAttribute("id", "Glaze_Next");
+  buttonNext.onclick = inCheckoutEdit; // assemble the qty TD
 
   glazeDiv.appendChild(buttonPrev);
   glazeDiv.appendChild(glazeParagraph);
@@ -589,9 +604,10 @@ function checkoutListTemplate(name, glaze, qty, price, imgUrl) {
   var totalDiv = document.createElement("div");
   var totalParagraph = document.createElement("p");
   var rowTotal = qty * price;
-  totalParagraph.innerHTML = "".concat(rowTotal, "$");
+  totalParagraph.innerHTML = "<span>".concat(rowTotal, "$</span>");
   var buttonDel = document.createElement("button");
-  buttonDel.setAttribute("id", "In_Delete_btn"); // assemble the total TD
+  buttonDel.setAttribute("id", "In_Delete_btn");
+  buttonDel.onclick = inCheckoutDelete; // assemble the total TD
 
   totalDiv.appendChild(totalParagraph);
   totalDiv.appendChild(buttonDel); // insert div to the item TD
@@ -606,4 +622,72 @@ function checkoutListTemplate(name, glaze, qty, price, imgUrl) {
 
   console.log(newRow);
   return newRow;
+}
+
+function inCheckoutDelete() {
+  // target deleted item's index
+  var deleteNode = this.parentNode.parentNode.parentNode;
+  console.log(deleteNode);
+  var deleteKey = deleteNode.id.split("^");
+  var deleteIndex = cartArray.findIndex(function (item) {
+    return item.name === deleteKey[0] && item.glaze === deleteKey[1] && item.qty === deleteKey[2];
+  });
+  cartArray.splice(deleteIndex, 1); // delete from model
+
+  setCart(); // delete item from view
+
+  deleteItem(deleteNode);
+}
+
+function inCheckoutEdit(event) {
+  // target deleted item's index
+  var commandID = event.target.id;
+  var editNode = this.parentNode.parentNode.parentNode;
+  var editKey = editNode.id.split("^");
+  var editIndex = cartArray.findIndex(function (item) {
+    return item.name === editKey[0] && item.glaze === editKey[1] && item.qty === editKey[2];
+  });
+  var editItem = cartArray[editIndex];
+
+  var replaceItem = _objectSpread({}, editItem);
+
+  console.log("Original item:", editItem);
+  console.log("Original Array:", cartArray);
+  var GlazeIndex = glazeArray.findIndex(function (glaze) {
+    return glaze === editItem.glaze;
+  });
+  var QtyIndex = qtyArray.findIndex(function (qty) {
+    return qty === editItem.qty;
+  }); // Case 1: Decrease Qty if necessary
+
+  if (commandID === "Qty_Down" && QtyIndex !== 0) {
+    QtyIndex = (QtyIndex - 1) % qtyArray.length;
+  } // Case 2: Increase Qty if necessary
+  else if (commandID === "Qty_Up" && QtyIndex !== qtyArray.length - 1) {
+      QtyIndex = (QtyIndex + 1) % qtyArray.length;
+    } // Case 3: Prev Glaze circularly
+    else if (commandID === "Glaze_Prev") {
+        GlazeIndex = (GlazeIndex - 1) % glazeArray.length;
+
+        if (GlazeIndex < 0) {
+          GlazeIndex = 3;
+          console.log("Stupid JS modular arith");
+        }
+      } // Case 4: Next Glaze circularly
+      else if (commandID === "Glaze_Next") {
+          GlazeIndex = (GlazeIndex + 1) % glazeArray.length;
+        } // reset Qty & Glaze & ID
+
+
+  var newGlaze = glazeArray[GlazeIndex];
+  var newQty = qtyArray[QtyIndex];
+  replaceItem.glaze = newGlaze;
+  replaceItem.qty = newQty;
+  cartArray.splice(editIndex, 1, replaceItem);
+  console.log("New Item: ", replaceItem);
+  console.log("New Array:", cartArray);
+  setCart();
+  getCart();
+  checkoutListTemplate();
+  location.reload();
 }

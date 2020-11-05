@@ -23,6 +23,19 @@ a:hover {
   cursor: pointer;
 }
 
+span {
+  color: rgba(235, 94, 40, 0.8);
+}
+
+button {
+  justify-self: center;
+  align-self: center;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
 /* left arrow */
 .left {
   grid-area: left;
