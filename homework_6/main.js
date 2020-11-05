@@ -280,6 +280,23 @@ function loadCartItems(){
     })
 }
 
+function calculateTotal() {
+    let rawTotal = cartArray.map(cartTag => cartTag.price * cartTag.qty).reduce((a, b) => (a + b));
+    let shippingCost = 0;
+    let CouponCode = 0;
+    let finalTotal = (rawTotal + shippingCost) * (1 - CouponCode);
+    console.log("Raw Total:" + rawTotal);
+    
+    const subTotal = document.querySelector("p#d1");
+    subTotal.innerHTML = `<span>${rawTotal}</span>`;
+    const shippingFee = document.querySelector("p#d2");
+    shippingFee.innerHTML = `<span>${shippingCost}$</span>`;
+    const discount = document.querySelector("p#d3");
+    discount.innerHTML = `<span>${CouponCode}</span>`
+    const grandTotal = document.querySelector("p#d4");
+    grandTotal.innerHTML =`<span>${finalTotal}</span>`
+}
+
 // Loads up all stored item in the check out page display format
 function loadCartItemsToFinalCheckout(){
     // parent node
@@ -292,6 +309,8 @@ function loadCartItemsToFinalCheckout(){
         let newTableRow = checkoutListTemplate(cartTag.name, cartTag.glaze, cartTag.qty, cartTag.price, cartTag.imgUrl);
         tableBodyContainer.appendChild(newTableRow);
     })
+
+    calculateTotal()
 }
 
 function TurnOnItemPage() {
@@ -626,11 +645,23 @@ function checkoutListTemplate(name, glaze, qty, price, imgUrl) {
     qtyParagraph.innerHTML = `<span>${qty}</span>`;
     const buttonUp = document.createElement("button");
     buttonUp.setAttribute("id", "Qty_Up");
-    buttonUp.onclick = inCheckoutEdit;
+    if (qty != 12) {
+        buttonUp.setAttribute('class', "active");
+        buttonUp.onclick = inCheckoutEdit;
+    }
+    else {
+        buttonUp.setAttribute('class', "in-active");
+    }
 
     const buttonDown = document.createElement("button");
     buttonDown.setAttribute("id", "Qty_Down");
-    buttonDown.onclick = inCheckoutEdit;
+    if (qty != 1) {
+        buttonDown.setAttribute('class', "active");
+        buttonDown.onclick = inCheckoutEdit;
+    }
+    else {
+        buttonDown.setAttribute('class', "in-active");
+    }
 
     // assemble the qty TD
     qtyDiv.appendChild(buttonUp);
@@ -646,10 +677,12 @@ function checkoutListTemplate(name, glaze, qty, price, imgUrl) {
     glazeParagraph.innerHTML = `<span>${glaze}</span>`;
     const buttonPrev = document.createElement("button");
     buttonPrev.setAttribute("id", "Glaze_Prev");
+    buttonPrev.setAttribute('class', "active");
     buttonPrev.onclick = inCheckoutEdit;
 
     const buttonNext = document.createElement("button");
     buttonNext.setAttribute("id", "Glaze_Next");
+    buttonNext.setAttribute('class', "active");
     buttonNext.onclick = inCheckoutEdit;
 
     // assemble the qty TD
@@ -720,12 +753,25 @@ function inCheckoutEdit(event) {
     let GlazeIndex = glazeArray.findIndex(glaze => (glaze === editItem.glaze));
     let QtyIndex = qtyArray.findIndex(qty => (qty === editItem.qty));
     // Case 1: Decrease Qty if necessary
-    if (commandID === "Qty_Down" && QtyIndex !== 0) {
-        QtyIndex = ((QtyIndex - 1) % qtyArray.length);
+    if (commandID === "Qty_Down") {
+        if (QtyIndex !== 0) {
+            QtyIndex = ((QtyIndex - 1) % qtyArray.length);
+        }
+        else {
+            // no update => just skip
+            return;
+        }
     }
+
     // Case 2: Increase Qty if necessary
-    else if (commandID === "Qty_Up" && QtyIndex !== (qtyArray.length - 1)) {
-        QtyIndex = (QtyIndex + 1) % qtyArray.length;
+    else if (commandID === "Qty_Up") {
+        if (QtyIndex !== (qtyArray.length - 1)){
+            QtyIndex = (QtyIndex + 1) % qtyArray.length;
+        }
+        else {
+            // no update => just skip
+            return;
+        }
     }
     // Case 3: Prev Glaze circularly
     else if (commandID === "Glaze_Prev") {

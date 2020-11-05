@@ -48,7 +48,16 @@ Note:
 1. Implemented HTML & CSS for checkout Page
 2. Load cart info and display under the table template style with JS
 3. custom buttons
+4. in checkout page edit
+5. Make buttons features available
+6. In active buttons will grey out and become un clickable
+7. Partially implemented a total calculation function with JS
 
 TODO:
-1. Make buttons features available
 2. Calculate subtotal & Grand total
+3. Match coupon & shipping fee
+
+Challenge:
+1. Modularity
+2. redundant code => functional programming
+3. 

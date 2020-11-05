@@ -35,6 +35,12 @@ button {
 button:hover {
   cursor: pointer;
 }
+button.in-active:hover {
+  cursor: default;
+}
+button.in-active {
+  filter: contrast(0%) brightness(75%) invert(100%);
+}
 
 /* left arrow */
 .left {
@@ -305,6 +311,10 @@ tbody button {
   background-color: transparent;
 }
 
+tbody button.active:hover,
+tbody button.active:focus {
+    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
 /* Third col */
 tbody td:nth-child(3) div {
   display: grid;
@@ -432,11 +442,56 @@ button#In_Delete_btn {
 
 .footer #info {
   grid-area: Footer_info;
+  display: grid;
+  grid-template-areas: 't1 d1'
+                        't2 d2'
+                        't3 d3'
+                        't4 d4';
+  
   background-color: rgba(204, 197, 185, 0.4);
   border-radius: 15px;
+  padding-left: 5%;
+  padding-right: 5%;
   text-align: left;
-  padding-left: 3%;
 }
+
+.footer #info #t1{
+  grid-area: t1;
+}
+.footer #info #t2{
+  grid-area: t2;
+}
+.footer #info #t3{
+  grid-area: t3;
+}
+.footer #info #t4{
+  grid-area: t4;
+}
+
+.footer #info #d1 {
+  grid-area: d1;
+  text-align: right;
+}
+
+.footer #info #d2 {
+  grid-area: d2;
+  text-align: right;
+}
+
+.footer #info #d3 {
+  grid-area: d3;
+  text-align: right;
+}
+
+.footer #info #d4 {
+  grid-area: d4;
+  text-align: right;
+}
+
+
+
+
+
 .footer #checkOut_btn {
   grid-area: Footer_btn;
 }
