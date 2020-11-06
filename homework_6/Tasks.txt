@@ -54,7 +54,7 @@ Note:
 7. Partially implemented a total calculation function with JS
 8. Implemented Wish List feature, users could add/edit/delete items to their wishlist
 9. Combined wish list and cart together, users can switch between the two modes by clicking the mode control
-
+10. Made carousel available, Now users can switch and iterate through item lists within the page
 
 TODO:
 2. Calculate subtotal & Grand total

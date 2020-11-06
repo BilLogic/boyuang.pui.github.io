@@ -18,7 +18,16 @@ img {
     align-self: center;
     justify-self: center;
 }
+/* Big carousel arrows */
+.left:hover,
+.right:hover {
+    cursor: pointer;
+}
 
+.left>img:hover,
+.right>img:hover {
+    filter: invert(50%) sepia(51%) saturate(28%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
 /* left arrow */
 .left {
     grid-area: left;
@@ -29,7 +38,6 @@ img {
 .left>img {
     height: 100%;
 }
-
 /* right arrow */
 .right {
     grid-area: right;
@@ -355,9 +363,8 @@ img {
       border-color: #FFFCF2;
       opacity: 100%;
   }
-
-
-.grid-container>.content>.middle>.close img {
+  
+  .grid-container>.content>.middle>.close img {
     background: none;
     position: absolute;
     align-self: center;
@@ -365,4 +372,8 @@ img {
     width: 4vw;
     top: -2%;
     right: -2%;
+}
+
+.grid-container>.content>.middle>.close img:hover{      
+    filter: invert(27%) sepia(30%) saturate(2878%) hue-rotate(350deg) brightness(104%) contrast(97%) opacity(80%);
 }

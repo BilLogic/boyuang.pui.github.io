@@ -68,6 +68,7 @@ function ContentTemplate(roll){
     console.log("ContentTemplate got called");
     // get outer container
     const bodyContainer = document.getElementById("description-section");
+    bodyContainer.setAttribute('name', `${roll.itemName}`);
 
     // create three sections divs
     let picDiv = document.createElement("div");
@@ -368,8 +369,13 @@ function loadWishListItems(){
 }
 
 function calculateTotalCost() {
-    let rawTotal = cartArray.map(cartTag => cartTag.price * cartTag.qty).reduce((a, b) => (a + b));
-    return rawTotal;
+    if (cartArray.length == 0) {
+        return 0;
+    }
+    else {
+        let rawTotal = cartArray.map(cartTag => cartTag.price * cartTag.qty).reduce((a, b) => (a + b));
+        return rawTotal;
+    }
 }
 function calculateTotal() {
     let rawTotal = calculateTotalCost();
@@ -908,3 +914,32 @@ function inCheckoutEdit(event) {
     location.reload();
 }
 
+
+/*********************** Scroll left and right ************** */
+// function that make large carousel swap avaiable [Prev]
+function switchToPrevItem() {
+    const bodyContainer = document.getElementById("description-section");
+    const curItemName = bodyContainer.getAttribute('name');
+    let ogIndex = rollInfo.findIndex((item) => item.itemName === curItemName);
+    let newIndex = ((ogIndex - 1) % rollInfo.length);
+    if (newIndex === 0) {
+        newIndex = rollInfo.length-1;
+    }
+    // set newDetail Info
+    setDetailInfo(newIndex);
+    location.reload();
+}
+
+// function that make large carousel swap avaiable [Prev]
+function switchToNextItem() {
+    const bodyContainer = document.getElementById("description-section");
+    const curItemName = bodyContainer.getAttribute('name');
+    let ogIndex = rollInfo.findIndex((item) => item.itemName === curItemName);
+    let newIndex = ((ogIndex + 1) % rollInfo.length);
+    if (newIndex === 0) {
+        newIndex = 1;
+    }
+    // set newDetail Info
+    setDetailInfo(newIndex);
+    location.reload();
+}

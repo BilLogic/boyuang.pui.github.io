@@ -87,7 +87,8 @@ function AddImgTemplate(parentNode, src, alt) {
 function ContentTemplate(roll) {
   console.log("ContentTemplate got called"); // get outer container
 
-  var bodyContainer = document.getElementById("description-section"); // create three sections divs
+  var bodyContainer = document.getElementById("description-section");
+  bodyContainer.setAttribute('name', "".concat(roll.itemName)); // create three sections divs
 
   var picDiv = document.createElement("div");
   picDiv.className = "pic";
@@ -385,12 +386,16 @@ function loadWishListItems() {
 }
 
 function calculateTotalCost() {
-  var rawTotal = cartArray.map(function (cartTag) {
-    return cartTag.price * cartTag.qty;
-  }).reduce(function (a, b) {
-    return a + b;
-  });
-  return rawTotal;
+  if (cartArray.length == 0) {
+    return 0;
+  } else {
+    var rawTotal = cartArray.map(function (cartTag) {
+      return cartTag.price * cartTag.qty;
+    }).reduce(function (a, b) {
+      return a + b;
+    });
+    return rawTotal;
+  }
 }
 
 function calculateTotal() {
@@ -855,5 +860,43 @@ function inCheckoutEdit(event) {
   setCart();
   getCart();
   checkoutListTemplate();
+  location.reload();
+}
+/*********************** Scroll left and right ************** */
+// function that make large carousel swap avaiable [Prev]
+
+
+function switchToPrevItem() {
+  var bodyContainer = document.getElementById("description-section");
+  var curItemName = bodyContainer.getAttribute('name');
+  var ogIndex = rollInfo.findIndex(function (item) {
+    return item.itemName === curItemName;
+  });
+  var newIndex = (ogIndex - 1) % rollInfo.length;
+
+  if (newIndex === 0) {
+    newIndex = rollInfo.length - 1;
+  } // set newDetail Info
+
+
+  setDetailInfo(newIndex);
+  location.reload();
+} // function that make large carousel swap avaiable [Prev]
+
+
+function switchToNextItem() {
+  var bodyContainer = document.getElementById("description-section");
+  var curItemName = bodyContainer.getAttribute('name');
+  var ogIndex = rollInfo.findIndex(function (item) {
+    return item.itemName === curItemName;
+  });
+  var newIndex = (ogIndex + 1) % rollInfo.length;
+
+  if (newIndex === 0) {
+    newIndex = 1;
+  } // set newDetail Info
+
+
+  setDetailInfo(newIndex);
   location.reload();
 }

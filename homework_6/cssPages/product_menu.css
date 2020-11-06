@@ -303,14 +303,14 @@ button:hover {
     align-items: center;
     justify-items: center;
     background: rgba(235,94,40, 0.8);
-    border-radius: 15%;
+    border-radius: 15px;
     column-gap: 5%;
 }
 
 .item #cartImg {
     grid-area: pic;
     background: #fffcf2;
-    border-radius: 15%;
+    border-radius: 15px;
     height: 90%;
     width: 100%;
 }
@@ -318,7 +318,7 @@ button:hover {
 .item #cartInfo {
     grid-area: info;
     background: #fffcf2;
-    border-radius: 15%;
+    border-radius: 15px;
     height: 90%;
     width: 100%;
 }
