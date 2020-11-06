@@ -222,15 +222,15 @@ button.in-active {
 table {
   table-layout: fixed;
   width: 100%;
-  border-collapse: collapse;
   background-color:  rgba(204, 197, 185, 0.3);
+  border-radius: 15px;
 }
 
 thead {
   display: table;  
   width: 100%;
   border: 5px solid rgba(37,36,34,0.8);
-  border-radius: 3px;
+  border-radius: 15px;
 }
 /* Spacing and layout*/
 thead th:nth-child(1) {

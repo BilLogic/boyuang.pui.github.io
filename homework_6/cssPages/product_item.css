@@ -31,22 +31,24 @@ img {
 /* left arrow */
 .left {
     grid-area: left;
-    height: 50%;
+    height: 40%;
     justify-self: end;
 }
 
 .left>img {
     height: 100%;
+    margin: auto;
 }
 /* right arrow */
 .right {
     grid-area: right;
-    height: 50%;
+    height: 40%;
     justify-self: start;
 }
 
 .right>img {
     height: 100%;
+    margin: auto;
     transform: rotate(180deg);
 }
 
