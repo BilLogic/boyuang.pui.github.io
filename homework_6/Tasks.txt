@@ -52,6 +52,9 @@ Note:
 5. Make buttons features available
 6. In active buttons will grey out and become un clickable
 7. Partially implemented a total calculation function with JS
+8. Implemented Wish List feature, users could add/edit/delete items to their wishlist
+9. Combined wish list and cart together, users can switch between the two modes by clicking the mode control
+
 
 TODO:
 2. Calculate subtotal & Grand total

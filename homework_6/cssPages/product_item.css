@@ -283,17 +283,37 @@ img {
 .grid-container>.content>.middle>.cart {
     grid-column: 2/-1;
     grid-row: 6/7;
+    display: flex;
+    align-items: center;
 
     background: rgba(235,94,40, 0.8);
     border-radius: 15px;
     font-size: 3vw;
-    text-align: center;
-
-
+    
 }
 
 .grid-container>.content>.middle>.cart a{
+    margin: auto;
     color: #FFFCF2;
+    font-weight: bold;
+    text-decoration-line: underline;
+    text-transform: uppercase;
+}
+
+.grid-container>.content>.middle>.wish {
+    grid-column: 1/2;
+    grid-row: 6/7;
+    display: flex;
+    align-items: center;
+    background: rgba(204, 197, 185, 1);
+    border-radius: 15px;
+    font-size: 3vw;
+
+}
+
+.grid-container>.content>.middle>.wish a {
+    margin: auto;
+    color: rgba(64,61,57,0.7);
     font-weight: bold;
     text-decoration-line: underline;
     text-transform: uppercase;

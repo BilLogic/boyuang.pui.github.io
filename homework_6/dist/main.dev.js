@@ -22,8 +22,10 @@ function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.
 
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
 
+//import { checkoutListTemplate } from './components/checkoutTemplate';
 // global variable
 var cartArray = [];
+var wishListArray = [];
 var glazeArray = ["None", "Sugar-Milk", "Vanilla-Milk", "Double-chocolate"];
 var qtyArray = ["1", "3", "6", "12"]; // Roll Info constructor function
 
@@ -125,6 +127,7 @@ function getInfo() {
 
 
   getCart();
+  getWishList();
 } // Constructor of cart array items
 
 
@@ -134,6 +137,13 @@ function CartTag(name, glaze, qty, price, imgUrl) {
   this.qty = qty;
   this.price = price;
   this.imgUrl = imgUrl;
+} // helper function that keep track of number in cart
+
+
+function updateNumberTag() {
+  //update cart tag number
+  var numberTag = document.querySelector("p.number-in-cart");
+  numberTag.innerHTML = "".concat(cartArray.length);
 } // Function that store the info locally
 // this info will get passed into the side cart and check-out page
 
@@ -173,13 +183,6 @@ function setCart() {
 
   localStorage.setItem("cartArray", jsonCartArray);
   updateNumberTag();
-} // helper function that keep track of number in cart
-
-
-function updateNumberTag() {
-  //update cart tag number
-  var numberTag = document.querySelector("p.number-in-cart");
-  numberTag.innerHTML = "".concat(cartArray.length);
 } // helper function that loads up all locally stored in cart items
 
 
@@ -190,15 +193,67 @@ function getCart() {
     console.log("got a problem when parsing the cart array!");
   } else {
     var parsedCartArray = JSON.parse(JsonSelectedCartArray);
+    console.log("Get Cart:" + parsedCartArray);
     cartArray = _toConsumableArray(parsedCartArray);
     updateNumberTag();
   }
-} //FIXME:
-// Helper function that is attached to the edit button
+} //TODO:
+// Function that store the info locally
+// this info will get passed into the side wishListArray and check-out page
+
+
+function setWishListInfo(glaze, qty) {
+  var JsonSelectedRoll = localStorage.getItem("selectedRoll");
+  var parsedSelection = JSON.parse(JsonSelectedRoll); // create tag array element object
+
+  var cartTag = new CartTag(parsedSelection.itemName, glaze, qty, parsedSelection.price, parsedSelection.imgUrl); // push to array
+
+  wishListArray.push(cartTag);
+  console.log(cartTag);
+  console.log(wishListArray); // create JSON cart array object
+
+  var jsonCartArray = JSON.stringify(wishListArray); // store locally
+
+  localStorage.setItem("wishListArray", jsonCartArray);
+}
+
+function updateWishList() {
+  var glazeField = document.querySelector('input[name="glaze"]:checked');
+  var qtyField = document.querySelector('input[name="qty"]:checked'); // check if both selection are filled
+
+  if (glazeField === null || qtyField === null) {
+    window.alert("Please finish you glaze and quantity selection~");
+  } else {
+    var glazeValue = glazeField.value;
+    var qtyValue = qtyField.value;
+    setWishListInfo(glazeValue, qtyValue);
+  }
+} // helper function that updates local info about the cart
+
+
+function setWishList() {
+  var jsonCartArray = JSON.stringify(wishListArray); // store locally
+
+  localStorage.setItem("wishListArray", jsonCartArray);
+} // helper function that loads up all locally stored in cart items
+
+
+function getWishList() {
+  var JsonSelectedWishListArray = localStorage.getItem("wishListArray");
+
+  if (JsonSelectedWishListArray === null) {
+    console.log("got a problem when parsing the wishList array!");
+  } else {
+    var parsedWishListArray = JSON.parse(JsonSelectedWishListArray);
+    console.log("Get Wish List:" + parsedWishListArray);
+    wishListArray = _toConsumableArray(parsedWishListArray);
+  }
+} // Helper function that is attached to the edit button
 
 
 function inCartEdit() {
-  // get info
+  var mode = document.querySelector("input[name=mode]:checked").id; // get info
+
   var editName, editGlaze, editQty;
 
   var _this$parentNode$id$s = this.parentNode.id.split("^");
@@ -208,36 +263,65 @@ function inCartEdit() {
   editName = _this$parentNode$id$s2[0];
   editGlaze = _this$parentNode$id$s2[1];
   editQty = _this$parentNode$id$s2[2];
-  console.log(editName, editGlaze, editQty); // edit index on the local cart array
+  console.log(editName, editGlaze, editQty);
 
-  var editIndex = cartArray.findIndex(function (item) {
-    return item.name === editName && item.glaze === editGlaze && item.qty === editQty;
-  });
-  console.log(editIndex); // obj index from the default array
+  if (mode === 'cart') {
+    // edit index on the local cart array
+    var editIndex = cartArray.findIndex(function (item) {
+      return item.name === editName && item.glaze === editGlaze && item.qty === editQty;
+    }); // obj index from the default array
 
-  var objIndex = rollInfo.findIndex(function (item) {
-    return item.itemName === editName;
-  });
-  console.log(objIndex);
-  var editObj = cartArray[editIndex];
-  setDetailInfo(objIndex); // delete it from array and set local
+    var objIndex = rollInfo.findIndex(function (item) {
+      return item.itemName === editName;
+    });
+    setDetailInfo(objIndex); // delete it from array and set local
 
-  cartArray.splice(editIndex, 1);
-  setCart(); //bring back to specific product page
+    cartArray.splice(editIndex, 1);
+    setCart();
+  } else if (mode === 'wish') {
+    // edit index on the local cart array
+    var _editIndex = wishListArray.findIndex(function (item) {
+      return item.name === editName && item.glaze === editGlaze && item.qty === editQty;
+    }); // obj index from the default array
 
-  window.location.href = "../htmlPages/Product_detail.html"; //TODO: Have og value set (radio button)
+
+    var _objIndex = rollInfo.findIndex(function (item) {
+      return item.itemName === editName;
+    });
+
+    setDetailInfo(_objIndex); // delete it from array and set local
+
+    wishListArray.splice(_editIndex, 1);
+    setWishList();
+  } //bring back to specific product page
+
+
+  window.location.href = "../htmlPages/Product_detail.html";
 } // Helper function that are attached to the button
 
 
 function inCartDelete() {
-  // target deleted item's index
-  var deleteKey = this.parentNode.id.split("^");
-  var deleteIndex = cartArray.findIndex(function (item) {
-    return item.name === deleteKey[0] && item.glaze === deleteKey[1] && item.qty === deleteKey[2];
-  });
-  cartArray.splice(deleteIndex, 1); // delete from model
+  var mode = document.querySelector("input[name=mode]:checked").id; // target deleted item's index
 
-  setCart(); // delete item from view
+  var deleteKey = this.parentNode.id.split("^");
+
+  if (mode === 'cart') {
+    var deleteIndex = cartArray.findIndex(function (item) {
+      return item.name === deleteKey[0] && item.glaze === deleteKey[1] && item.qty === deleteKey[2];
+    });
+    cartArray.splice(deleteIndex, 1); // delete from model
+
+    setCart();
+  } else if (mode === 'wish') {
+    var _deleteIndex = wishListArray.findIndex(function (item) {
+      return item.name === deleteKey[0] && item.glaze === deleteKey[1] && item.qty === deleteKey[2];
+    });
+
+    wishListArray.splice(_deleteIndex, 1); // delete from model
+
+    setWishList();
+  } // delete item from view
+
 
   deleteItem(this.parentNode);
 } // Produce SideBar Cart Items
@@ -282,18 +366,38 @@ function loadCartItems() {
     var cartBlock = CartItemTemplate(cartTag.name, cartTag.glaze, cartTag.qty, cartTag.price, cartTag.imgUrl);
     cartItemList.appendChild(cartBlock);
   });
+  console.log(cartArray);
+} // Loads up all stored items in cart
+
+
+function loadWishListItems() {
+  // parent node
+  var wishListItemList = document.getElementById("wishList"); // clear cartItemList
+
+  wishListItemList.innerHTML = ""; // iterate through each item => turn into a block item => add to display item list 
+
+  wishListArray.forEach(function (cartTag) {
+    var cartBlock = CartItemTemplate(cartTag.name, cartTag.glaze, cartTag.qty, cartTag.price, cartTag.imgUrl);
+    wishListItemList.appendChild(cartBlock);
+    console.log(wishListItemList);
+  });
+  console.log(wishListArray);
 }
 
-function calculateTotal() {
+function calculateTotalCost() {
   var rawTotal = cartArray.map(function (cartTag) {
     return cartTag.price * cartTag.qty;
   }).reduce(function (a, b) {
     return a + b;
   });
+  return rawTotal;
+}
+
+function calculateTotal() {
+  var rawTotal = calculateTotalCost();
   var shippingCost = 0;
   var CouponCode = 0;
   var finalTotal = (rawTotal + shippingCost) * (1 - CouponCode);
-  console.log("Raw Total:" + rawTotal);
   var subTotal = document.querySelector("p#d1");
   subTotal.innerHTML = "<span>".concat(rawTotal, "</span>");
   var shippingFee = document.querySelector("p#d2");
@@ -329,19 +433,34 @@ var cartSwitch = false;
 function openCart() {
   var cartLogo = document.getElementById("theCartLogo");
   var menu = document.getElementById("mainMenu");
-  var cartList = document.getElementById("cartDisplay");
+  var cartDisplay = document.getElementById("cartDisplay");
+  var mode = document.querySelector("input[name=mode]:checked").id;
+  var cartList = document.getElementById("itemList");
+  var wishList = document.getElementById("wishList");
+  var totalPrice = document.getElementById('totalPrice');
 
   if (!cartSwitch) {
     cartLogo.src = "../Imgs/Buttons/Cart_CheckOut.svg";
     menu.style.gridTemplateAreas = "'roll_1 roll_2 roll_3 .' 'roll_4 roll_5 roll_6 .'";
     menu.style.gridAutoColumns = "3fr 3fr 3fr 0fr";
-    cartList.style.display = "grid";
-    menu.style.justifySelf = 'start';
+    cartDisplay.style.display = "grid";
+    menu.style.justifySelf = 'start'; // display cart
+
+    if (mode === 'cart') {
+      cartList.style.display = "block";
+      wishList.style.display = "none";
+    } else if (mode === 'wish') {
+      wishList.style.display = "block";
+      cartList.style.display = "none";
+    } // calculate the total cost
+
+
+    totalPrice.innerHTML = "Total Cost: ".concat(calculateTotalCost(), "$");
   } else {
     cartLogo.src = "../Imgs/CartCart_without_number.svg";
     menu.style.gridTemplateAreas = "'roll_1 roll_2 roll_3' 'roll_4 roll_5 roll_6'";
     menu.style.gridAutoColumns = "1fr 1fr 1fr";
-    cartList.style.display = "none";
+    cartDisplay.style.display = "none";
     menu.style.justifySelf = 'center';
   }
 

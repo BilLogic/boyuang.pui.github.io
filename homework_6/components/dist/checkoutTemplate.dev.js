@@ -11,7 +11,8 @@ var _main = require("../main");
 function checkoutListTemplate(name, glaze, qty, price, imgUrl) {
   console.log("CheckoutListTemplate got called"); // create the tr wrapper
 
-  var newRow = document.createElement("tr"); // create the td under tr
+  var newRow = document.createElement("tr");
+  newRow.setAttribute("id", "".concat(name, "^").concat(glaze, "^").concat(qty)); // create the td under tr
 
   var itemTD = document.createElement("td");
   itemTD.setAttribute("scope", "row");
@@ -30,29 +31,49 @@ function checkoutListTemplate(name, glaze, qty, price, imgUrl) {
 
   itemTD.appendChild(itemDiv); // set up price TD
 
-  priceTD.innerHTML = "".concat(price); // set up qty TD
+  priceTD.innerHTML = "<span>".concat(price, "$</span>"); // set up qty TD
 
   var qtyDiv = document.createElement("div");
   var qtyParagraph = document.createElement("p");
-  qtyParagraph.innerHTML = "".concat(qty);
+  qtyParagraph.innerHTML = "<span>".concat(qty, "</span>");
   var buttonUp = document.createElement("button");
   buttonUp.setAttribute("id", "Qty_Up");
-  var buttonDown = document.createElement("button");
-  buttonDown.setAttribute("id", "Qty_Down"); // assemble the qty TD
 
-  qtyDiv.appendChild(bottomUp);
+  if (qty != 12) {
+    buttonUp.setAttribute('class', "active");
+    buttonUp.onclick = _main.inCheckoutEdit;
+  } else {
+    buttonUp.setAttribute('class', "in-active");
+  }
+
+  var buttonDown = document.createElement("button");
+  buttonDown.setAttribute("id", "Qty_Down");
+
+  if (qty != 1) {
+    buttonDown.setAttribute('class', "active");
+    buttonDown.onclick = _main.inCheckoutEdit;
+  } else {
+    buttonDown.setAttribute('class', "in-active");
+  } // assemble the qty TD
+
+
+  qtyDiv.appendChild(buttonUp);
   qtyDiv.appendChild(qtyParagraph);
-  qtyDiv.appendChild(bottomDown); // insert div to the item TD
+  qtyDiv.appendChild(buttonDown); // insert div to the item TD
 
   qtyTD.appendChild(qtyDiv); // set up glaze TD
 
   var glazeDiv = document.createElement("div");
   var glazeParagraph = document.createElement("p");
-  qtyParagraph.innerHTML = "".concat(glaze);
+  glazeParagraph.innerHTML = "<span>".concat(glaze, "</span>");
   var buttonPrev = document.createElement("button");
   buttonPrev.setAttribute("id", "Glaze_Prev");
+  buttonPrev.setAttribute('class', "active");
+  buttonPrev.onclick = _main.inCheckoutEdit;
   var buttonNext = document.createElement("button");
-  buttonNext.setAttribute("id", "Glaze_Next"); // assemble the qty TD
+  buttonNext.setAttribute("id", "Glaze_Next");
+  buttonNext.setAttribute('class', "active");
+  buttonNext.onclick = _main.inCheckoutEdit; // assemble the qty TD
 
   glazeDiv.appendChild(buttonPrev);
   glazeDiv.appendChild(glazeParagraph);
@@ -63,9 +84,10 @@ function checkoutListTemplate(name, glaze, qty, price, imgUrl) {
   var totalDiv = document.createElement("div");
   var totalParagraph = document.createElement("p");
   var rowTotal = qty * price;
-  totalParagraph.innerHTML = "".concat(rowTotal);
+  totalParagraph.innerHTML = "<span>".concat(rowTotal, "$</span>");
   var buttonDel = document.createElement("button");
-  buttonDel.setAttribute("id", "In_Delete_btn"); // assemble the total TD
+  buttonDel.setAttribute("id", "In_Delete_btn");
+  buttonDel.onclick = _main.inCheckoutDelete; // assemble the total TD
 
   totalDiv.appendChild(totalParagraph);
   totalDiv.appendChild(buttonDel); // insert div to the item TD

@@ -11,10 +11,10 @@
       href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
       rel="stylesheet"
     />
-    <script src="../main.js"></script>
+    <script  src="../main.js"></script>
   </head>
 
-  <body onload="getCart(); loadCartItems();">
+  <body onload="getCart(); getWishList(); loadCartItems(); loadWishListItems();">
     <div class="grid-container" id="GeneralLayout">
       <div class="header" id="navBar">
         <div class="logo">
@@ -169,13 +169,18 @@
           </div>
         </div>
         <div id="cartDisplay">
-          <div id="itemList">
+          <div id='mode' onclick="openCart(); openCart();">
+              <input type="radio" id="cart" value="cart" name="mode" checked="true">
+              <label for="cart">Cart</label>
+              <input type="radio" id="wish" value="wish" name="mode">
+              <label for="wish">Wishlist</label>
           </div>
-          <div id="totalPrice">Total Cost: 1$</div>
+          <div id="itemList"></div>
+          <div id="wishList"></div>
+          <div id="totalPrice">Total Cost: 0$</div>
           <button
             id="Review"
-            onclick="location.href='../htmlPages/Check_out.html'"
-          >
+            onclick="location.href='../htmlPages/Check_out.html'">
             Review Order & Check Out
           </button>
         </div>
