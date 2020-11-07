@@ -438,6 +438,7 @@ function openCart() {
             cartList.style.display = "block";
             wishList.style.display = "none";
         }
+        // display wishlist
         else if (mode === 'wish') {
             wishList.style.display = "block" ;
             cartList.style.display = "none";
@@ -679,9 +680,11 @@ function menuTagTemplate(obj){
         doneDiv.innerHTML = `
         <button onclick="setCartInfo(menuTagManager.glaze, menuTagManager.qty);
                          getCart();
-                         openCart();
+                         updateMenuTag(menuTagManager.cartDiv, 0);
                          loadCartItems();
-                         resetMenuTagManger();">
+                         openCart();
+                         resetMenuTagManger();
+                         ">
                          ${stateArray[textIndex]}
                          </button>`
         mainDiv.appendChild(doneDiv);
@@ -718,7 +721,7 @@ function updateMenuTag(prevTag, step){
 
 //TODO: Make the load available across all pages
 
-/**************        * CHECK OUT PAGE LOADING ********* */
+/*************** CHECK OUT PAGE LOADING ********* */
 
 function checkoutListTemplate(name, glaze, qty, price, imgUrl) {
     console.log("CheckoutListTemplate got called");
@@ -917,7 +920,7 @@ function inCheckoutEdit(event) {
 
 
 /*********************** Scroll left and right ************** */
-// function that make large carousel swap avaiable [Prev]
+// function that make large carousel swap available [Prev]
 function switchToPrevItem() {
     const bodyContainer = document.getElementById("description-section");
     const curItemName = bodyContainer.getAttribute('name');
@@ -931,7 +934,7 @@ function switchToPrevItem() {
     location.reload();
 }
 
-// function that make large carousel swap avaiable [Prev]
+// function that make large carousel swap available [Prev]
 function switchToNextItem() {
     const bodyContainer = document.getElementById("description-section");
     const curItemName = bodyContainer.getAttribute('name');

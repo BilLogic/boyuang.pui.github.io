@@ -454,10 +454,11 @@ function openCart() {
     if (mode === 'cart') {
       cartList.style.display = "block";
       wishList.style.display = "none";
-    } else if (mode === 'wish') {
-      wishList.style.display = "block";
-      cartList.style.display = "none";
-    } // calculate the total cost
+    } // display wishlist
+    else if (mode === 'wish') {
+        wishList.style.display = "block";
+        cartList.style.display = "none";
+      } // calculate the total cost
 
 
     totalPrice.innerHTML = "Total Cost: ".concat(calculateTotalCost(), "$");
@@ -655,7 +656,7 @@ function menuTagTemplate(obj) {
           mainDiv.appendChild(qtyDiv);
         } else if (textIndex === 4) {
           var doneDiv = document.createElement("div");
-          doneDiv.innerHTML = "\n        <button onclick=\"setCartInfo(menuTagManager.glaze, menuTagManager.qty);\n                         getCart();\n                         openCart();\n                         loadCartItems();\n                         resetMenuTagManger();\">\n                         ".concat(stateArray[textIndex], "\n                         </button>");
+          doneDiv.innerHTML = "\n        <button onclick=\"setCartInfo(menuTagManager.glaze, menuTagManager.qty);\n                         getCart();\n                         updateMenuTag(menuTagManager.cartDiv, 0);\n                         loadCartItems();\n                         openCart();\n                         resetMenuTagManger();\n                         \">\n                         ".concat(stateArray[textIndex], "\n                         </button>");
           mainDiv.appendChild(doneDiv);
         } // update menuTagManager info
 
@@ -686,7 +687,7 @@ function updateMenuTag(prevTag, step) {
     }
 } //TODO: Make the load available across all pages
 
-/**************        * CHECK OUT PAGE LOADING ********* */
+/*************** CHECK OUT PAGE LOADING ********* */
 
 
 function checkoutListTemplate(name, glaze, qty, price, imgUrl) {
@@ -864,7 +865,7 @@ function inCheckoutEdit(event) {
   location.reload();
 }
 /*********************** Scroll left and right ************** */
-// function that make large carousel swap avaiable [Prev]
+// function that make large carousel swap available [Prev]
 
 
 function switchToPrevItem() {
@@ -882,7 +883,7 @@ function switchToPrevItem() {
 
   setDetailInfo(newIndex);
   location.reload();
-} // function that make large carousel swap avaiable [Prev]
+} // function that make large carousel swap available [Prev]
 
 
 function switchToNextItem() {
