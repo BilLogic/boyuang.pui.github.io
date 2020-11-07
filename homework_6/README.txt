@@ -1,4 +1,23 @@
-Updates!
+More Updates!
+
+6B checkpoints:
+1. Wooooooo! Checkout Page!
+    1.1 Implemented HTML & CSS for checkout Page
+    1.2 Load items in cart and display under the table template with JS on Checkout Page
+    1.3 Enable users to directly modify(edit & delete) their item on Checkout Page
+    1.4.1 Customized buttons
+    1.4.2 Disable buttons and make them grey out when necessary
+    1.5 Calculation system that counts and displays all types of cost.
+
+2. Waaaaaaat! Wish List!
+    2.1 Combined wish list and cart together, users can view their wishlist by clicking the cart icon on top right
+        - They can switch between the two modes (wishlist & cart list) by clicking the mode control
+    2.2 Implemented Wish List feature, users could add/edit/delete items to their wishlist
+
+3. Also.... Carousel!
+    3.1 Made carousel available, users can switch and iterate through item lists within the page
+
+
 6A checkpoints:
 1.1. Made Lo-fi Prototype for "About Us" page 
     (The pdf file is under this folder with title "Lofi_aboutUs")
@@ -7,6 +26,7 @@ Updates!
     Therefore, under the achievement section, I picked 4 numbers that describes the shop's success and connection with the neighborhood.
     To keep the page simple and clean, I used grids to regulate all sections.
     I decided to de-saturate the colors as high saturations might make them tired.
+    
 1.2 Made Hi-fi Prototype for "About Us" page
     (the page could be fold with the Figma link below)
     The hi-fi prototype basically follows the design I come up with in the lo-fi stage.

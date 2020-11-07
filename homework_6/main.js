@@ -845,6 +845,7 @@ function inCheckoutDelete() {
     setCart();
     // delete item from view
     deleteItem(deleteNode);
+    location.reload();
 }
 
 
