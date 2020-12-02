@@ -18,6 +18,7 @@
     <link href="/base.cf80568e.css" rel="stylesheet">
     <!-- Animation modules -->
     <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
+
 <script src="/base.cf80568e.js"></script><link rel="stylesheet" href="/burger.edf888c6.css"></head>
 
 <body class="text-center">
@@ -27,8 +28,8 @@
     <nav class="navbar navbar-expand-sm navbar-light bg-light sticky-top">
         <!-- Buttons -->
         <div class="collapse navbar-collapse justify-content-center" id="navbarTitles">
-            <a class="nav-item nav-link active" href="#Introduction">Introduction</a>
-                <a class="nav-item nav-link" href="#Fun-Fact">Fun-Fact</a>
+            <a class="nav-item nav-link " href="#Introduction">Introduction</a>
+                <a class="nav-item nav-link active" href="#Fun-Fact">Fun-Fact</a>
                 <a class="nav-item nav-link" href="#Ingredient">Ingredient</a>
                 <a class="nav-item nav-link" href="#Instruction">Instruction</a>
             </div>
@@ -102,24 +103,24 @@
         
         <!-- Section 2: Fun Fact Section (Cards + AOS-animation) -->
         <section id="Fun-Fact" data-scroll-section="">
-            <div id="trigger-left" class="container w-75 h-100">
+            <div id="trigger-left" class="container h-100">
                 <!-- First Card -->
-                <div class="row mt-5 w-75 justify-content-start">
-                <div class="card" data-aos="fade-right" data-aos-anchor="#trigger-left">
-                    <div class="card-horizontal">
-                        <div class="img-square-wrapper">
-                            <img src="http://via.placeholder.com/300x180" alt="Card image cap">
+                <div class="row h-25 justify-content-start">
+                    <div class="card h-75 col-md-12 col-lg-6">
+                        <div class="card-horizontal">
+                            <div class="img-square-wrapper">
+                                <img src="http://via.placeholder.com/300x180" alt="Card image cap">
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title text-warning">Card title</h4>
+                                <p class="card-text text-primary">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <h4 class="card-title text-warning">Card title</h4>
-                            <p class="card-text text-primary">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div> 
+                    </div> 
                 </div><!-- First Card -->
                 <!-- Second Card -->
-                <div class="row mt-5 w-75 justify-content-end">
-                <div class="card">
+                <div class="row h-25 justify-content-end">
+                <div class="card h-100 col-md-12 col-lg-6">
                     <div class="card-horizontal">
                         <div class="img-square-wrapper">
                             <img src="http://via.placeholder.com/300x180" alt="Card image cap">
@@ -132,17 +133,33 @@
                 </div> 
                 </div> <!-- Second Card -->
                 <!-- Third Card -->
-                <div class="row mt-5 w-75 justify-content-start card" data-aos="fade-right" data-aos-anchor="#trigger-left">
-                    <div class="card-horizontal">
-                        <div class="img-square-wrapper">
-                            <img src="http://via.placeholder.com/300x180" alt="Card image cap">
-                        </div>
-                        <div class="card-body">
-                            <h4 class="card-title text-warning">Card title</h4>
-                            <p class="card-text text-primary">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div class="row h-25 justify-content-start">
+                    <div class="card h-75 col-md-12 col-lg-6">
+                        <div class="card-horizontal">
+                            <div class="img-square-wrapper">
+                                <img src="http://via.placeholder.com/300x180" alt="Card image cap">
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title text-warning">Card title</h4>
+                                <p class="card-text text-primary">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
                         </div>
                     </div>
                 </div> <!-- Third Card -->
+                <!-- Fourth Card -->
+                <div class="row h-25 justify-content-end">
+                    <div class="card h-100 col-md-12 col-lg-6">
+                        <div class="card-horizontal">
+                            <div class="img-square-wrapper">
+                                <img src="http://via.placeholder.com/300x180" alt="Card image cap">
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title text-warning">Card title</h4>
+                                <p class="card-text text-primary">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- Fourth Card -->
             </div><!-- Container -->
         </section>
 
@@ -166,7 +183,9 @@
     <script src="/burger.edf888c6.js"></script>
 
     <!-- AOS -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>AOS.init();</script>
+    <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script> -->
 </body>
 </html>

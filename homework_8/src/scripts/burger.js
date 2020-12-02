@@ -1,6 +1,10 @@
 import LocomotiveScroll from 'locomotive-scroll';
 import "../styles/burger.scss";
 import { BurgerData } from "./data";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+
+AOS.init();
 
 // scrolling function
 const scroll = new LocomotiveScroll({
