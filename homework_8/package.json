@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "https://billogic.github.io/boyuang.pui.github.io/homework_8",
   "dependencies": {
     "@googlemaps/js-api-loader": "^1.11.1",
     "aos": "^2.3.4",
@@ -13,7 +14,9 @@
   "devDependencies": {},
   "scripts": {
     "cleanup": "rm -rf .cache dist",
-    "dev": "parcel src/index.html"
+    "dev": "parcel src/index.html",
+    "predeploy": "npm run src",
+    "deploy": "gh-pages -d src"
   },
   "keywords": [],
   "author": "",
