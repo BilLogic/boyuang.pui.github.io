@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://billogic.github.io/boyuang.pui.github.io/homework_8",
+  "homepage": "https://billogic.github.io/homework_8",
   "dependencies": {
     "@googlemaps/js-api-loader": "^1.11.1",
     "aos": "^2.3.4",
