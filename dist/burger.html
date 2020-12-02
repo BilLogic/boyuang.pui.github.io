@@ -18,28 +18,27 @@
     <link href="/base.cf80568e.css" rel="stylesheet">
     <!-- Animation modules -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <!-- <link rel="stylesheet" href="styles/animationCheetsheet.css"> -->
 
 <script src="/base.cf80568e.js"></script><link rel="stylesheet" href="/burger.edf888c6.css"></head>
 
 <body class="text-center">
-    <div class="container-fluid">
-    
-    <!-- Nav bar -->
-    <nav class="navbar navbar-expand-sm navbar-light bg-light sticky-top">
-        <!-- Buttons -->
-        <div class="collapse navbar-collapse justify-content-center" id="navbarTitles">
-            <a class="nav-item nav-link " href="#Introduction">Introduction</a>
-                <a class="nav-item nav-link active" href="#Fun-Fact">Fun-Fact</a>
-                <a class="nav-item nav-link" href="#Ingredient">Ingredient</a>
-                <a class="nav-item nav-link" href="#Instruction">Instruction</a>
-            </div>
-            <!-- Right top ICON => Dark Mode -->
-            <button class="navbar-brand btn btn-outline-dark btn-lg order-last" href="#">
-                    <img src="/moon.9f698c28.svg" alt="dark mode on">
-            </button>
-    </nav>
-    
+    <div class="container-fluid">    
     <div data-scroll-container="">
+        <!-- Nav bar -->
+        <nav class="navbar navbar-expand-sm navbar-light bg-light" data-scroll-section="" data-scroll-sticky="" data-scroll-repeat="true">
+            <!-- Buttons -->
+            <div class="collapse navbar-collapse justify-content-center" id="navbarTitles">
+                <a class="nav-item nav-link " href="#Introduction">Introduction</a>
+                    <a class="nav-item nav-link active" href="#Fun-Fact">Fun-Fact</a>
+                    <a class="nav-item nav-link" href="#Ingredient">Ingredient</a>
+                    <a class="nav-item nav-link" href="#Instruction">Instruction</a>
+                </div>
+                <!-- Right top ICON => Dark Mode -->
+                <button class="navbar-brand btn btn-outline-dark btn-lg order-last" href="#">
+                        <img src="/moon.9f698c28.svg" alt="dark mode on">
+                </button>
+        </nav>
         <!--TODO: Section 0: Burger Slides -->
         
         <!-- Section 1: Intro Section -->
@@ -164,33 +163,78 @@
             </div><!-- Container -->
         </section>
 
-        <!-- Section 3: Ingredient Section-->
+        <!-- Section 3: Ingredient Section (cards) -->
         <section id="Ingredient" data-scroll-section="">
             <div class="container h-100">
                 <!-- First Row -->
-                <div class="row mt-5 justify-content-center">
-                    <div class="card col-4" style="width: 18rem;">
+                <div class="row mt-5 justify-content-center" data-scroll="" data-scroll-speed="1.5">
+                    <!-- Card 1 -->
+                    <div class="card col-lg-4 col-md-6 col-sm-12" style="width: 18rem;" data-scroll="" data-scroll-speed="1">
                         <img class="card-img-top" src="https://via.placeholder.com/286x180" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
                             <p class="card-text text-secondary">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
-                    </div>
-                <div class="card col-4" style="width: 18rem;">
+                    </div> <!-- Card 1-->
+                    <!-- Card 2-->
+                    <div class="card col-lg-4 col-md-6 col-sm-12" style="width: 18rem;" data-scroll="" data-scroll-speed="3">
                         <img class="card-img-top" src="https://via.placeholder.com/286x180" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
                             <p class="card-text text-secondary">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
-                    </div>
+                    </div> <!-- Card 2-->
+                    <!-- Card 3 -->
+                    <div class="card col-lg-4 col-md-6 col-sm-12" style="width: 18rem;" data-scroll="" data-scroll-speed="5">
+                        <img class="card-img-top" src="https://via.placeholder.com/286x180" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text text-secondary">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div> <!-- Card 3-->
                 </div><!-- First Row -->
+                <!-- Second Row -->
+                <div class="row mt-5 justify-content-center" data-scroll="" data-scroll-speed="1.5">
+                    <div class="card col-lg-4 col-md-6 col-sm-12" style="width: 18rem;" data-scroll="" data-scroll-speed="5">
+                        <img class="card-img-top" src="https://via.placeholder.com/286x180" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text text-secondary">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                    <div class="card col-lg-4 col-md-6 col-sm-12" style="width: 18rem;" data-scroll="" data-scroll-speed="3">
+                        <img class="card-img-top" src="https://via.placeholder.com/286x180" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text text-secondary">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                    <div class="card col-lg-4 col-md-6 col-sm-12" style="width: 18rem;" data-scroll="" data-scroll-speed="1">
+                        <img class="card-img-top" src="https://via.placeholder.com/286x180" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text text-secondary">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div><!-- Second Row -->
             </div><!-- Container -->
 
         </section>
+        <div data-scroll-container="" data-scroll-direction="horizontal">
 
-        <!-- TODO: Section 4: Instruction Section (cards) -->
+        <!-- TODO: Section 4: Instruction Section (slides) -->
+                <section id="Step-1" data-scroll-direction="horizontal" data-scroll-section="">
+                    <img src="https://via.placeholder.com/1000x1000">
+                </section>
+        </div>
+
+        <!-- FIXME: For fun-->
         <section id="Instruction" data-scroll-section="">
             <h1>This is the last page</h1>
             <p data-scroll="" data-scroll-speed="2">gkjashdkajshdkajshdkasjhdkasjhdkjashdkjahskjdhaskjdaskdjhaskdhaskjdhasd</p>

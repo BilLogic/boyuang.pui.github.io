@@ -13,8 +13,6 @@ const scroll = new LocomotiveScroll({
     multiplier: 1,
 });
 
-
-
 // burger details info structure
 class Burger {
     constructor(id, title, origin, img, restaurantImg, description) {
