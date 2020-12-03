@@ -67,6 +67,10 @@ section#Fun-Fact .card-horizontal {
   flex: 1 1 auto;
 }
 
+section#Ingredient {
+  background: #007ef3;
+}
+
 /* Test */
 .custom-p {
   opacity: 0;

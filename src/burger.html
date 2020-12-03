@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
     <!-- style -->
-    <!-- <link href="./styles/burger.css" rel="stylesheet"> -->
+    <link href="./styles/burger.css" rel="stylesheet">
     <link href="./styles/base.css" rel="stylesheet">
     <!-- Animation modules -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -117,9 +117,10 @@
             <!-- Container -->
             <div class="container h-100">
                 <!-- First Card -->
-                <div id="trigger-left" 
-                    class="row mt-5 justify-content-start">
-                    <div class="card h-75 col-md-12 col-lg-6">
+                <div class="row mt-5 justify-content-start" 
+                    data-scroll-repeat data-scroll data-scroll-speed="2">
+                    <div class="card h-75 col-md-12 col-lg-6"
+                     >
                         <div class="card-horizontal">
                             <div class="img-square-wrapper">
                                 <img class="mx-auto" src="https://via.placeholder.com/300x180" alt="Card image cap">
@@ -132,7 +133,8 @@
                     </div> 
                 </div><!-- First Card -->
                 <!-- Second Card -->
-                <div class="row justify-content-end">
+                <div class="row justify-content-end"
+                data-scroll-repeat data-scroll data-scroll-speed="2">
                 <div class="card h-100 col-md-12 col-lg-6">
                     <div class="card-horizontal">
                         <div class="img-square-wrapper">
@@ -146,7 +148,8 @@
                 </div> 
                 </div> <!-- Second Card -->
                 <!-- Third Card -->
-                <div class="row justify-content-start">
+                <div class="row justify-content-start"
+                data-scroll-repeat data-scroll data-scroll-speed="2">
                     <div class="card h-75 col-md-12 col-lg-6">
                         <div class="card-horizontal">
                             <div class="img-square-wrapper">
@@ -160,7 +163,8 @@
                     </div>
                 </div> <!-- Third Card -->
                 <!-- Fourth Card -->
-                <div class="row  mb-5 justify-content-end">
+                <div class="row  mb-5 justify-content-end"
+                data-scroll-repeat data-scroll data-scroll-speed="2">
                     <div class="card h-100 col-md-12 col-lg-6">
                         <div class="card-horizontal">
                             <div class="img-square-wrapper">
@@ -180,12 +184,13 @@
         <section id="Ingredient" data-scroll-section>
             <div class="container h-100">
                 <!-- First Row -->
-                <div class="row mt-5 justify-content-center"
-                    data-scroll data-scroll-speed="1.5">
+                <div class="row mt-5 justify-content-center">
                     <!-- Card 1 -->
                     <div class="card col-lg-4 col-md-6 col-sm-12" 
                         style="width: 18rem;"
-                        data-scroll data-scroll-speed="1">
+                        data-scroll-repeat
+                        data-scroll 
+                        data-scroll-speed="1">
                         <img class="card-img-top" src="https://via.placeholder.com/286x180" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
@@ -196,7 +201,9 @@
                     <!-- Card 2-->
                     <div class="card col-lg-4 col-md-6 col-sm-12" 
                         style="width: 18rem;"
-                        data-scroll data-scroll-speed="3">
+                        data-scroll-repeat
+                        data-scroll 
+                        data-scroll-speed="3">
                         <img class="card-img-top" src="https://via.placeholder.com/286x180" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
@@ -207,7 +214,9 @@
                     <!-- Card 3 -->
                     <div class="card col-lg-4 col-md-6 col-sm-12" 
                         style="width: 18rem;"
-                        data-scroll data-scroll-speed="5">
+                        data-scroll-repeat
+                        data-scroll 
+                        data-scroll-speed="5">
                         <img class="card-img-top" src="https://via.placeholder.com/286x180" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
@@ -221,7 +230,9 @@
                     data-scroll data-scroll-speed="1.5">
                     <div class="card col-lg-4 col-md-6 col-sm-12" 
                         style="width: 18rem;"
-                        data-scroll data-scroll-speed="5">
+                        data-scroll-repeat
+                        data-scroll 
+                        data-scroll-speed="5">
                         <img class="card-img-top" src="https://via.placeholder.com/286x180" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
@@ -231,7 +242,9 @@
                     </div>
                     <div class="card col-lg-4 col-md-6 col-sm-12" 
                         style="width: 18rem;"
-                        data-scroll data-scroll-speed="3">
+                        data-scroll-repeat
+                        data-scroll 
+                        data-scroll-speed="3">
                         <img class="card-img-top" src="https://via.placeholder.com/286x180" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
@@ -241,7 +254,9 @@
                     </div>
                     <div class="card col-lg-4 col-md-6 col-sm-12" 
                         style="width: 18rem;"
-                        data-scroll data-scroll-speed="1">
+                        data-scroll-repeat
+                        data-scroll 
+                        data-scroll-speed="1">
                         <img class="card-img-top" src="https://via.placeholder.com/286x180" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
@@ -253,18 +268,9 @@
             </div><!-- Container -->
 
         </section>
-        <div data-scroll-container 
-                data-scroll-direction="horizontal">
+        <div data-scroll-container>
 
         <!-- TODO: Section 4: Instruction Section (slides) -->
-                <section id="Step-1" 
-                data-scroll-direction="horizontal"
-                data-scroll-section>
-                    <img src="https://via.placeholder.com/1000x1000">
-                </section>
-        </div>
-
-        <!-- FIXME: For fun-->
         <section id="Instruction" data-scroll-section>
             <h1>This is the last page</h1>
             <p data-scroll data-scroll-speed="2">gkjashdkajshdkajshdkasjhdkasjhdkjashdkjahskjdhaskjdaskdjhaskdhaskjdhasd</p>

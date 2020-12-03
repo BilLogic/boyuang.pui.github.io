@@ -184,12 +184,12 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"styles/main.css":[function(require,module,exports) {
+},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"styles/burger.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./..\\icons\\arrow-left-square.svg":[["arrow-left-square.ca312b1a.svg","icons/arrow-left-square.svg"],"icons/arrow-left-square.svg"],"./..\\icons\\arrow-right-square.svg":[["arrow-right-square.ee5a12d0.svg","icons/arrow-right-square.svg"],"icons/arrow-right-square.svg"],"./..\\icons\\cd-icon-arrow.svg":[["cd-icon-arrow.d876c404.svg","icons/cd-icon-arrow.svg"],"icons/cd-icon-arrow.svg"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -217,7 +217,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62195" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63973" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -394,4 +394,4 @@ function hmrAcceptRun(bundle, id) {
   }
 }
 },{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
-//# sourceMappingURL=/main.d2070829.js.map
+//# sourceMappingURL=/burger.217c7b95.js.map
