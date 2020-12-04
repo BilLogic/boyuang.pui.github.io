@@ -86,22 +86,13 @@ section#Ingredient {
     opacity: 1;
 }
 
+
+.scroll-class1-pre {
+    background-color: #333;
+    transition: background-color 1s;
+}
+.scroll-class1 {
+    background-color: aquamarine;
+}
+
 // slide 
-
-// test
-.square {
-    width: 150px;
-    height: 150px;
-    background-color: fuchsia;
-}
-
-.square2 {
-    margin-top: 300px;
-    width: 150px;
-    height: 150px;
-    background-color: blue;
-}
-
-.red {
-    background-color: red;
-}
