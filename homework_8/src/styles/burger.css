@@ -83,34 +83,6 @@ section#Fun-Fact .card-horizontal {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
-<<<<<<< HEAD
-}
-
-section#Ingredient {
-  background: #fe5652;
-}
-
-/* Test */
-.custom-p {
-  opacity: 0;
-  -webkit-transition: opacity 4s;
-  transition: opacity 4s;
-  color: aquamarine;
-}
-
-.scroll-class {
-  opacity: 1;
-}
-
-.scroll-class1-pre {
-  background-color: #333;
-  -webkit-transition: background-color 1s;
-  transition: background-color 1s;
-}
-
-.scroll-class1 {
-  background-color: aquamarine;
-=======
 }
 
 section#Ingredient {
@@ -135,15 +107,13 @@ section#Ingredient {
   background-color: fuchsia;
 }
 
-.square2 {
-  margin-top: 300px;
-  width: 150px;
-  height: 150px;
-  background-color: blue;
+.scroll-class1-pre {
+  background-color: #333;
+  -webkit-transition: background-color 1s;
+  transition: background-color 1s;
 }
 
-.red {
-  background-color: red;
->>>>>>> 77d53c51855242c545369a4680c4a5abb597d18c
+.scroll-class1 {
+  background-color: aquamarine;
 }
 /*# sourceMappingURL=burger.css.map */
