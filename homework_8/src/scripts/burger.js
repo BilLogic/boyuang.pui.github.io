@@ -73,6 +73,3 @@ const locoScroll = new LocomotiveScroll({
 //     markers: true
 //   }
 // });
-
-// ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-// ScrollTrigger.refresh();
