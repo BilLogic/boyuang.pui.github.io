@@ -73,18 +73,35 @@ section#Fun-Fact {
 }
 
 section#Ingredient {
-    background: rgb(0,126,243);
+    background: #fe5652;
 }
 /* Test */
 .custom-p {
     opacity: 0;
     transition: opacity 4s;
+    color: aquamarine;
 }
 
 .scroll-class {
     opacity: 1;
 }
 
-
-
 // slide 
+
+// test
+.square {
+    width: 150px;
+    height: 150px;
+    background-color: fuchsia;
+}
+
+.square2 {
+    margin-top: 300px;
+    width: 150px;
+    height: 150px;
+    background-color: blue;
+}
+
+.red {
+    background-color: red;
+}
