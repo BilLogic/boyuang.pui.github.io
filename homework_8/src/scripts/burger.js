@@ -1,20 +1,3 @@
-import LocomotiveScroll from 'locomotive-scroll';
-import "../styles/burger.scss";
-import { BurgerData } from "./data";
-import AOS from 'aos';
-import 'aos/dist/aos.css'; // You can also use <link> for styles
-
-AOS.init();
-
-// scrolling function
-const scroll = new LocomotiveScroll({
-    el: document.querySelector('[data-scroll-container]'),
-    smooth: true,
-    multiplier: 1,
-});
-
-
-
 // burger details info structure
 class Burger {
     constructor(id, title, origin, img, restaurantImg, description) {
@@ -43,11 +26,53 @@ function buildBurgerDescription() {
     });
 }
 
+gsap.registerPlugin(ScrollTrigger);
 
-document.addEventListener('aos:in', ({ detail }) => {
-  console.log('animated in', detail);
+// gsap.to(".line-inner", {
+//   y: "0%",
+//   rotate: "0deg",
+//   duration: 0.7,
+//   delay: 0.5,
+//   stagger: {
+//     from: "end",
+//     amount: 0.1
+//   }
+// });
+
+const locoScroll = new LocomotiveScroll({
+  el: document.querySelector("[data-scroll-container]"),
+  smooth: true,
+  lerp: 0.01,
 });
 
-document.addEventListener('aos:out', ({ detail }) => {
-  console.log('animated out', detail);
-});
+// locoScroll.on("scroll", ScrollTrigger.update);
+
+// ScrollTrigger.scrollerProxy("body", {
+//   scrollTop(value) {
+//     return arguments.length
+//       ? locoScroll.scrollTo(value, 0, 0)
+//       : locoScroll.scroll.instance.scroll.y;
+//   },
+//   getBoundingClientRect() {
+//     return {
+//       top: 0,
+//       left: 0,
+//       width: window.innerWidth,
+//       height: window.innerHeight
+//     };
+//   }
+// });
+
+// gsap.to(".background", {
+//   backgroundColor: "red",
+//   duration: 1,
+//   ease: "Power4.easeIn",
+//   scrollTrigger: {
+//     start: "50% 50%",
+//     scrub: true,
+//     markers: true
+//   }
+// });
+
+// ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+// ScrollTrigger.refresh();

@@ -72,10 +72,14 @@ section#Fun-Fact {
     }
 }
 
+section#Ingredient {
+    background: #fe5652;
+}
 /* Test */
 .custom-p {
     opacity: 0;
     transition: opacity 4s;
+    color: aquamarine;
 }
 
 .scroll-class {
@@ -83,5 +87,12 @@ section#Fun-Fact {
 }
 
 
+.scroll-class1-pre {
+    background-color: #333;
+    transition: background-color 1s;
+}
+.scroll-class1 {
+    background-color: aquamarine;
+}
 
 // slide 

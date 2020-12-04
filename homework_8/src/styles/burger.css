@@ -15,6 +15,10 @@ body {
   /* overflow: hidden; */
 }
 
+p {
+  word-wrap: break-word;
+}
+
 .container-fluid {
   width: 100%;
   height: 100%;
@@ -54,37 +58,56 @@ section h1 {
 }
 
 section p {
-  font-size: 1.5rem;
+  font-size: 1.125rem;
 }
 
 section a {
   font-weight: bold;
 }
 
-section:first-child {
+/* Color Scheme */
+section#Introduction {
   background: #007ef3;
   color: white;
 }
 
-section:last-child {
+section#Fun-Fact {
   background: #1f252b;
   color: white;
 }
 
-/* Section Background Images */
-/* section#Introduction {
-  background: url("") no-repeat center center cover;
-}
-
-section#Description {
-  background: url("") no-repeat center center cover;
+section#Fun-Fact .card-horizontal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
 }
 
 section#Ingredient {
-  background: url("") no-repeat center center cover;
+  background: #fe5652;
 }
 
-section#Instruction {
-  background: url("") no-repeat center center cover;
-} */
+/* Test */
+.custom-p {
+  opacity: 0;
+  -webkit-transition: opacity 4s;
+  transition: opacity 4s;
+  color: aquamarine;
+}
+
+.scroll-class {
+  opacity: 1;
+}
+
+.scroll-class1-pre {
+  background-color: #333;
+  -webkit-transition: background-color 1s;
+  transition: background-color 1s;
+}
+
+.scroll-class1 {
+  background-color: aquamarine;
+}
 /*# sourceMappingURL=burger.css.map */
