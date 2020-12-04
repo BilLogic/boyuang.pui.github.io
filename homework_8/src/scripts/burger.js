@@ -26,7 +26,58 @@ function buildBurgerDescription() {
     });
 }
 
+gsap.registerPlugin(ScrollTrigger);
 
+<<<<<<< HEAD
+// gsap.to(".line-inner", {
+//   y: "0%",
+//   rotate: "0deg",
+//   duration: 0.7,
+//   delay: 0.5,
+//   stagger: {
+//     from: "end",
+//     amount: 0.1
+//   }
+// });
+
+const locoScroll = new LocomotiveScroll({
+  el: document.querySelector("[data-scroll-container]"),
+  smooth: true,
+  lerp: 0.01,
+});
+
+// locoScroll.on("scroll", ScrollTrigger.update);
+
+// ScrollTrigger.scrollerProxy("body", {
+//   scrollTop(value) {
+//     return arguments.length
+//       ? locoScroll.scrollTo(value, 0, 0)
+//       : locoScroll.scroll.instance.scroll.y;
+//   },
+//   getBoundingClientRect() {
+//     return {
+//       top: 0,
+//       left: 0,
+//       width: window.innerWidth,
+//       height: window.innerHeight
+//     };
+//   }
+// });
+
+// gsap.to(".background", {
+//   backgroundColor: "red",
+//   duration: 1,
+//   ease: "Power4.easeIn",
+//   scrollTrigger: {
+//     start: "50% 50%",
+//     scrub: true,
+//     markers: true
+//   }
+// });
+
+// ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+// ScrollTrigger.refresh();
+=======
 gsap.registerPlugin(ScrollTrigger);
 
 const locoScroll = new LocomotiveScroll({
@@ -68,3 +119,4 @@ ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 
 // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
 ScrollTrigger.refresh();
+>>>>>>> 77d53c51855242c545369a4680c4a5abb597d18c
