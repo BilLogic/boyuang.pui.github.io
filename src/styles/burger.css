@@ -101,6 +101,12 @@ section#Ingredient {
   opacity: 1;
 }
 
+.square {
+  width: 150px;
+  height: 150px;
+  background-color: fuchsia;
+}
+
 .scroll-class1-pre {
   background-color: #333;
   -webkit-transition: background-color 1s;
