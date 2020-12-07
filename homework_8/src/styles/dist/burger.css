@@ -10,8 +10,7 @@ body {
   color: #fff;
   line-height: 1.6;
   height: 100vh;
-  /* disable default scrolling  */
-  /* overflow: hidden; */
+  font-size: 1rem;
 }
 
 p {
@@ -74,11 +73,44 @@ section#Ingredient {
 /* Test */
 .custom-p {
   opacity: 0;
-  transition: opacity 4s;
+  transition: opacity 3s, background-color 4s;
   color: aquamarine;
+  background-color: green;
 }
 
 .scroll-class {
+  opacity: 1;
+}
+
+.info-bg-pre {
+  opacity: 0;
+  transition: opacity 8s;
+}
+
+.info-bg-post {
+  opacity: 0.8;
+}
+
+.info-button-pre {
+  opacity: 0;
+  color: wheat;
+  background-color: black;
+  transition: opacity 3s, background-color 3s, color 3s;
+}
+
+.info-button-post {
+  opacity: 1;
+  color: black;
+  background-color: wheat;
+}
+
+.info-title-pre {
+  opacity: 0;
+  color: wheat;
+  transition: opacity 3s;
+}
+
+.info-title-post {
   opacity: 1;
 }
 
@@ -94,5 +126,112 @@ section#Ingredient {
 }
 
 .scroll-class1 {
-  background-color: aquamarine;
+  opacity: 1;
+  color: fuchsia;
+  background-color: gold;
+}
+
+/* Reach top of the screen  */
+/* My google map*/
+#map {
+  height: 60vh;
+  width: 100%;
+}
+
+/* Text Menu */
+#Menu_Text ol {
+  position: relative;
+  top: 10%;
+  -webkit-transform: translateY(-15%);
+  transform: translateY(-15%);
+}
+
+#Menu_Text li {
+  list-style-type: none;
+}
+
+.iframe-container {
+  position: relative;
+  width: 70vw;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+
+.iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/** Carousel */
+.carousel-inner img {
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-caption {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-caption h1 {
+  font-size: 5vw;
+  white-space: nowrap;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 15px #000;
+}
+
+.carousel-caption h3 {
+  font-weight: 200%;
+  font-weight: 500;
+  text-shadow: 1px 1px 1px 10px #000;
+  padding-bottom: 1rem;
+}
+
+/* Clickable scroll buttons (Prev + Next) */
+.cd-vertical-nav {
+  list-style-type: none;
+  /* lateral navigation */
+  position: fixed;
+  z-index: 1;
+  right: 3%;
+  top: 80%;
+  bottom: auto;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  display: none;
+}
+
+.cd-vertical-nav a {
+  display: block;
+  height: 40px;
+  width: 40px;
+  /* image replace */
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  opacity: 0.5;
+  background: url(../icons/cd-icon-arrow.svg) no-repeat center center;
+}
+
+.cd-vertical-nav a.cd-prev {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+  margin-bottom: 2vh;
+}
+
+.cd-vertical-nav a.inactive {
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s 0s, visibility 0s 0.2s;
+  transition: opacity 0.2s 0s, visibility 0s 0.2s;
+}
+
+@media only screen and (min-width: 1050px) {
+  .cd-vertical-nav {
+    display: block;
+  }
 }
