@@ -71,7 +71,9 @@ function buildBurgerDescription() {
 const locoScroll = new LocomotiveScroll({
   el: document.querySelector("[data-scroll-container]"),
   smooth: true,
-  lerp: 0.03,
+    lerp: 0.02,
+    multiplier: 2,
+    repeat: true
 });
 
 // const testButton = document.querySelector("#testButton");
