@@ -27,7 +27,7 @@
 <body class="text-center" >
     <div class="container-fluid" >    
     <div data-scroll-container>
-        <!-- Carousel Slide -->
+        <!-- Section 0: Carousel Slide -->
         <section id="Burger-Menu" class="carousel slide" data-ride="carousel"
                 data-scroll-section>
             <!-- Indicators in the bottom-->
@@ -60,18 +60,20 @@
                         data-scroll-class="info-title-post"
                         >hyper-regional burger from Northern Mississippi</h3>
                         
-                        <button type="button" class="col-sm-6 col-md-2 btn btn-lg info-button-pre
+                        <button type="button" class="btn btn-lg info-button-pre
+                         col-sm-6 col-md-2 
                          my-3 my-sm-1 my-md-0 
-                         mx-5 mx-sm-0 ml-md-3" 
+                         mx-5 mx-sm-0 mr-md-3" 
                         data-scroll 
                         data-scroll-speed="1"
                         data-scroll-repeat="true"
                         data-scroll-direction="horizontal"
                         data-scroll-class="info-button-post"
                         onclick="ScrollTo('#Burger-Map')">Location</button>
-                        <button type="button" class="col-sm-6 col-md-2 btn btn-lg info-button-pre 
+                        <button type="button" class="btn btn-lg info-button-pre
+                         col-sm-6 col-md-2  
                          my-3 my-sm-1 my-md-0 
-                         mx-5 mx-sm-0 ml-md-3"
+                         mx-5 mx-sm-0 mr-md-3"
                         data-scroll 
                         data-scroll-delay="0.1"
                         data-scroll-speed="1"
@@ -79,16 +81,18 @@
                         data-scroll-direction="horizontal"
                         data-scroll-class="info-button-post"
                         onclick="ScrollTo('#Introduction')">Brief Info</button>
-                        <button type="button" class="col-sm-6 col-md-2 btn btn-lg info-button-pre
+                        <button type="button" class="btn btn-lg info-button-pre
+                         col-sm-6 col-md-2  
                          my-3 my-sm-1 my-md-0 
                          mx-5 mx-sm-0 mx-md-3" 
                         data-scroll 
                         data-scroll-repeat="true"
                         data-scroll-class="info-button-post"
                         onclick="ScrollTo('#Fun-Fact')">Fun Facts</button>
-                        <button type="button" class="col-sm-6 col-md-2 btn btn-lg info-button-pre
-                         my-3 my-sm-1 my-md-0
-                        mx-5 mx-sm-0 mr-md-3" 
+                        <button type="button" class="btn btn-lg info-button-pre
+                        col-sm-6 col-md-2  
+                        my-3 my-sm-1 my-md-0
+                        mx-5 mx-sm-0 ml-md-3" 
                         data-scroll 
                         data-scroll-delay="0.1"
                         data-scroll-speed="-1"
@@ -96,9 +100,10 @@
                         data-scroll-direction="horizontal"
                         data-scroll-class="info-button-post"
                         onclick="ScrollTo('#Ingredient')">Ingredient</button>
-                        <button type="button" class="col-sm-6 col-md-2 btn btn-lg info-button-pre
-                         my-3 my-sm-1 my-md-0
-                         mx-5 mx-sm-0 mr-md-3" 
+                        <button type="button" class="btn btn-lg info-button-pre
+                        col-sm-6 col-md-2 
+                        my-3 my-sm-1 my-md-0
+                         mx-5 mx-sm-0 ml-md-3" 
                         data-scroll 
                         data-scroll-speed="-1"
                         data-scroll-repeat="true"
@@ -120,59 +125,92 @@
             <!-- Arrow to the bottom -->
         </section>
             
-        <!-- Menu-Graph -->
-        <section id="Burger-Map" class="container row-12 vertical-center-row"
-            data-scroll-section>
-            <div class="jumbotron">
-                <h1 class="display-4">Burger Map</h1>
-                <p class="lead">This is an interactive map which displays the burgers discussed in the sessions</p>
-                <hr class="my-4">
-                <p>Click on the pin points and checkout the burgers</p>
-                <p class="lead">
-                        <div id="map"></div>
+        <!-- Section 1: Menu-Graph -->
+        <section id="Burger-Map" data-scroll-section>
+                <h1 class="display-4 map-title-pre"
+                data-scroll
+                data-scroll-repeat="true"
+                data-scroll-speed="1"
+                data-scroll-class="map-title-post">
+                Burger Map</h1>
+                <p class="lead map-description-pre"
+                data-scroll
+                data-scroll-repeat="true"
+                data-scroll-speed="1"
+                data-scroll-class="map-description-post">
+                This is an interactive map which displays the burgers discussed in the sessions</p>
+                <hr class="my-4 map-description-pre"
+                 data-scroll
+                data-scroll-repeat="true"
+                data-scroll-speed="1"
+                data-scroll-class="map-description-post">
+                <p class="lead map-description-pre"
+                data-scroll
+                data-scroll-repeat="true"
+                data-scroll-speed="1"
+                data-scroll-class="map-description-post">
+                Click on the pin points and checkout the burgers</p>
+                <p class="lead ">
+                        <div id="map"
+                        class="lead map-map-pre"
+                        data-scroll
+                        data-scroll-repeat="true"
+                        data-scroll-speed="1"
+                        data-scroll-class="map-map-post"></div>
                 </p>
-            </div>
         </section>
-        <!-- Section 1: Intro Section -->
+        <!-- Section 2: Intro Section -->
         <section id="Introduction" data-scroll-section >
             <div class="w-75 h-50 row justify-content-center">
                 <!-- Description Div -->
                 <div class="col mr-5">
                     <!-- time -->
                     <div class="row justify-content-start text-left">
-                        <p >1940s</p>
+                        <p class="intro-text-pre"
+                        data-scroll
+                        data-scroll-speed="1"
+                        data-scroll-class="intro-text-post">1940s</p>
                     </div>
                     <!-- Title -->
                     <div class="row justify-content-start">
-                        <h1 data-scroll-class="scroll-class" 
-                            data-scroll data-scroll-speed="2" 
-                            data-scroll-repeat="true"
-                            class="custom-p text-uppercase font-weight-bold text-left">
+                        <h1 class="text-uppercase font-weight-bold text-left intro-title-pre"
+                        data-scroll
+                        data-scroll-delay="0.5"
+                        data-scroll-speed="-1"
+                        data-scroll-direction="horizontal"
+                        data-scroll-class="intro-title-post">
                             Slug Burger
                         </h1>
                     </div>
                     <!-- Origin -->
                     <div class="row justify-content-start">
-                        <p data-scroll-class="scroll-class" 
-                            data-scroll data-scroll-speed="2" 
-                            data-scroll-repeat="true"
-                            class="custom-p text-capitalize text-left">
+                        <p class="text-capitalize text-left intro-text-pre"
+                        data-scroll
+                        data-scroll-speed="1"
+                        data-scroll-delay="0.1"
+                        data-scroll-class="intro-text-post">
                             Mississippi
                         </p>
                     </div>
                     <!-- Story -->
                     <div class="row justify-content-start">
-                        <p data-scroll-class="scroll-class" 
-                            data-scroll data-scroll-speed="1" 
-                            data-scroll-repeat="true"
-                            class="custom-p my-auto text-capitalize text-left">
+                        <p class="my-auto text-capitalize text-left 
+                        intro-text-pre"
+                        data-scroll
+                        data-scroll-delay="0.3"
+                        data-scroll-speed="5"
+                        data-scroll-direction="horizontal"
+                        data-scroll-class="intro-text-post">
                             The historic slug burger recipe was borne out of the Great Depression 
                             The slugburger patty combines beef and bread crumbs—a method that was used to extend the meat supply. As the bread crumbs toast on the griddle, they absorb the rendered beef fat, creating the ultimate crispy burger.
                         </p>
                     </div>
                 </div>
                 <!-- Carousel Slide -->
-                <div id="carouselExampleIndicators" class="col ml-5 carousel slide" data-ride="carousel">
+                <div id="carouselExampleIndicators" class="col ml-5 carousel slide intro-carousel-pre"
+                data-ride="carousel"
+                data-scroll
+                data-scroll-class="intro-carousel-post">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -201,98 +239,122 @@
             </div>
         </section>
         
-        <!-- Section 2: Fun Fact Section (Cards + AOS-animation) -->
+        <!-- Section 3: Fun Fact Section -->
         <section id="Fun-Fact" data-scroll-section>
             <!-- Container -->
             <div class="container h-100">
                 <!-- First Card -->
-                <div class="row mt-5 justify-content-start" 
-                        data-scroll-repeat="true"
+                <div class="row mt-5 justify-content-start"
                         data-scroll 
+                        data-scroll-delay="0.1" 
                         data-scroll-speed="-5"
-                        data-scroll-direction="horizontal">
-                    <div class="card h-75 col-md-12 col-lg-6 slideUp"
-                        data-scroll-repeat="true"
+                        data-scroll-direction="horizontal"
+                        >
+                    <div class="card fun-card-pre
+                    h-75 col-md-12 col-lg-6 slideUp"
+                        data-scroll-target="#Fun-Fact"
                         data-scroll 
-                        data-scroll-speed="-1">
+                        data-scroll-speed="-1"
+                        data-scroll-class="fun-card-post">
                         <div class="card-horizontal">
                             <div class="img-square-wrapper">
-                                <img class="mx-auto" src="https://via.placeholder.com/300x180" alt="Card image cap">
+                                <img src="https://via.placeholder.com/300x180" alt="Card image cap">
                             </div>
                             <div class="card-body">
-                                <h4 class="card-title text-warning">Card title</h4>
-                                <p class="card-text text-primary">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <h4 class="card-title fun-title-pre"
+                                data-scroll
+                                data-scroll-class="fun-title-post">
+                                Card title</h4>
+                                <p class="card-text fun-text-pre"
+                                data-scroll
+                                data-scroll-class="fun-text-post">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             </div>
                         </div>
                     </div> 
                 </div><!-- First Card -->
                 <!-- Second Card -->
                 <div class="row justify-content-end"
-                    data-scroll-repeat="true" 
-                    data-scroll 
+                    data-scroll-target="#Fun-Fact"
+                    data-scroll
+                    data-scroll-delay="0.1" 
                     data-scroll-speed="5"
                     data-scroll-direction="horizontal">
-                <div class="card h-100 col-md-12 col-lg-6"
+                <div class="card fun-card-pre 
+                h-100 col-md-12 col-lg-6"
                     data-scroll-repeat="true"
-                    data-scroll 
-                    data-scroll-speed="1">
+                    data-scroll
+                    data-scroll-speed="1"
+                    data-scroll-class="fun-card-post">
                     <div class="card-horizontal">
                         <div class="img-square-wrapper">
                             <img src="https://via.placeholder.com/300x180" alt="Card image cap">
                         </div>
-                        <div class="card-body">
-                            <h4 class="card-title text-warning">Card title</h4>
-                            <p class="card-text text-primary">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
+                            <div class="card-body">
+                                <h4 class="card-title fun-title-pre"
+                                data-scroll
+                                data-scroll-class="fun-title-post">
+                                Card title</h4>
+                                <p class="card-text fun-text-pre"
+                                data-scroll
+                                data-scroll-class="fun-text-post">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
                     </div>
                 </div> 
                 </div> <!-- Second Card -->
                 <!-- Third Card -->
-                <div class="row justify-content-start"
-                    data-scroll-repeat="true"
-                    data-scroll 
+                <div id="card-block3" 
+                    class="row justify-content-start"
+                    data-scroll-target="#Fun-Fact"
+                    data-scroll
+                    data-scroll-delay="0.5" 
                     data-scroll-speed="10">
-                    <div class="card h-75 col-md-12 col-lg-6"
+                    <div class="card fun-card-pre 
+                    h-75 col-md-12 col-lg-6"
                         data-scroll-repeat="true"
                         data-scroll 
                         data-scroll-speed="-3"
-                        data-scroll-direction="horizontal">
+                        data-scroll-direction="horizontal"
+                        data-scroll-class="fun-card-post">
                         <div class="card-horizontal">
-                            <div class="img-square-wrapper"
-                                data-scroll-repeat="true"
-                                data-scroll 
-                                data-scroll-speed="-3">
+                            <div class="img-square-wrapper">
                                 <img src="https://via.placeholder.com/300x180" alt="Card image cap">
                             </div>
                             <div class="card-body">
-                                <h4 class="card-title text-warning">Card title</h4>
-                                <p class="card-text text-primary">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <h4 class="card-title fun-title-pre"
+                                data-scroll
+                                data-scroll-class="fun-title-post">
+                                Card title</h4>
+                                <p class="card-text fun-text-pre"
+                                data-scroll
+                                data-scroll-class="fun-text-post">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             </div>
                         </div>
                     </div>
                 </div> <!-- Third Card -->
                 <!-- Fourth Card -->
-                <div class="row  mb-5 justify-content-end"
-                data-scroll-repeat="true"
-                data-scroll 
-                data-scroll-speed="0.2">
-                    <div class="card h-100 col-md-12 col-lg-6
-                        scroll-class1-pre"
-                        data-scroll-repeat="true"
+                <div class="row mb-5 justify-content-end"
+                    data-scroll-target="#card-block3"
+                    data-scroll
+                    data-scroll-delay="0.8" 
+                    data-scroll-speed="-3">
+                    <div class="card fun-card-pre 
+                        h-100 col-md-12 col-lg-6"
                         data-scroll 
-                        data-scroll-speed="10"
+                        data-scroll-speed="-10"
                         data-scroll-direction="horizontal"
-                        data-scroll-class="scroll-class1">
+                        data-scroll-class="fun-card-post">
                         <div class="card-horizontal">
-                            <div class="img-square-wrapper"
-                                data-scroll-repeat="true"
-                                data-scroll 
-                                data-scroll-speed="-5">
+                            <div class="img-square-wrapper">
                                 <img src="https://via.placeholder.com/300x180" alt="Card image cap">
                             </div>
                             <div class="card-body">
-                                <h4 class="card-title text-warning">Card title</h4>
-                                <p class="card-text text-primary">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <h4 class="card-title fun-title-pre"
+                                data-scroll
+                                data-scroll-class="fun-title-post">
+                                Card title</h4>
+                                <p class="card-text fun-text-pre"
+                                data-scroll
+                                data-scroll-class="fun-text-post">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             </div>
                         </div>
                     </div>
@@ -300,107 +362,130 @@
             </div><!-- Container -->
         </section>
 
-        <!-- Section 3: Ingredient Section (cards) -->
+        <!-- Section 4: Ingredient Section (cards) -->
         <section id="Ingredient" data-scroll-section>
             <div class="container h-100">
                 <!-- First Row -->
-                <div class="row mt-5 justify-content-center">
+                <div class="row mt-5 justify-content-center"
+                    data-scroll
+                    data-scroll-offset="60"
+                    data-scroll-delay="0.1" 
+                    data-scroll-speed="-1">
                     <!-- Card 1 -->
-                    <div class="card col-lg-4 col-md-6 col-sm-12" 
-                        style="width: 18rem;"
+                    <div class="card d-flex col-lg-3 col-md-4 col-sm-12 fun-card-pre" 
+                        style="width: w-20;"
                         data-scroll-repeat="true"
                         data-scroll 
                         data-scroll-speed="1"
-                        data-scroll-direction="horizontal">
+                        data-scroll-direction="horizontal"
+                        data-scroll-class="fun-card-post">
                         <img class="card-img-top" src="https://via.placeholder.com/286x180" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
                             <p class="card-text text-secondary">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
                     </div> <!-- Card 1-->
                     <!-- Card 2-->
-                    <div class="card col-lg-4 col-md-6 col-sm-12" 
-                        style="width: 18rem;"
+                    <div class="card d-flex col-lg-3 col-md-4 col-sm-12 ingredient-card-pre" 
+                        style="width: w-20;"
                         data-scroll-repeat="true"
                         data-scroll 
                         data-scroll-speed="3"
-                        data-scroll-direction="horizontal">
+                        data-scroll-direction="horizontal"
+                        data-scroll-class="ingredient-card-post">
                         <img class="card-img-top" src="https://via.placeholder.com/286x180" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
                             <p class="card-text text-secondary">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
                     </div> <!-- Card 2-->
                     <!-- Card 3 -->
-                    <div class="card col-lg-4 col-md-6 col-sm-12" 
-                        style="width: 18rem;"
+                    <div class="card d-flex col-lg-3 col-md-4 col-sm-12 ingredient-card-pre" 
+                        style="width: w-20;"
                         data-scroll-repeat="true"
                         data-scroll 
                         data-scroll-speed="5"
-                        data-scroll-direction="horizontal">
+                        data-scroll-direction="horizontal"
+                        data-scroll-class="ingredient-card-post">
                         <img class="card-img-top" src="https://via.placeholder.com/286x180" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
                             <p class="card-text text-secondary">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
                     </div> <!-- Card 3-->
-                </div><!-- First Row -->
+                </div> <!--First Row-->
                 <!-- Second Row -->
                 <div class="row mt-5 justify-content-center"
-                    data-scroll data-scroll-speed="1.5">
-                    <div class="card col-lg-4 col-md-6 col-sm-12" 
+                    data-scroll
+                    data-scroll-delay="0.1" 
+                    data-scroll-speed="-1">
+                    <div class="card col-lg-3 col-md-4 col-sm-12 ingredient-card-pre" 
                         style="width: 18rem;"
                         data-scroll-repeat="true"
                         data-scroll 
                         data-scroll-speed="-5"
-                        data-scroll-direction="horizontal">
+                        data-scroll-direction="horizontal"
+                        data-scroll-class="ingredient-card-post">
                         <img class="card-img-top" src="https://via.placeholder.com/286x180" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
                             <p class="card-text text-secondary">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
                     </div>
-                    <div class="card col-lg-4 col-md-6 col-sm-12" 
+                    <div class="card col-lg-3 col-md-4 col-sm-12 ingredient-card-pre" 
                         style="width: 18rem;"
                         data-scroll-repeat="true"
                         data-scroll 
                         data-scroll-speed="-3"
-                        data-scroll-direction="horizontal">
+                        data-scroll-direction="horizontal"
+                        data-scroll-class="ingredient-card-post">
                         <img class="card-img-top" src="https://via.placeholder.com/286x180" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
                             <p class="card-text text-secondary">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
                     </div>
-                    <div class="card col-lg-4 col-md-6 col-sm-12" 
+                    <div class="card col-lg-3 col-md-4 col-sm-12 ingredient-card-pre" 
                         style="width: 18rem;"
                         data-scroll-repeat="true"
                         data-scroll 
                         data-scroll-speed="-1"
-                        data-scroll-direction="horizontal">
+                        data-scroll-direction="horizontal"
+                        data-scroll-class="ingredient-card-post">
                         <img class="card-img-top" src="https://via.placeholder.com/286x180" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
                             <p class="card-text text-secondary ">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
                     </div>
-                </div><!-- Second Row -->
+                </div> <!--Second Row-->
             </div><!-- Container -->
 
         </section>
         <div data-scroll-container>
 
-        <!-- TODO: Section 4: Instruction Section (slides) -->
-        <section id="Instruction"  data-scroll-section>
-            <h1 class="background">Follow the session and make it yourself!</h1>
-            <div class="iframe-container">
-                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/WSM1tp4Qtpc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <!-- Section 5: Instruction Section (slides) -->
+        <section id="Instruction" data-scroll-section>
+            <h1 class="background vid-title-pre"
+                data-scroll-offset="80%"
+                data-scroll
+                data-scroll-speed="10"
+                data-scroll-target="#Instruction"
+                data-scroll-class="vid-title-post">Follow the session and make it yourself!</h1>
+            <div class="iframe-container"
+                data-scroll 
+                data-scroll-speed="2">
+                <iframe class="vid-frame-pre"
+                data-scroll 
+                data-scroll-speed="2"
+                data-scroll-direction="horizontal"
+                data-scroll-class="vid-frame-post"
+                width="560" height="315" src="https://www.youtube-nocookie.com/embed/WSM1tp4Qtpc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div>
+                <button class="mb-0 mt-5 btn btn-lg btn-warning 
+                d-flex justify-content-end"
+                onclick="ScrollTo('#Burger-Menu')"><img src="icons/arrow-up-circle-fill.svg"></button>
             </div>
         </section>
     </div>

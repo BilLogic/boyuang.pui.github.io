@@ -20,10 +20,6 @@ p {
 .container-fluid {
   width: 100%;
   height: 100%;
-  /* CSS smooth scroll */
-  /* overflow-y: scroll;
-  scroll-behavior: smooth;
-  scroll-snap-type: y mandatory; */
 }
 
 /* MAIN SECTION STYLE */
@@ -52,14 +48,16 @@ section a {
 }
 
 /* Color Scheme */
+section#Burger-Map {
+  background: rgba(251, 175, 65, 0.6);
+}
+
 section#Introduction {
-  background: #007ef3;
-  color: white;
+  background: rgba(144, 201, 100, 0.6);
 }
 
 section#Fun-Fact {
-  background: #1f252b;
-  color: white;
+  background: rgba(140, 92, 62, 0.6);
 }
 section#Fun-Fact .card-horizontal {
   display: flex;
@@ -67,19 +65,46 @@ section#Fun-Fact .card-horizontal {
 }
 
 section#Ingredient {
-  background: #fe5652;
+  background: rgba(222, 60, 45, 0.6);
 }
 
-/* Test */
-.custom-p {
+section#Instruction {
+  background: rgba(236, 166, 64, 0.6);
+}
+
+.fun-card-pre {
   opacity: 0;
-  transition: opacity 3s, background-color 4s;
-  color: aquamarine;
-  background-color: green;
+  color: wheat;
+  background-color: black;
+  transition: opacity 1s, background-color 1s, color 1s;
 }
 
-.scroll-class {
+.fun-card-post {
   opacity: 1;
+  color: black;
+  background-color: wheat;
+}
+
+.fun-title-pre {
+  opacity: 0;
+  color: #5c8001;
+  transition: opacity 2s, color 2s;
+}
+
+.fun-title-post {
+  opacity: 1;
+  color: #7cb518;
+}
+
+.fun-text-pre {
+  opacity: 0;
+  color: #f3de2c;
+  transition: opacity 4s, color 4s;
+}
+
+.fun-text-post {
+  opacity: 1;
+  color: #fb6107;
 }
 
 .info-bg-pre {
@@ -114,40 +139,76 @@ section#Ingredient {
   opacity: 1;
 }
 
-.square {
-  width: 150px;
-  height: 150px;
-  background-color: fuchsia;
-}
-
-.scroll-class1-pre {
-  background-color: #333;
-  transition: background-color 1s;
-}
-
-.scroll-class1 {
-  opacity: 1;
-  color: fuchsia;
-  background-color: gold;
-}
-
-/* Reach top of the screen  */
 /* My google map*/
 #map {
   height: 60vh;
-  width: 100%;
+  width: 80vw;
 }
 
-/* Text Menu */
-#Menu_Text ol {
-  position: relative;
-  top: 10%;
-  -webkit-transform: translateY(-15%);
-  transform: translateY(-15%);
+.map-title-pre {
+  opacity: 0;
+  color: wheat;
+  background-color: black;
+  transition: opacity 3s, background-color 3s, color 3s;
 }
 
-#Menu_Text li {
-  list-style-type: none;
+.map-title-post {
+  opacity: 1;
+  color: black;
+  background-color: wheat;
+}
+
+.map-description-pre {
+  opacity: 0;
+  color: wheat;
+  background-color: black;
+  transition: opacity 3s, background-color 3s, color 3s;
+}
+
+.map-description-post {
+  opacity: 1;
+  color: black;
+  background-color: wheat;
+}
+
+.intro-carousel-pre {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.intro-carousel-post {
+  opacity: 1;
+}
+
+.intro-title-pre {
+  opacity: 0;
+  transition: opacity 3s;
+}
+
+.intro-title-post {
+  opacity: 1;
+}
+
+.intro-text-pre {
+  opacity: 0;
+  transition: opacity 5s;
+}
+
+.intro-text-post {
+  opacity: 1;
+}
+
+.ingredient-card-pre {
+  opacity: 0;
+  color: fuchsia;
+  background-color: gold;
+  transition: opacity 1s, background-color 1s, color 1s;
+}
+
+.ingredient-card-post {
+  opacity: 1;
+  background-color: wheat;
+  color: #fe5652;
 }
 
 .iframe-container {
@@ -163,6 +224,29 @@ section#Ingredient {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+.vid-title-pre {
+  font-size: 3.9vw;
+  opacity: 0;
+  color: wheat;
+  background-color: black;
+  transition: opacity 1s, background-color 1s, color 1s;
+}
+
+.vid-title-post {
+  opacity: 1;
+  color: #fe5652;
+  background-color: wheat;
+}
+
+.vid-frame-pre {
+  opacity: 0;
+  transition: opacity 6s, color 3s;
+}
+
+.vid-frame-post {
+  opacity: 1;
 }
 
 /** Carousel */
