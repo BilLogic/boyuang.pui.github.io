@@ -46,6 +46,31 @@ section p {
 section a {
   font-weight: bold;
 }
+section#Bottom {
+  width: 100%;
+  height: 5vh;
+}
+section .Transition-Buttons {
+  position: absolute;
+  right: 2%;
+  bottom: 15%;
+  display: flex;
+  flex-direction: column;
+}
+section .Transition-Buttons button {
+  opacity: 0.5;
+}
+section .Transition-Buttons button:hover {
+  opacity: 1;
+}
+section .carousel-inner {
+  width: 100%;
+  height: 100%;
+}
+section .carousel-inner .carousel-item {
+  width: 100%;
+  height: 100%;
+}
 
 /* Color Scheme */
 section#Burger-Map {
@@ -59,11 +84,6 @@ section#Introduction {
 section#Fun-Fact {
   background: rgba(140, 92, 62, 0.6);
 }
-section#Fun-Fact .card-horizontal {
-  display: flex;
-  flex: 1 1 auto;
-}
-
 section#Ingredient {
   background: rgba(222, 60, 45, 0.6);
 }
@@ -251,8 +271,8 @@ section#Instruction {
 
 /** Carousel */
 .carousel-inner img {
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  text-align: center;
 }
 
 .carousel-caption {

@@ -50,7 +50,35 @@ section {
         font-weight: bold;
     }
 
+    &#Bottom {
+        width: 100%;
+        height: 5vh;
+    }
 
+    .Transition-Buttons {
+        position: absolute;
+        right: 2%;
+        bottom: 15%;
+        display: flex;
+        flex-direction: column;   
+        button {
+            opacity: 0.5;     
+        }
+
+        button:hover {
+            opacity: 1;
+        }
+    }
+
+    .carousel-inner {
+        width: 100%;
+        height: 100%;
+
+        .carousel-item {
+            width: 100%;
+            height: 100%;
+        }
+    }
 
 }
 
@@ -67,8 +95,8 @@ section#Fun-Fact {
     background: rgba(140, 92, 62, 0.6);
 
     .card-horizontal {
-        display: flex;
-        flex: 1 1 auto;
+        // display: flex;
+        // flex: 1 1 auto;
     }
 }
 
@@ -157,6 +185,7 @@ section#Instruction {
 }
 
 // slide 
+// < !-- Section 0: Carousel Slide -->
 
 // < !-- Section 1: Menu-Graph -->
 /* My google map*/
@@ -285,9 +314,13 @@ section#Instruction {
 
 
 /** Carousel */
+// .carousel {
+//     text-align: center;
+// }
 .carousel-inner img {
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    text-align: center;
+    // height: 100%;
 }
 
 .carousel-caption {
