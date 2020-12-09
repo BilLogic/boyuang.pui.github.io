@@ -70,9 +70,9 @@ const rawData = [
         year: "1940s",
         description: "The historic slug burger recipe was borne out of the Great Depression. The slug burger patty combines beef and bread crumbs—a method that was used to extend the meat supply. As the bread crumbs toast on the griddle, they absorb the rendered beef fat, creating the ultimate crispy burger.",
         images: [
-            "../imgs/slug_img_1.jpg",
-            "../imgs/slug_img_2.jpg",
-            "../imgs/slug_img_3.jpg"
+            "https://github.com/BilLogic/boyuang.pui.github.io/blob/master/homework_8/src/imgs/slug_img_1.jpg",
+            "https://github.com/BilLogic/boyuang.pui.github.io/blob/master/homework_8/src/imgs/slug_img_2.jpg",
+            "https://github.com/BilLogic/boyuang.pui.github.io/blob/master/homework_8/src/imgs/slug_img_3.jpg"
         ],
         facts: [
             {
