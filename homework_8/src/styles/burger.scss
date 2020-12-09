@@ -100,6 +100,10 @@ section#Introduction {
 section#Fun-Fact {
     background: rgba(140, 92, 62, 0.6);
 
+    p {
+       font-size: clamp(12px, 3vw, 18px);
+
+    }
     img {
         max-width: 20vw;
         max-height: 20vh;
