@@ -39,15 +39,15 @@ section {
     scroll-snap-align: center;
 
     h1 {
-        font-size: 4rem;
+        font-size: clamp(40px, 8vw, 52px);
     }
 
     p {
-        font-size: 1.125rem;
+       font-size: clamp(16px, 4vw, 22px);
     }
 
     a {
-        font-weight: bold;
+        font-size: clamp(16px, 4vw, 22px);
     }
 
     &#Bottom {
@@ -89,19 +89,32 @@ section#Burger-Map {
 
 section#Introduction {
     background: rgba(144, 201, 100, 0.6);
+
+    img {
+        max-width: 20vw;
+        max-height: 20vh;
+        margin: auto;
+    }
 }
 
 section#Fun-Fact {
     background: rgba(140, 92, 62, 0.6);
 
-    .card-horizontal {
-        // display: flex;
-        // flex: 1 1 auto;
+    img {
+        max-width: 20vw;
+        max-height: 20vh;
+        margin: auto;
     }
 }
 
 section#Ingredient {
     background: rgba(222, 60, 45, 0.6);
+
+    img {
+        max-width: 20vw;
+        max-height: 20vh;
+        margin: auto;
+    }
 }
 
 section#Instruction {
