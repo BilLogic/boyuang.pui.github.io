@@ -80,10 +80,16 @@ section#Burger-Map {
 section#Introduction {
   background: rgba(144, 201, 100, 0.6);
 }
-section#Introduction img {
+section#Introduction .carousel-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section#Introduction .carousel-item img {
+  display: block;
   max-width: 20vw;
   max-height: 20vh;
-  margin: auto;
+  margin: auto auto;
 }
 
 section#Fun-Fact {

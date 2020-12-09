@@ -89,11 +89,18 @@ section#Burger-Map {
 
 section#Introduction {
     background: rgba(144, 201, 100, 0.6);
-
-    img {
-        max-width: 20vw;
-        max-height: 20vh;
-        margin: auto;
+    
+    .carousel-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+            display: block;
+            // position: absolute;
+            max-width: 20vw;
+            max-height: 20vh;
+            margin: auto auto;
+        }
     }
 }
 
