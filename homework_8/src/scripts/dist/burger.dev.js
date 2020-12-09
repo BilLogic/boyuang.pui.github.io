@@ -85,7 +85,7 @@ var rawData = [{
   },
   year: "1940s",
   description: "The historic slug burger recipe was borne out of the Great Depression. The slug burger patty combines beef and bread crumbs—a method that was used to extend the meat supply. As the bread crumbs toast on the griddle, they absorb the rendered beef fat, creating the ultimate crispy burger.",
-  images: ["http://www.mississippifolklife.org/images/resizer_cache/e9b86998c4fa1bc003e1a4a9ac0733cbdeb2199e.jpg", "http://www.mississippifolklife.org/images/resizer_cache/ce17fdf817c7d38041332e5f52168ad778cafe6a.jpg", "http://www.mississippifolklife.org/images/resizer_cache/f5df9079d61c677388bef30d686ff80af7f24785.jpg"],
+  images: ["../imgs/slug_img_1.jpg", "../imgs/slug_img_2.jpg", "../imgs/slug_img_3.jpg"],
   facts: [{
     title: "Great Depression",
     note: "Slug burger was invented because restaurant have to come up with inventive ways to cook so that they can extend their food supply during the Great Depression.",
