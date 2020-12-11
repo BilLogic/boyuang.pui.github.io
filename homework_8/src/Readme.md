@@ -24,22 +24,22 @@ Color Scheme I used
 ## Part 2: Interaction Bullet List
 
 - Actives scrolling animations
-  - Interaction type: Animations
-  - Instruction:
-    - The animation will be triggered as you scroll down the pages.
-  - Note:
-    - This works better with the trackpad. The library isn't stable enough. If you find a scroll bar that appears on the side without scrolling, please turn the page back to standard computer screen size and refresh the page.
+    - Interaction type: Animations
+    - Instruction:
+        - The animation will be triggered as you scroll down the pages.
+    - Note:
+        - This works better with the trackpad. The library isn't stable enough. If you find a scroll bar that appears on the side without scrolling, please turn the page back to standard computer screen size and refresh the page.
 
 ![Assignment%208%20-%20Write%20Up%201563ab51a9604044995381beb4763cde/Untitled%201.png](Assignment%208%20-%20Write%20Up%201563ab51a9604044995381beb4763cde/Untitled%201.png)
 
-Example of program fails to hijack default scroll system. The grey scroll bar would appear on the side.
+Example of program fails to hijack default scroll system. The grey scroll bar would appear on the side. 
 
 - Passive scrolling animations
-  - Interaction type: Animations
-  - Instruction:
-    - Click on the Buttons ("Location," "Brief Info," "Fun Facts," etc.) to trigger the event and visit the target pages.
-    - Click on the yellow buttons at the right button to visit the successive page.
-    - Once you scroll down to the very bottom, a button will appear at the bottom. Click on it to trigger the event and go back to the home page.
+    - Interaction type: Animations
+    - Instruction:
+        - Click on the Buttons ("Location," "Brief Info," "Fun Facts," etc.) to trigger the event and visit the target pages.
+        - Click on the yellow buttons at the right button to visit the successive page.
+        - Once you scroll down to the very bottom, a button will appear at the bottom. Click on it to trigger the event and go  back to the home page.
 
 ![Assignment%208%20-%20Write%20Up%201563ab51a9604044995381beb4763cde/Untitled%202.png](Assignment%208%20-%20Write%20Up%201563ab51a9604044995381beb4763cde/Untitled%202.png)
 
@@ -50,9 +50,9 @@ Click on the buttons in the center or on the side
 Click on the button at the bottom or on the side.
 
 - Content Generation
-  - Interaction type: Animation
-  - Instruction:
-    - Click on the pin-point on the map and then click on the button appears. This will force the page to load proper information in pages below and automatClick on the Buttons ("Location," "Brief Info," "Fun Facts," etc.) to trigger the event and visit the target pages.ically take you to the introduction page.
+    - Interaction type: Animation
+    - Instruction:
+        - Click on the pin-point on the map and then click on the button appears. This will force the page to load proper information in pages below and automatClick on the Buttons ("Location," "Brief Info," "Fun Facts," etc.) to trigger the event and visit the target pages.ically take you to the introduction page.
 
 ![Assignment%208%20-%20Write%20Up%201563ab51a9604044995381beb4763cde/Untitled%204.png](Assignment%208%20-%20Write%20Up%201563ab51a9604044995381beb4763cde/Untitled%204.png)
 
@@ -61,26 +61,26 @@ Click on the yellow button to generate content
 ## Part 3: External Tool
 
 1. Google Map API
-   - Why I chose to use it:
-   - During the user test, my tester reported that it would be beneficial to provide information about the burgers, such as their origin and location of the best-known restaurants. Therefore, I decided to use the Google map API to visualize the geographic data.
-   - How I used it:
-   - I include the metadata with the API key in the <head> section and created a function called initMap() in JavaScript, which opens up a Google Map on the page and makes pinpoint on all target positions I pass in. The pinpoint contains HTML code and functions as a button as well as an event trigger.
-   - What it adds to my website:
-   - With this tool, users could find the origin and remarkable restaurants I mentioned on a map.
+    - Why I chose to use it:
+    - During the user test, my tester reported that it would be beneficial to provide information about the burgers, such as their origin and location of the best-known restaurants. Therefore, I decided to use the Google map API to visualize the geographic data.
+    - How I used it:
+    - I include the metadata with the API key in the <head> section and created a function called initMap() in JavaScript, which opens up a Google Map on the page and makes pinpoint on all target positions I pass in. The pinpoint contains HTML code and functions as a button as well as an event trigger.
+    - What it adds to my website:
+    - With this tool, users could find the origin and remarkable restaurants I mentioned on a map.
 2. Bootstrap 4
-   - Why I chose to use it:
-   - To make my website responsive to different screen sizes and maintain a consistent style across all pages, I used bootstrap to build a grid system.
-   - How I used it:
-   - After getting familiar with the class tags and built-in styles, I created the layout for a normal-sized computer screen based on my prototype. Then I planned out the information I want to emit for smaller screens and how the design should change. Finally, I included breaking points at each screen size, namely, extra-small, small, and medium.
-   - What it adds to my website:
-   - It helps me to quickly create high-fi prototype components such as carousels, cards, and buttons as I develop my website. The built-in design pattern and grid system keep everything aligned, justified, simple, and clean.
+    - Why I chose to use it:
+    - To make my website responsive to different screen sizes and maintain a consistent style across all pages, I used bootstrap to build a grid system.
+    - How I used it:
+    - After getting familiar with the class tags and built-in styles, I created the layout for a normal-sized computer screen based on my prototype. Then I planned out the information I want to emit for smaller screens and how the design should change. Finally, I included breaking points at each screen size, namely, extra-small, small, and medium.
+    - What it adds to my website:
+    - It helps me to quickly create high-fi prototype components such as carousels, cards, and buttons as I develop my website. The built-in design pattern and grid system keep everything aligned, justified, simple, and clean.
 3. Locomotive-Scroll (An animation library)
-   - Why I chose to use it:
-   - I want my animations to be triggered by the scroller and create smoother feedback on scrolling for the users.
-   - How I used it:
-   - I customized several animation patterns with the parameters from the library. Then I include them as class names in HTML, which controls factors such as speed and moving directions of the animation.
-   - What it adds to my website:Click on the pinpoint on the map and then click on the button that appears. This will force the page to load correct information in the pages below and automatically take you to the introduction page.
-   - The library helps create animations moving smoothly as the user scrolling down the website. It also helps show hierarchy and connections among components based on how they move and the time it takes for them to appear.
+    - Why I chose to use it:
+    - I want my animations to be triggered by the scroller and create smoother feedback on scrolling for the users.
+    - How I used it:
+    - I customized several animation patterns with the parameters from the library. Then I include them as class names in HTML, which controls factors such as speed and moving directions of the animation.
+    - What it adds to my website:Click on the pinpoint on the map and then click on the button that appears. This will force the page to load correct information in the pages below and automatically take you to the introduction page.
+    - The library helps create animations moving smoothly as the user scrolling down the website. It also helps show hierarchy and connections among components based on how they move and the time it takes for them to appear.
 
 ## Part 4: Iteration Process (2-4 Sentences)
 
