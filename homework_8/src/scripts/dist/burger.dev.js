@@ -12,7 +12,7 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 var locoScroll = new LocomotiveScroll({
   el: document.querySelector("[data-scroll-container]"),
   smooth: true,
-  lerp: 0.02,
+  lerp: 0.01,
   multiplier: 2 // repeat: true
 
 });
@@ -27,8 +27,9 @@ function ScrollTo(destID) {
   var dest = document.querySelector(destID);
   locoScroll.scrollTo(dest);
 }
-/*************** Google Map Api Parser ***********/
 
+;
+/*************** Google Map Api Parser ***********/
 
 function initMap() {
   // Map options
@@ -67,8 +68,9 @@ function initMap() {
       });
     }
   }
-} // Array of markers
+}
 
+; // Array of markers
 
 var Markers = [];
 var rawData = [{
@@ -128,7 +130,7 @@ var rawData = [{
     note: "Dopping you burger with mustard!",
     src: "https://i.redd.it/sqh6n0ez8lw31.jpg"
   }],
-  videoURL: "https://www.youtube-nocookie.com/embed/WSM1tp4Qtpc"
+  videoURL: "https://www.youtube.com/embed/WSM1tp4Qtpc"
 }]; // burger details info structure
 
 function Burger(id, oneLiner, thumbnail, origin, location, year, description, images, facts, ingredients, videoURL) {
@@ -145,6 +147,7 @@ function Burger(id, oneLiner, thumbnail, origin, location, year, description, im
   this.videoURL = videoURL;
 }
 
+;
 var BURGERS;
 
 function loadContent() {
@@ -176,6 +179,8 @@ function buildIntro() {
 
   buildContent(rawData[0].id);
 }
+
+;
 
 function buildContent(key) {
   // Step 1: Get the target element
@@ -268,7 +273,9 @@ function buildContent(key) {
 
   var videoURL = document.querySelector("#burger-videoURL");
   videoURL.setAttribute("src", entry.videoURL); // console.log(videoURL);
-} // Page Content Template Factory
+}
+
+; // Page Content Template Factory
 // Parsing data to Map Menu
 // Parsing data to Text Menu
 // Parsing data to slides

@@ -4,7 +4,7 @@
 const locoScroll = new LocomotiveScroll({
   el: document.querySelector("[data-scroll-container]"),
   smooth: true,
-    lerp: 0.02,
+    lerp: 0.01,
     multiplier: 2
     // repeat: true
 });
@@ -16,7 +16,7 @@ const locoScroll = new LocomotiveScroll({
 function ScrollTo(destID) {
     const dest = document.querySelector(destID);
     locoScroll.scrollTo(dest);
-}
+};
 
 /*************** Google Map Api Parser ***********/
 function initMap() {
@@ -52,10 +52,10 @@ function initMap() {
             });
         }
     }
-}
+};
 
 // Array of markers
-let Markers = []
+let Markers = [];
 
 const rawData = [
     {
@@ -128,7 +128,7 @@ const rawData = [
                 src: "https://i.redd.it/sqh6n0ez8lw31.jpg"
             }
         ],
-        videoURL: "https://www.youtube-nocookie.com/embed/WSM1tp4Qtpc"
+        videoURL: "https://www.youtube.com/embed/WSM1tp4Qtpc"
     }
 ];
 
@@ -149,7 +149,7 @@ function Burger (id, oneLiner, thumbnail, origin, location, year,
     this.facts = [...facts];
     this.ingredients = [...ingredients];
     this.videoURL = videoURL;
-}
+};
 
 let BURGERS;
 function loadContent() {
@@ -193,7 +193,7 @@ function buildIntro() {
     initMap();
     // build default content in case the user didn't make a choice
     buildContent(rawData[0].id);
-}
+};
 
 function buildContent(key) {
     // Step 1: Get the target element
@@ -306,7 +306,7 @@ function buildContent(key) {
     let videoURL = document.querySelector("#burger-videoURL");
     videoURL.setAttribute("src", entry.videoURL);
     // console.log(videoURL);
-}
+};
 
 
 
