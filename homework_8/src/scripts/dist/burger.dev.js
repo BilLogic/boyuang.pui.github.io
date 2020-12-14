@@ -131,6 +131,64 @@ var rawData = [{
     src: "https://i.redd.it/sqh6n0ez8lw31.jpg"
   }],
   videoURL: "https://www.youtube.com/embed/WSM1tp4Qtpc"
+}, {
+  id: "Gargiulo burger",
+  oneLiner: "The iconic double-dipped roast beef burger from Brooklyn, New York",
+  thumbnail: "http://i3.ytimg.com/vi/OL2kejLKwmg/maxresdefault.jpg",
+  origin: "Brooklyn, New York",
+  location: {
+    coords: {
+      lat: 40.60045444980158,
+      lng: -73.94211056641795
+    },
+    content: "<button class=\"btn btn-lg btn-warning\" onclick=\"buildContent('Gargiulo burger');ScrollTo('#Introduction');\">Gargiulo Burger</button>"
+  },
+  year: "1938",
+  description: "Hot beef broth, hot beef burger, hot roast beef, hot beef burger topped with hot roast beef and cheese.",
+  images: ["https://thumbor.thedailymeal.com/s1P5UpSDEL6TTcD0ub7HC3-dLR0=/870x565/filters:format(webp)/https://www.thedailymeal.com/sites/default/files/story/2020/BrennanandCarrDIP.jpg", "https://farm5.staticflickr.com/4109/4961012616_84afd9278e_b_d.jpg", "https://patch.com/img/cdn20/users/22943091/20170621/075654/styles/raw/public/article_images/20170518_192240-1498089353-5847.jpg"],
+  facts: [{
+    title: "Gargiulo's !?",
+    note: "Gargiulo's a very fancy, huge italian restaurant in Coney Island. Brenna and Carr usually feeds the staff at Gargulio at Sundays.",
+    src: "https://gargiulos.com/wp-content/uploads/2017/11/Gargiulos-History-featured.jpg"
+  }, {
+    title: "One and Only",
+    note: "Unlike other regional burgers, the Gargiulo burger is only served at the one and only Brenna and Carr's.",
+    src: "https://cdn.vox-cdn.com/thumbor/O6NXBODHzlv3GAZjbwH685OH0Nc=/0x0:500x332/1200x800/filters:focal(210x126:290x206)/cdn.vox-cdn.com/uploads/chorus_image/image/61178741/5454752308_c58207e974_o.0.0.1526066843.0.jpg"
+  }, {
+    title: "Beef+++",
+    note: "Roast Beef Sandwich with Beef patty inside dipped in Beef Broth",
+    src: "https://static01.nyt.com/images/2012/01/15/nyregion/20120115JOINTss-slide-DB10/20120115JOINTss-slide-DB10-jumbo.jpg?quality=75&auto=webp&disable=upscale"
+  }, {
+    title: "Waiters",
+    note: "At BRennan & Carr, if a waiter shows up for work without a tie (or a pen!) they are sent home",
+    src: "https://www.thedailymeal.com/sites/default/files/story/2018/iStock-666368278.jpg"
+  }],
+  ingredients: [{
+    title: "Beef",
+    note: "Fresh Beef Patty As Always",
+    src: "https://www.meijer.com/content/dam/meijer/product/0004/12/5006/86/0004125006869_0_A1C1_0200.png"
+  }, {
+    title: "Deli Roast Beef",
+    note: "Fresh Sliced deli roast beef",
+    src: "https://stuffmattycooks.com/wp-content/uploads/2019/10/thin-sliced-rare-roast-beef.jpg"
+  }, {
+    title: "Salted Onions",
+    note: "Nothing special",
+    src: "https://www.foodiecrush.com/wp-content/uploads/2017/10/Caramelized-Onions-foodiecrush.com-012.jpg"
+  }, {
+    title: "Huge Italian Bun",
+    note: "Follow the tradition, these are huge burgers with huge buns",
+    src: "https://ciaoflorentina.com/wp-content/uploads/2016/12/Rustic-Crusty-Bread-Recipe.jpg"
+  }, {
+    title: "American Cheese",
+    note: "Two thick slices of American cheese",
+    src: "https://cdn.schwans.com/media/images/products/62172-1-1540.jpg"
+  }, {
+    title: "Beef Broth",
+    note: "It's all about beeeeeeef!",
+    src: "https://cdn3.tmbi.com/toh/GoogleImagesPostCard/Homemade-Beef-Broth_exps9161_W101973175B04_30_1bC_RMS.jpg"
+  }],
+  videoURL: "https://www.youtube.com/embed/OL2kejLKwmg"
 }]; // burger details info structure
 
 function Burger(id, oneLiner, thumbnail, origin, location, year, description, images, facts, ingredients, videoURL) {
@@ -165,15 +223,6 @@ function buildIntro() {
   rawData.forEach(function (element) {
     Markers.push(element.location); //FIXME: This only work temporarily. Needs to be changed once more carousel pages are added
     // console.log(element.location);
-
-    var id = document.querySelector("#burger-id");
-    id.innerHTML = element.id; // console.log(id);
-
-    var oneLiner = document.querySelector("#burger-oneLiner");
-    oneLiner.innerHTML = element.oneLiner; // console.log(oneLiner);
-
-    var thumbnail = document.querySelector("#burger-thumbnail");
-    thumbnail.setAttribute("src", element.thumbnail);
   });
   initMap(); // build default content in case the user didn't make a choice
 
@@ -186,7 +235,15 @@ function buildContent(key) {
   // Step 1: Get the target element
   var entry = BURGERS.find(function (element) {
     return element.id === key;
-  }); // Step 2: parse burger into HTML content
+  });
+  var id = document.querySelector("#burger-id");
+  id.innerHTML = entry.id; // console.log(id);
+
+  var oneLiner = document.querySelector("#burger-oneLiner");
+  oneLiner.innerHTML = entry.oneLiner; // console.log(oneLiner);
+
+  var thumbnail = document.querySelector("#burger-thumbnail");
+  thumbnail.setAttribute("src", entry.thumbnail); // Step 2: parse burger into HTML content
   // Set Info on Section 2
 
   var origin = document.querySelector("#burger-origin");
@@ -199,11 +256,11 @@ function buildContent(key) {
   description.innerHTML = entry.description; // Set Images on Section 2
 
   var burgerImg1 = document.querySelector("#burger-images-0");
-  burgerImg1.setAttribute("src", entry.images[0]);
-  var burgerImg2 = document.querySelector("#burger-images-1");
-  burgerImg2.setAttribute("src", entry.images[1]);
-  var burgerImg3 = document.querySelector("#burger-images-2");
-  burgerImg3.setAttribute("src", entry.images[2]); // Set Info on Section 3
+  burgerImg1.setAttribute("src", entry.images[0]); // let burgerImg2 = document.querySelector("#burger-images-1");
+  // burgerImg2.setAttribute("src", entry.images[1]);
+  // let burgerImg3 = document.querySelector("#burger-images-2");
+  // burgerImg3.setAttribute("src", entry.images[2]);
+  // Set Info on Section 3
   // Imgs
 
   var funImg1 = document.querySelector("#fun-card-0-img");

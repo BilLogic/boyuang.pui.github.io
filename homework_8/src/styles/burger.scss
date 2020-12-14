@@ -112,7 +112,8 @@ section#Fun-Fact {
 
     }
     img {
-        max-width: 20vw;
+        position: relative;
+        max-width: 100%;
         max-height: 20vh;
         margin: auto;
     }
@@ -297,7 +298,7 @@ section#Instruction {
 // iframe for youtube vid
 .iframe-container {
     position: relative;
-    width: 70vw;
+    width: 56.25%;
     padding-bottom: 56.25%;
     height: 0;
 }
